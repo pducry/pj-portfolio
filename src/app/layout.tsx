@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Instrument_Sans } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { EntranceProvider } from "@/components/entrance-provider";
+import { CustomCursor } from "@/components/custom-cursor";
+import { PasswordGate } from "@/components/password-gate";
 import "./globals.css";
 
 const instrumentSans = Instrument_Sans({
@@ -23,7 +26,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${instrumentSans.variable} ${instrumentSans.className} antialiased`}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <EntranceProvider>
+            <CustomCursor />
+            <PasswordGate>
+              {children}
+            </PasswordGate>
+          </EntranceProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

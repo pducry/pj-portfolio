@@ -5,39 +5,86 @@ import Image from "next/image";
 
 const images = [
   { src: "/gallery/2.png", alt: "Project 1" },
-  { src: "/gallery/11.png", alt: "Project 2" },
-  { src: "/gallery/15b.png", alt: "Project 3" },
-  { src: "/gallery/19.png", alt: "Project 4" },
-  { src: "/gallery/21.png", alt: "Project 5" },
-  { src: "/gallery/23.png", alt: "Project 6" },
-  { src: "/gallery/27.png", alt: "Project 7" },
-  { src: "/gallery/31.png", alt: "Project 8" },
-  { src: "/gallery/41.png", alt: "Project 9" },
-  { src: "/gallery/43.png", alt: "Project 10" },
-  { src: "/gallery/47.png", alt: "Project 11" },
-  { src: "/gallery/50b.png", alt: "Project 12" },
-  { src: "/gallery/51.png", alt: "Project 13" },
-  { src: "/gallery/56.png", alt: "Project 14" },
-  { src: "/gallery/61.png", alt: "Project 15" },
-  { src: "/gallery/62.png", alt: "Project 16" },
-  { src: "/gallery/63.png", alt: "Project 17" },
-  { src: "/gallery/63b.png", alt: "Project 18" },
-  { src: "/gallery/64.png", alt: "Project 19" },
-  { src: "/gallery/65.png", alt: "Project 20" },
-  { src: "/gallery/66.png", alt: "Project 21" },
-  { src: "/gallery/67.png", alt: "Project 22" },
-  { src: "/gallery/68.png", alt: "Project 23" },
-  { src: "/gallery/69.png", alt: "Project 24" },
-  { src: "/gallery/70.png", alt: "Project 25" },
-  { src: "/gallery/71.png", alt: "Project 26" },
-  { src: "/gallery/72.png", alt: "Project 27" },
-  { src: "/gallery/73.png", alt: "Project 28" },
-  { src: "/gallery/74.png", alt: "Project 29" },
-  { src: "/gallery/75.png", alt: "Project 30" },
+  { src: "/gallery/3b.png", alt: "Project 2" },
+  { src: "/gallery/11.png", alt: "Project 3" },
+  { src: "/gallery/11b.png", alt: "Project 4" },
+  { src: "/gallery/12.png", alt: "Project 5" },
+  { src: "/gallery/13b.png", alt: "Project 6" },
+  { src: "/gallery/15b.png", alt: "Project 7" },
+  { src: "/gallery/19.png", alt: "Project 8" },
+  { src: "/gallery/21.png", alt: "Project 9" },
+  { src: "/gallery/23.png", alt: "Project 10" },
+  { src: "/gallery/27.png", alt: "Project 11" },
+  { src: "/gallery/31.png", alt: "Project 12" },
+  { src: "/gallery/41.png", alt: "Project 13" },
+  { src: "/gallery/43.png", alt: "Project 14" },
+  { src: "/gallery/47.png", alt: "Project 15" },
+  { src: "/gallery/50b.png", alt: "Project 16" },
+  { src: "/gallery/51.png", alt: "Project 17" },
+  { src: "/gallery/56.png", alt: "Project 18" },
+  { src: "/gallery/61.png", alt: "Project 19" },
+  { src: "/gallery/62.png", alt: "Project 20" },
+  { src: "/gallery/63b.png", alt: "Project 22" },
+  { src: "/gallery/64.png", alt: "Project 23" },
+  { src: "/gallery/65.png", alt: "Project 24" },
+  { src: "/gallery/66.png", alt: "Project 25" },
+  { src: "/gallery/67.png", alt: "Project 26" },
+  { src: "/gallery/68.png", alt: "Project 27" },
+  { src: "/gallery/69.png", alt: "Project 28" },
+  { src: "/gallery/71.png", alt: "Project 30" },
+  { src: "/gallery/72.png", alt: "Project 31" },
+  { src: "/gallery/73.png", alt: "Project 32" },
+  { src: "/gallery/74.png", alt: "Project 33" },
+  { src: "/gallery/75.png", alt: "Project 34" },
+  { src: "/gallery/76b.png", alt: "Project 35" },
+  { src: "/gallery/78.png", alt: "Project 36" },
+  { src: "/gallery/79.png", alt: "Project 37" },
+  { src: "/gallery/80.png", alt: "Project 38" },
+  { src: "/gallery/81.png", alt: "Project 39" },
+  { src: "/gallery/82.png", alt: "Project 40" },
+  { src: "/gallery/83.png", alt: "Project 41" },
+  { src: "/gallery/84.png", alt: "Project 42" },
+  { src: "/gallery/85.png", alt: "Project 43" },
+  { src: "/gallery/86.png", alt: "Project 44" },
+  { src: "/gallery/87.png", alt: "Project 45" },
+  { src: "/gallery/88.png", alt: "Project 46" },
+  { src: "/gallery/89.png", alt: "Project 47" },
+  { src: "/gallery/93.png", alt: "Project 48" },
+  { src: "/gallery/94.png", alt: "Project 49" },
+  { src: "/gallery/95.png", alt: "Project 50" },
+  { src: "/gallery/96c.png", alt: "Project 51" },
+  { src: "/gallery/97.png", alt: "Project 52" },
+  { src: "/gallery/98.png", alt: "Project 53" },
+  { src: "/gallery/99c.png", alt: "Project 54" },
+  { src: "/gallery/100.png", alt: "Project 55" },
+  { src: "/gallery/101.png", alt: "Project 56" },
+  { src: "/gallery/102.png", alt: "Project 57" },
+  { src: "/gallery/103.png", alt: "Project 58" },
+  { src: "/gallery/104.png", alt: "Project 59" },
+  { src: "/gallery/105.png", alt: "Project 60" },
 ];
 
-export function HorizontalGallery() {
+function shuffle<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+interface HorizontalGalleryProps {
+  columns?: number;
+  gap?: number;
+}
+
+export function HorizontalGallery({ columns = 3, gap = 12 }: HorizontalGalleryProps) {
+  const [shuffled, setShuffled] = useState(images);
   const [selected, setSelected] = useState<number | null>(null);
+
+  useEffect(() => {
+    setShuffled(shuffle(images));
+  }, []);
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   const [cursorSide, setCursorSide] = useState<"left" | "right">("right");
   const [onImage, setOnImage] = useState(false);
@@ -46,12 +93,12 @@ export function HorizontalGallery() {
   const close = useCallback(() => setSelected(null), []);
 
   const prev = useCallback(
-    () => setSelected((s) => (s !== null ? (s - 1 + images.length) % images.length : null)),
-    [],
+    () => setSelected((s) => (s !== null ? (s - 1 + shuffled.length) % shuffled.length : null)),
+    [shuffled],
   );
   const next = useCallback(
-    () => setSelected((s) => (s !== null ? (s + 1) % images.length : null)),
-    [],
+    () => setSelected((s) => (s !== null ? (s + 1) % shuffled.length : null)),
+    [shuffled],
   );
 
   useEffect(() => {
@@ -67,8 +114,14 @@ export function HorizontalGallery() {
 
   return (
     <section className="px-8 py-16 md:px-12 lg:px-20">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 items-center">
-        {images.map((img, i) => (
+      <div
+        className="grid items-center"
+        style={{
+          gridTemplateColumns: `repeat(${columns}, 1fr)`,
+          gap: `${gap}px`,
+        }}
+      >
+        {shuffled.map((img, i) => (
           <div
             key={i}
             className="group overflow-hidden cursor-pointer"
@@ -77,10 +130,10 @@ export function HorizontalGallery() {
             <Image
               src={img.src}
               alt={img.alt}
-              width={800}
-              height={600}
+              width={1920}
+              height={1440}
               className="w-full h-auto object-contain"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+              sizes={`(max-width: 640px) 100vw, ${Math.round(100 / columns)}vw`}
             />
           </div>
         ))}
@@ -144,8 +197,8 @@ export function HorizontalGallery() {
             style={{ maxWidth: "90vw", maxHeight: "80vh" }}
           >
             <Image
-              src={images[selected].src}
-              alt={images[selected].alt}
+              src={shuffled[selected].src}
+              alt={shuffled[selected].alt}
               width={1600}
               height={1200}
               className="max-w-full max-h-[80vh] w-auto h-auto object-contain"
@@ -167,7 +220,7 @@ export function HorizontalGallery() {
               <span className="ml-1">close</span>
             </span>
             <span className="text-white/30">
-              {selected + 1} / {images.length}
+              {selected + 1} / {shuffled.length}
             </span>
           </div>
         </div>
