@@ -28,7 +28,7 @@ export default function Bio() {
 
       <div className="flex min-h-[calc(100svh-56px)] flex-col">
         <main className="flex flex-1 flex-col justify-end px-8 pb-16 md:px-12 lg:px-20">
-          <div className="h-[100px]" />
+          <div className="h-[25px]" />
           {/* Two-column layout */}
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1fr_1fr] lg:gap-24">
             {/* Left column — Main bio */}

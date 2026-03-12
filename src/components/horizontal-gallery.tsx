@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect, useRef } from "react";
 import Image from "next/image";
+import { LayoutGroup, motion, AnimatePresence, useInView } from "framer-motion";
 
 const images = [
   { src: "/gallery/2.png", alt: "Project 1" },
@@ -73,6 +74,50 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
+function GalleryItem({
+  img,
+  index,
+  columns,
+  onClick,
+}: {
+  img: { src: string; alt: string };
+  index: number;
+  columns: number;
+  onClick: () => void;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const colIndex = index % columns;
+
+  return (
+    <motion.div
+      ref={ref}
+      key={img.src}
+      layout
+      layoutId={img.src}
+      className="group overflow-hidden cursor-pointer"
+      onClick={onClick}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+      transition={{
+        duration: 0.6,
+        ease: [0.25, 1, 0.5, 1],
+        delay: colIndex * 0.08,
+        layout: { duration: 0.6, ease: [0.25, 1, 0.5, 1] },
+      }}
+    >
+      <Image
+        src={img.src}
+        alt={img.alt}
+        width={1920}
+        height={1440}
+        className="w-full h-auto object-contain"
+        sizes={`(max-width: 640px) 100vw, ${Math.round(100 / columns)}vw`}
+      />
+    </motion.div>
+  );
+}
+
 interface HorizontalGalleryProps {
   columns?: number;
   gap?: number;
@@ -114,35 +159,37 @@ export function HorizontalGallery({ columns = 3, gap = 12 }: HorizontalGalleryPr
 
   return (
     <section className="px-8 py-16 md:px-12 lg:px-20">
-      <div
-        className="grid items-center"
-        style={{
-          gridTemplateColumns: `repeat(${columns}, 1fr)`,
-          gap: `${gap}px`,
-        }}
-      >
-        {shuffled.map((img, i) => (
-          <div
-            key={i}
-            className="group overflow-hidden cursor-pointer"
-            onClick={() => setSelected(i)}
-          >
-            <Image
-              src={img.src}
-              alt={img.alt}
-              width={1920}
-              height={1440}
-              className="w-full h-auto object-contain"
-              sizes={`(max-width: 640px) 100vw, ${Math.round(100 / columns)}vw`}
+      <LayoutGroup>
+        <motion.div
+          layout
+          className="grid items-center"
+          style={{
+            gridTemplateColumns: `repeat(${columns}, 1fr)`,
+            gap: `${gap}px`,
+          }}
+          transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+        >
+          {shuffled.map((img, i) => (
+            <GalleryItem
+              key={img.src}
+              img={img}
+              index={i}
+              columns={columns}
+              onClick={() => setSelected(i)}
             />
-          </div>
-        ))}
-      </div>
+          ))}
+        </motion.div>
+      </LayoutGroup>
 
       {/* Lightbox */}
+      <AnimatePresence>
       {selected !== null && (
-        <div
+        <motion.div
           ref={overlayRef}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
           className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/80 backdrop-blur-sm cursor-none select-none"
           onMouseDown={(e) => e.preventDefault()}
           onMouseMove={(e) => {
@@ -223,8 +270,9 @@ export function HorizontalGallery({ columns = 3, gap = 12 }: HorizontalGalleryPr
               {selected + 1} / {shuffled.length}
             </span>
           </div>
-        </div>
+        </motion.div>
       )}
+      </AnimatePresence>
     </section>
   );
 }
