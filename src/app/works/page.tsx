@@ -1,22 +1,16 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Navigation } from "@/components/navigation";
-import { HorizontalGallery } from "@/components/horizontal-gallery";
-import { GridControls } from "@/components/grid-controls";
 import { useEntrance } from "@/components/entrance-provider";
 
 export default function Works() {
   const animate = useEntrance();
   const [easterEgg, setEasterEgg] = useState(false);
   const [flashVisible, setFlashVisible] = useState(true);
-  const [columns, setColumns] = useState(3);
-  const [gap, setGap] = useState(8);
-  const [galleryInView, setGalleryInView] = useState(false);
-  const galleryRef = useRef<HTMLDivElement>(null);
 
   const handleEnter = useCallback(() => setEasterEgg(true), []);
   const handleLeave = useCallback(() => setEasterEgg(false), []);
@@ -26,17 +20,6 @@ export default function Works() {
     const id = setInterval(() => setFlashVisible((v) => !v), 50);
     return () => clearInterval(id);
   }, [easterEgg]);
-
-  useEffect(() => {
-    const el = galleryRef.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => setGalleryInView(entry.isIntersecting),
-      { threshold: 0 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <div>
@@ -115,19 +98,6 @@ export default function Works() {
         </div>
       </div>
 
-      {/* Horizontal Gallery */}
-      <div ref={galleryRef}>
-        <HorizontalGallery columns={columns} gap={gap} />
-      </div>
-
-      {/* Floating grid controls */}
-      <GridControls
-        visible={galleryInView}
-        columns={columns}
-        gap={gap}
-        onColumnsChange={setColumns}
-        onGapChange={setGap}
-      />
     </div>
   );
 }
