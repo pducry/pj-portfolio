@@ -82,24 +82,14 @@ export default function Playground() {
         <main className="flex flex-1 flex-col justify-end px-8 pb-[50px] md:px-12 lg:px-20">
           <section className="max-w-lg space-y-6">
             <h1 className={`${animate ? "animate-fade-in-up" : ""} text-3xl font-semibold leading-tight tracking-tight md:text-4xl`} style={animate ? { animationDelay: "0.2s" } : undefined}>
-              Hey, I&apos;m Pedro Julien &ndash;
-              <br />
-              Ux Manager in Mercado Pago.
+              Playground.
             </h1>
 
             <p className={`${animate ? "animate-fade-in-up" : ""} max-w-md text-sm leading-relaxed text-muted`} style={animate ? { animationDelay: "0.4s" } : undefined}>
-              I&apos;m a builder at heart, with 20+ years shaping products
-              and branding experiences. I chase what&apos;s new, but always
-              grounded in what&apos;s real. Prototyping fast, iterating with
-              intention and turn insights into visuals that&apos;s clear,
-              human and purposeful.
+              This is my playground — years of experiments across code, sounds, surfboards shapes and visual design. The medium changes, the curiosity doesn&apos;t. Creativity first, always.
             </p>
 
             <p className={`${animate ? "animate-fade-in-up" : ""} text-xs text-muted`} style={animate ? { animationDelay: "0.6s" } : undefined}>
-              Building cool stuff to <span className="font-semibold text-foreground">people</span> using <span className="font-semibold text-foreground">AI</span>.
-            </p>
-
-            <p className={`${animate ? "animate-fade-in-up" : ""} text-xs text-muted`} style={animate ? { animationDelay: "0.8s" } : undefined}>
               &copy; Pedro Julien 2026
             </p>
           </section>
