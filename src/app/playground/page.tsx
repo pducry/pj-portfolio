@@ -12,7 +12,6 @@ import { useEntrance } from "@/components/entrance-provider";
 export default function Playground() {
   const animate = useEntrance();
   const [easterEgg, setEasterEgg] = useState(false);
-  const [flashVisible, setFlashVisible] = useState(true);
   const [columns, setColumns] = useState(3);
   const [gap, setGap] = useState(8);
   const [galleryInView, setGalleryInView] = useState(false);
@@ -20,12 +19,6 @@ export default function Playground() {
 
   const handleEnter = useCallback(() => setEasterEgg(true), []);
   const handleLeave = useCallback(() => setEasterEgg(false), []);
-
-  useEffect(() => {
-    if (!easterEgg) return;
-    const id = setInterval(() => setFlashVisible((v) => !v), 50);
-    return () => clearInterval(id);
-  }, [easterEgg]);
 
   useEffect(() => {
     const el = galleryRef.current;
@@ -40,17 +33,13 @@ export default function Playground() {
 
   return (
     <div>
-      {/* Easter Egg Flash */}
+      {/* Easter Egg GIF */}
       {easterEgg && (
         <div className="pointer-events-none fixed inset-0 z-50 flex items-center justify-center">
-          <Image
-            src="/easter-egg.png"
+          <img
+            src="/compilacao.gif"
             alt=""
-            width={192}
-            height={192}
-            className="object-cover transition-none"
-            style={{ opacity: flashVisible ? 1 : 0 }}
-            priority
+            className="max-h-[400px] w-auto object-contain"
           />
         </div>
       )}
@@ -96,10 +85,11 @@ export default function Playground() {
         </main>
 
         {/* Scroll indicator */}
-        <div className={`${animate ? "animate-fade-in-up" : ""} flex justify-end px-8 pb-6 md:px-12 lg:px-20`} style={animate ? { animationDelay: "1s" } : undefined}>
+        <div className={`${animate ? "animate-fade-in-up" : ""} flex flex-col items-center gap-2 pb-10`} style={animate ? { animationDelay: "1s" } : undefined}>
+          <span className="text-[10px] uppercase tracking-widest text-muted">scroll</span>
           <div className="animate-bounce">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-muted">
-              <path d="M8 2v10M3 8l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="text-muted">
+              <path d="M12 3v14M5 11l7 7 7-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
         </div>

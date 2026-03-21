@@ -26,31 +26,24 @@ function useScrollReveal() {
 export default function Home() {
   const animate = useEntrance();
   const [easterEgg, setEasterEgg] = useState(false);
-  const [flashVisible, setFlashVisible] = useState(true);
   const project1 = useScrollReveal();
   const project2 = useScrollReveal();
+  const project3 = useScrollReveal();
+  const project4 = useScrollReveal();
 
   const handleEnter = useCallback(() => setEasterEgg(true), []);
   const handleLeave = useCallback(() => setEasterEgg(false), []);
 
-  useEffect(() => {
-    if (!easterEgg) return;
-    const id = setInterval(() => setFlashVisible((v) => !v), 50);
-    return () => clearInterval(id);
-  }, [easterEgg]);
-
   return (
     <div>
-      {/* Easter Egg Flash */}
+      {/* Easter Egg GIF */}
       {easterEgg && (
         <div className="pointer-events-none fixed inset-0 z-50 flex items-center justify-center">
-          <Image
-            src="/easter-egg.png"
+          <img
+            src="/compilacao.gif"
             alt=""
-            width={192}
-            height={192}
-            className="object-cover transition-none"
-            style={{ opacity: flashVisible ? 1 : 0 }}
+            className="max-h-[400px] w-auto object-contain"
+            style={{ opacity: 1 }}
             priority
           />
         </div>
@@ -96,42 +89,112 @@ export default function Home() {
               human and purposeful.
             </p>
 
-            <p className={`${animate ? "animate-fade-in-up" : ""} text-xs text-muted`} style={animate ? { animationDelay: "0.6s" } : undefined}>
-              Building cool stuff to <span className="font-semibold text-foreground">people</span> using <span className="font-semibold text-foreground">AI</span>.
-            </p>
+            <div className={`${animate ? "animate-fade-in-up" : ""} flex items-center gap-3`} style={animate ? { animationDelay: "0.6s" } : undefined}>
+              <p className="text-xs text-muted">
+                Making things that <span className="font-semibold text-foreground">matter</span>, powered by <span className="font-semibold text-foreground">AI</span>.
+              </p>
+              <div className="animate-bounce">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-foreground">
+                  <path d="M12 3v14M5 11l7 7 7-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+            </div>
 
             <p className={`${animate ? "animate-fade-in-up" : ""} text-xs text-muted`} style={animate ? { animationDelay: "0.8s" } : undefined}>
               &copy; Pedro Julien 2026
             </p>
           </section>
         </main>
-
-        {/* Scroll indicator */}
-        <div className={`${animate ? "animate-fade-in-up" : ""} flex justify-end px-8 pb-6 md:px-12 lg:px-20`} style={animate ? { animationDelay: "1s" } : undefined}>
-          <div className="animate-bounce">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-muted">
-              <path d="M8 2v10M3 8l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-        </div>
       </div>
 
-      {/* Project Module — My Phone */}
+      {/* Project Module — Artas */}
       <section ref={project1.ref} className="px-8 py-16 md:py-24 md:px-12 lg:px-20">
         <div className="block space-y-6 lg:flex lg:space-y-0 lg:items-end lg:gap-20">
           <div className={`space-y-4 lg:flex-1 ${project1.visible ? "animate-fade-in-up" : "opacity-0"}`} style={project1.visible ? { animationDelay: "0.1s" } : undefined}>
+            <p className="text-xs font-medium uppercase tracking-widest text-muted">2026</p>
+            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Artas</h2>
+            <div className="flex flex-wrap gap-2">
+              {["Product Design", "AI", "Branding"].map((tag) => (
+                <span key={tag} className="rounded-full border border-border px-3 py-1 text-[11px] tracking-wide text-muted">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <p className="max-w-md text-sm leading-relaxed text-muted">
+              A product that reimagines how we interact with images — turning passive visuals into
+              dynamic, expressive experiences. Through creative interfaces, Artas opens new ways
+              to explore, manipulate and connect imagery, making every interaction feel intentional,
+              fluid and deeply human.
+            </p>
+          </div>
+          <div className={`lg:w-[62%] lg:shrink-0 ${project1.visible ? "animate-fade-in-up" : "opacity-0"}`} style={project1.visible ? { animationDelay: "0.3s" } : undefined}>
+            <div className="relative w-full overflow-hidden rounded-lg" style={{ aspectRatio: "5 / 3" }}>
+              <Image
+                src="/gallery/artasthumb.png"
+                alt="Artas — creative image interaction"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Project Module — Mude */}
+      <section ref={project2.ref} className="px-8 py-16 md:py-24 md:px-12 lg:px-20">
+        <div className="block space-y-6 lg:flex lg:space-y-0 lg:items-end lg:gap-20">
+          <div className={`space-y-4 lg:flex-1 ${project2.visible ? "animate-fade-in-up" : "opacity-0"}`} style={project2.visible ? { animationDelay: "0.1s" } : undefined}>
+            <p className="text-xs font-medium uppercase tracking-widest text-muted">2024</p>
+            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Mude</h2>
+            <div className="flex flex-wrap gap-2">
+              {["Product Design"].map((tag) => (
+                <span key={tag} className="rounded-full border border-border px-3 py-1 text-[11px] tracking-wide text-muted">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <p className="max-w-md text-sm leading-relaxed text-muted">
+              An app that brings structure to mindfulness. Mude organizes and encourages daily
+              wellness practices — making it easier to build routines that actually stick.
+              Intentional design for a more present life.
+            </p>
+          </div>
+          <div className={`lg:w-[62%] lg:shrink-0 ${project2.visible ? "animate-fade-in-up" : "opacity-0"}`} style={project2.visible ? { animationDelay: "0.3s" } : undefined}>
+            <div className="relative w-full overflow-hidden rounded-lg" style={{ aspectRatio: "5 / 3" }}>
+              <Image
+                src="/gallery/mude.png"
+                alt="Mude — mindfulness app"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Project Module — My Phone */}
+      <section ref={project3.ref} className="px-8 py-16 md:py-24 md:px-12 lg:px-20">
+        <div className="block space-y-6 lg:flex lg:space-y-0 lg:items-end lg:gap-20">
+          <div className={`space-y-4 lg:flex-1 ${project3.visible ? "animate-fade-in-up" : "opacity-0"}`} style={project3.visible ? { animationDelay: "0.1s" } : undefined}>
             <p className="text-xs font-medium uppercase tracking-widest text-muted">2023</p>
             <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">My Phone</h2>
+            <div className="flex flex-wrap gap-2">
+              {["Product Design", "Branding"].map((tag) => (
+                <span key={tag} className="rounded-full border border-border px-3 py-1 text-[11px] tracking-wide text-muted">
+                  {tag}
+                </span>
+              ))}
+            </div>
             <p className="max-w-md text-sm leading-relaxed text-muted">
               A complete digital product experience — from website design and responsive interfaces
               to cohesive branding that connects every touchpoint. Crafted with attention to detail,
               blending visual identity with a seamless user journey across web and mobile.
             </p>
           </div>
-          <div className={`lg:w-[62%] lg:shrink-0 ${project1.visible ? "animate-fade-in-up" : "opacity-0"}`} style={project1.visible ? { animationDelay: "0.3s" } : undefined}>
+          <div className={`lg:w-[62%] lg:shrink-0 ${project3.visible ? "animate-fade-in-up" : "opacity-0"}`} style={project3.visible ? { animationDelay: "0.3s" } : undefined}>
             <div className="relative w-full overflow-hidden rounded-lg" style={{ aspectRatio: "5 / 3" }}>
               <Image
-                src="/gallery/z1.jpg"
+                src="/gallery/Myphonethumb.png"
                 alt="My Phone — product showcase"
                 fill
                 className="object-cover"
@@ -141,23 +204,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Project Module — Aesthetics */}
-      <section ref={project2.ref} className="px-8 py-16 md:py-24 md:px-12 lg:px-20">
+      {/* Project Module — Combustion */}
+      <section ref={project4.ref} className="px-8 py-16 md:py-24 md:px-12 lg:px-20">
         <div className="block space-y-6 lg:flex lg:space-y-0 lg:items-end lg:gap-20">
-          <div className={`space-y-4 lg:flex-1 ${project2.visible ? "animate-fade-in-up" : "opacity-0"}`} style={project2.visible ? { animationDelay: "0.1s" } : undefined}>
-            <p className="text-xs font-medium uppercase tracking-widest text-muted">2025</p>
-            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Aesthetics</h2>
+          <div className={`space-y-4 lg:flex-1 ${project4.visible ? "animate-fade-in-up" : "opacity-0"}`} style={project4.visible ? { animationDelay: "0.1s" } : undefined}>
+            <p className="text-xs font-medium uppercase tracking-widest text-muted">2024</p>
+            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Combustion</h2>
+            <div className="flex flex-wrap gap-2">
+              {["Branding"].map((tag) => (
+                <span key={tag} className="rounded-full border border-border px-3 py-1 text-[11px] tracking-wide text-muted">
+                  {tag}
+                </span>
+              ))}
+            </div>
             <p className="max-w-md text-sm leading-relaxed text-muted">
-              An exploration of 3D art direction and visual storytelling — merging cinematic lighting,
-              textured environments and bold composition into a digital experience that pushes the
-              boundaries between design and emotion.
+              Rebranding of a São Paulo-based sound design studio with a strong international presence.
+              A new visual identity built to match the weight and reach of their work — bold, precise
+              and unmistakably sonic.
             </p>
           </div>
-          <div className={`lg:w-[62%] lg:shrink-0 ${project2.visible ? "animate-fade-in-up" : "opacity-0"}`} style={project2.visible ? { animationDelay: "0.3s" } : undefined}>
+          <div className={`lg:w-[62%] lg:shrink-0 ${project4.visible ? "animate-fade-in-up" : "opacity-0"}`} style={project4.visible ? { animationDelay: "0.3s" } : undefined}>
             <div className="relative w-full overflow-hidden rounded-lg" style={{ aspectRatio: "5 / 3" }}>
               <Image
-                src="/gallery/MacBook-Pro-04.png"
-                alt="Aesthetics — 3D art direction"
+                src="/gallery/combustion.png"
+                alt="Combustion — sound design studio rebranding"
                 fill
                 className="object-cover"
               />
