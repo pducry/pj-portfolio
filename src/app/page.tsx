@@ -43,8 +43,6 @@ export default function Home() {
             src="/compilacao.gif"
             alt=""
             className="max-h-[400px] w-auto object-contain"
-            style={{ opacity: 1 }}
-            priority
           />
         </div>
       )}
