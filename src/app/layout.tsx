@@ -18,6 +18,12 @@ export const metadata: Metadata = {
     "Creative Director fueld by AI, crafting tools that make the world bigger, clearer, and more connected.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -30,7 +36,9 @@ export default function RootLayout({
           <EntranceProvider>
             <CustomCursor />
             <PasswordGate>
-              {children}
+              <div className="w-full overflow-x-hidden">
+                {children}
+              </div>
             </PasswordGate>
           </EntranceProvider>
         </ThemeProvider>
