@@ -126,10 +126,21 @@ interface HorizontalGalleryProps {
 export function HorizontalGallery({ columns = 3, gap = 12 }: HorizontalGalleryProps) {
   const [shuffled, setShuffled] = useState(images);
   const [selected, setSelected] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setShuffled(shuffle(images));
   }, []);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  const effectiveColumns = isMobile ? 1 : columns;
+  const effectiveGap = isMobile ? 16 : gap;
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   const [cursorSide, setCursorSide] = useState<"left" | "right">("right");
   const [onImage, setOnImage] = useState(false);
@@ -164,8 +175,8 @@ export function HorizontalGallery({ columns = 3, gap = 12 }: HorizontalGalleryPr
           layout
           className="grid items-center"
           style={{
-            gridTemplateColumns: `repeat(${columns}, 1fr)`,
-            gap: `${gap}px`,
+            gridTemplateColumns: `repeat(${effectiveColumns}, 1fr)`,
+            gap: `${effectiveGap}px`,
           }}
           transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
         >
@@ -174,7 +185,7 @@ export function HorizontalGallery({ columns = 3, gap = 12 }: HorizontalGalleryPr
               key={img.src}
               img={img}
               index={i}
-              columns={columns}
+              columns={effectiveColumns}
               onClick={() => setSelected(i)}
             />
           ))}

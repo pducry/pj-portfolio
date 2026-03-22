@@ -44,7 +44,7 @@ export function GridControls({
 
   return (
     <div
-      className={`fixed bottom-6 left-1/2 z-40 -translate-x-1/2 transition-all duration-500 ease-out ${
+      className={`hidden md:block fixed bottom-6 left-1/2 z-40 -translate-x-1/2 transition-all duration-500 ease-out ${
         visible
           ? "translate-y-0 opacity-100"
           : "pointer-events-none translate-y-8 opacity-0"

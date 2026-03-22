@@ -60,7 +60,7 @@ export default function Playground() {
           </span>
         </Link>
 
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-3 md:gap-8">
           <Navigation />
           <ThemeToggle />
         </div>
@@ -78,21 +78,16 @@ export default function Playground() {
               This is my playground — years of experiments across code, sounds, surfboards shapes and visual design. The medium changes, the curiosity doesn&apos;t. Creativity first, always.
             </p>
 
-            <p className={`${animate ? "animate-fade-in-up" : ""} text-xs text-muted`} style={animate ? { animationDelay: "0.6s" } : undefined}>
-              &copy; Pedro Julien 2026
-            </p>
+            <div className={`${animate ? "animate-fade-in-up" : ""} flex items-center gap-3`} style={animate ? { animationDelay: "0.6s" } : undefined}>
+              <p className="text-xs text-muted">&copy; Pedro Julien 2026</p>
+              <div className="animate-bounce">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-foreground">
+                  <path d="M12 3v14M5 11l7 7 7-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+            </div>
           </section>
         </main>
-
-        {/* Scroll indicator */}
-        <div className={`${animate ? "animate-fade-in-up" : ""} flex flex-col items-center gap-2 pb-10`} style={animate ? { animationDelay: "1s" } : undefined}>
-          <span className="text-[10px] uppercase tracking-widest text-muted">scroll</span>
-          <div className="animate-bounce">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="text-muted">
-              <path d="M12 3v14M5 11l7 7 7-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-        </div>
       </div>
 
       {/* Horizontal Gallery */}
