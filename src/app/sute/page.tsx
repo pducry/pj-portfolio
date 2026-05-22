@@ -33,7 +33,7 @@ function SuteCarousel() {
   useEffect(() => {
     const id = setInterval(() => {
       setIdx((i) => (i + 1) % carouselImages.length);
-    }, 3000);
+    }, 650);
     return () => clearInterval(id);
   }, []);
 
@@ -45,7 +45,7 @@ function SuteCarousel() {
           key={src}
           src={asset(src)}
           alt={`Sute — slide ${i + 1}`}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-out ${
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-out ${
             i === idx ? "opacity-100" : "opacity-0"
           }`}
         />
