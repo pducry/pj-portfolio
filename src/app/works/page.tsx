@@ -62,7 +62,7 @@ function ProjectRow({ project, t }: { project: Project; t: Translation }) {
     </>
   );
 
-  const cls = `grid items-start grid-cols-[1fr_auto] gap-3 border-b border-border py-6 lg:py-10 ${project.href ? "group transition-colors hover:bg-foreground cursor-pointer" : ""}`;
+  const cls = `grid items-start grid-cols-[1fr_auto] gap-3 border-b border-border px-6 py-6 lg:py-10 ${project.href ? "group transition-colors hover:bg-foreground cursor-pointer" : ""}`;
 
   return project.href ? (
     <Link href={project.href} className={cls}>{inner}</Link>
@@ -119,9 +119,8 @@ export default function Bio() {
       {/* ── Header — idêntico em todas as páginas ── */}
       <SiteHeader />
 
-      <div className="px-6">
-      {/* ── Intro text — centrado no grid, stick ao topo ── */}
-      <div className="pt-6 pb-8">
+      {/* ── Intro text ── */}
+      <div className="px-6 pt-6 pb-8">
         <div className="space-y-5 max-w-xl">
           <p className="text-base leading-snug text-foreground/75">{t.bio.p1}</p>
           <p className="text-base leading-snug text-foreground/75">
@@ -138,21 +137,21 @@ export default function Bio() {
       {/* ── Spacer ── */}
       <div className="h-[120px] lg:h-[200px]" />
 
-      {/* ── Projects — Craft | Build ── */}
+      {/* ── Projects — Craft | Build (full-bleed) ── */}
       <div id="projects" className="border-t border-border">
         {/* Module sub-headers */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 border-b border-border">
-          <div className="py-3 lg:border-r lg:border-border lg:pr-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 border-b border-border">
+          <div className="px-6 py-3 lg:border-r lg:border-border">
             <span className="text-sm text-foreground/30 whitespace-nowrap">Craft</span>
           </div>
-          <div className="hidden lg:block py-3">
+          <div className="hidden lg:block px-6 py-3">
             <span className="text-sm text-foreground/30 whitespace-nowrap">Build</span>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
           {/* Craft column */}
-          <div className="lg:border-r lg:border-border lg:pr-12">
+          <div className="lg:border-r lg:border-border">
             {craftProjects.map((project) => (
               <ProjectRow key={project.name} project={project} t={t} />
             ))}
@@ -160,7 +159,7 @@ export default function Bio() {
 
           {/* Build column — mobile header inline */}
           <div>
-            <div className="lg:hidden py-3 border-t border-border">
+            <div className="lg:hidden px-6 py-3 border-t border-border">
               <span className="text-sm text-foreground/30 whitespace-nowrap">Build</span>
             </div>
             {buildProjects.map((project) => (
@@ -170,19 +169,18 @@ export default function Bio() {
         </div>
       </div>
 
-      {/* ── Experience ── */}
+      {/* ── Experience (full-bleed) ── */}
       <div id="experience" className="mt-16 lg:mt-20">
-        {/* Module header — border above and below, aligned with Projects */}
-        <div className="py-3 border-t border-b border-border">
+        {/* Module header */}
+        <div className="px-6 py-3 border-t border-b border-border">
           <span className="text-sm text-foreground/30 whitespace-nowrap">{t.experience.past}</span>
         </div>
 
         {experience.map((entry) => (
           <div
             key={entry.company}
-            className={`grid items-center border-b border-border ${PROJ_COL} gap-x-8 py-3 lg:py-3`}
+            className={`grid items-center border-b border-border ${PROJ_COL} gap-x-8 px-6 py-3 lg:py-3`}
           >
-            {/* Desktop — Role (col 1) | empty (col 2) | Years (col 3) | Company (col 4) | empty (col 5) */}
             <span className="hidden text-base text-muted lg:block whitespace-nowrap">
               {t.roles[entry.role as keyof typeof t.roles]}
             </span>
@@ -190,7 +188,6 @@ export default function Bio() {
             <span className="hidden text-base text-muted lg:block whitespace-nowrap">{entry.years}</span>
             <p className="hidden text-base text-foreground lg:block whitespace-nowrap truncate">{entry.company}</p>
             <span className="hidden lg:block" />
-            {/* Mobile — same pattern as Projects: primary on top, meta below */}
             <div className="lg:hidden flex items-start justify-between gap-3 w-full">
               <div className="min-w-0">
                 <p className="text-base text-foreground leading-snug">{entry.company}</p>
@@ -201,20 +198,20 @@ export default function Bio() {
         ))}
       </div>
 
-      {/* ── Footer ── */}
+      {/* ── Footer (full-bleed) ── */}
       <div className="mt-16 lg:mt-20">
         {/* Desktop module header — one continuous line spanning all 3 columns */}
         <div className="hidden lg:block border-t border-b border-border">
-          <div className="grid grid-cols-3 gap-24 py-3">
+          <div className="grid grid-cols-3 gap-24 px-6 py-3">
             <span className="text-sm text-foreground/30 whitespace-nowrap">{t.footer.skills}</span>
             <span className="text-sm text-foreground/30 whitespace-nowrap">{t.footer.clients}</span>
             <span className="text-sm text-foreground/30 whitespace-nowrap">{t.footer.contact}</span>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-24 lg:mt-3">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-24 lg:mt-3 px-6 lg:px-6">
           <div>
-            <div className="lg:hidden py-3 border-t border-b border-border mb-6">
+            <div className="lg:hidden -mx-6 px-6 py-3 border-t border-b border-border mb-6">
               <span className="text-sm text-foreground/30 whitespace-nowrap">{t.footer.skills}</span>
             </div>
             <div className="space-y-3 lg:space-y-4">
@@ -224,7 +221,7 @@ export default function Bio() {
             </div>
           </div>
           <div>
-            <div className="lg:hidden py-3 border-t border-b border-border mb-6">
+            <div className="lg:hidden -mx-6 px-6 py-3 border-t border-b border-border mb-6">
               <span className="text-sm text-foreground/30 whitespace-nowrap">{t.footer.clients}</span>
             </div>
             <div className="space-y-3 lg:space-y-4">
@@ -234,7 +231,7 @@ export default function Bio() {
             </div>
           </div>
           <div>
-            <div className="lg:hidden py-3 border-t border-b border-border mb-6">
+            <div className="lg:hidden -mx-6 px-6 py-3 border-t border-b border-border mb-6">
               <span className="text-sm text-foreground/30 whitespace-nowrap">{t.footer.contact}</span>
             </div>
             <div className="space-y-3 lg:space-y-4">
@@ -260,11 +257,9 @@ export default function Bio() {
         </div>
       </div>
 
-      </div>{/* end px-6 */}
       <div className="mt-16"><WorksCarousel /></div>
-      <div className="px-6">
-      <p className="mt-16 text-sm text-muted pb-8">{t.copyright}</p>
-      </div>{/* end px-6 */}
+
+      <p className="mt-16 px-6 text-sm text-muted pb-8">{t.copyright}</p>
     </div>
   );
 }
