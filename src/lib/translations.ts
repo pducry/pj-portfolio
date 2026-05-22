@@ -5,8 +5,8 @@ export const translations = {
     nav: { bio: "Works", playground: "Playground", contact: "Contact" },
     bio: {
       label: "Bio",
-      p1: "Brazilian/Swiss design director with 20+ years across digital products, visual design and branding. A hands-on leader and builder who thinks strategically and crafts directly — with a genuine curiosity for AI as a creative tool.",
-      p2a: "Founder of",
+      p1: "Crafting interfaces. Leading design teams that ship polished digital products. Exploring AI as a tool for motion and visual systems. Design Manager at Mercado Pago.",
+      p2a: "Previously led design across Rise New York & Partners, Meiuca, and Descomplica. Founder of",
       p2b: ", a GenAI studio for motion and visual design.",
       cta: "Get in touch",
     },
@@ -52,8 +52,8 @@ export const translations = {
     nav: { bio: "Works", playground: "Playground", contact: "Contato" },
     bio: {
       label: "Bio",
-      p1: "Diretor de design brasileiro/suíço com 20+ anos entre produtos digitais, design visual e branding. Um líder hands-on e builder que pensa estrategicamente e executa diretamente — com genuína curiosidade pela IA como ferramenta criativa.",
-      p2a: "Fundador da",
+      p1: "Criando interfaces. Liderando times de design que entregam produtos digitais polidos. Explorando IA como ferramenta para motion e sistemas visuais. Design Manager no Mercado Pago.",
+      p2a: "Anteriormente liderei design no Rise New York & Partners, Meiuca e Descomplica. Fundador da",
       p2b: ", um estúdio de GenAI para motion e design visual.",
       cta: "Entre em contato",
     },
