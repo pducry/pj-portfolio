@@ -47,7 +47,7 @@ function WorksCarousel() {
   );
 }
 
-type Translation = (typeof translations)["en"];
+type Translation = (typeof translations)[keyof typeof translations];
 
 function ProjectRow({ project, t }: { project: Project; t: Translation }) {
   const inner = (
