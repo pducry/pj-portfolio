@@ -47,6 +47,30 @@ function WorksCarousel() {
   );
 }
 
+type Translation = (typeof translations)["en"];
+
+function ProjectRow({ project, t }: { project: Project; t: Translation }) {
+  const inner = (
+    <>
+      <div className="min-w-0">
+        <p className="text-base text-foreground group-hover:text-background leading-snug truncate">{project.name}</p>
+        <p className="text-sm text-muted group-hover:text-background mt-1 leading-snug whitespace-nowrap">
+          {t.categories[project.category as keyof typeof t.categories]} · {project.year} · {t.roles[project.role as keyof typeof t.roles]}
+        </p>
+      </div>
+      <span className={`text-base transition-colors shrink-0 mt-0.5 ${project.href ? "text-foreground/40 group-hover:text-background" : "text-muted/40"}`}>→</span>
+    </>
+  );
+
+  const cls = `grid items-start grid-cols-[1fr_auto] gap-3 border-b border-border py-6 lg:py-10 ${project.href ? "group transition-colors hover:bg-foreground cursor-pointer" : ""}`;
+
+  return project.href ? (
+    <Link href={project.href} className={cls}>{inner}</Link>
+  ) : (
+    <div className={cls}>{inner}</div>
+  );
+}
+
 type Entry = { company: string; role: string; years: string };
 
 const experience: Entry[] = [
@@ -63,15 +87,18 @@ const experience: Entry[] = [
 
 type Project = { category: string; year: string; name: string; role: string; href?: string };
 
-const projects: Project[] = [
-  { category: "Digital Product", year: "2026", name: "Mercado Pago",              role: "Design Manager" },
+const craftProjects: Project[] = [
   { category: "Digital Product", year: "2026", name: "Artas",                     role: "Designer"       },
-  { category: "Digital Product", year: "2025", name: "Sute",                      role: "Head of Design", href: "/sute" },
-  { category: "Digital Product", year: "2024", name: "Caju",                      role: "Head of Design" },
-  { category: "Digital Product", year: "2024", name: "Mude",                      role: "Head of Design" },
   { category: "Brand Identity",  year: "2020", name: "FFForma",                   role: "Founder"        },
   { category: "Brand Identity",  year: "2020", name: "My Phone",                  role: "Designer"       },
   { category: "Design System",   year: "2018", name: "Royal Canin Design System", role: "Head of Design" },
+];
+
+const buildProjects: Project[] = [
+  { category: "Digital Product", year: "2026", name: "Mercado Pago",              role: "Design Manager" },
+  { category: "Digital Product", year: "2025", name: "Sute",                      role: "Head of Design", href: "/sute" },
+  { category: "Digital Product", year: "2024", name: "Caju",                      role: "Head of Design" },
+  { category: "Digital Product", year: "2024", name: "Mude",                      role: "Head of Design" },
 ];
 
 const clients = [
@@ -111,51 +138,36 @@ export default function Bio() {
       {/* ── Spacer ── */}
       <div className="h-[120px] lg:h-[200px]" />
 
-      {/* ── Projects ── */}
+      {/* ── Projects — Craft | Build ── */}
       <div id="projects" className="border-t border-border">
-        {/* Column headers */}
-        <div className={`grid ${PROJ_COL} gap-x-8 py-3 border-b border-border`}>
-          <span className="hidden text-sm text-foreground/30 lg:block">{t.projects.type}</span>
-          <span className="hidden text-sm text-foreground/30 lg:block">{t.projects.year}</span>
-          <span className="hidden text-sm text-foreground/30 lg:block">{t.projects.role}</span>
-          <span className="text-sm text-foreground/30">{t.projects.name}</span>
-          <span className="hidden lg:block" />
+        {/* Module sub-headers */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 border-b border-border">
+          <div className="py-3 lg:border-r lg:border-border lg:pr-12">
+            <span className="text-sm text-foreground/30 whitespace-nowrap">Craft</span>
+          </div>
+          <div className="hidden lg:block py-3">
+            <span className="text-sm text-foreground/30 whitespace-nowrap">Build</span>
+          </div>
         </div>
 
-        {projects.map((project) => {
-          const inner = (
-            <>
-              <span className="hidden text-base text-muted group-hover:text-background lg:block whitespace-nowrap">
-                {t.categories[project.category as keyof typeof t.categories]}
-              </span>
-              <span className="hidden text-base text-muted group-hover:text-background lg:block whitespace-nowrap">{project.year}</span>
-              <span className="hidden text-base text-muted group-hover:text-background lg:block whitespace-nowrap">{project.role}</span>
-              {/* Desktop */}
-              <p className="hidden lg:block text-base text-foreground group-hover:text-background truncate">{project.name}</p>
-              {/* Mobile */}
-              <div className="lg:hidden flex items-start justify-between gap-3 w-full">
-                <div className="min-w-0">
-                  <p className="text-base text-foreground group-hover:text-background leading-snug">{project.name}</p>
-                  <p className="text-sm text-muted group-hover:text-background mt-1 leading-snug">{t.categories[project.category as keyof typeof t.categories]} · {project.year}</p>
-                </div>
-                <span className="text-base text-muted/40 group-hover:text-background shrink-0 mt-0.5">→</span>
-              </div>
-              <span className={`hidden text-base lg:block text-right transition-colors ${project.href ? "text-foreground/40 group-hover:text-background" : "text-muted/40"}`}>→</span>
-            </>
-          );
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12">
+          {/* Craft column */}
+          <div className="lg:border-r lg:border-border lg:pr-12">
+            {craftProjects.map((project) => (
+              <ProjectRow key={project.name} project={project} t={t} />
+            ))}
+          </div>
 
-          const cls = `grid items-center border-b border-border ${PROJ_COL} gap-x-8 py-6 lg:py-20${project.href ? " group transition-colors hover:bg-foreground cursor-pointer" : ""}`;
-
-          return project.href ? (
-            <Link key={project.name} href={project.href} className={cls}>
-              {inner}
-            </Link>
-          ) : (
-            <div key={project.name} className={cls}>
-              {inner}
+          {/* Build column — mobile header inline */}
+          <div>
+            <div className="lg:hidden py-3 border-t border-border">
+              <span className="text-sm text-foreground/30 whitespace-nowrap">Build</span>
             </div>
-          );
-        })}
+            {buildProjects.map((project) => (
+              <ProjectRow key={project.name} project={project} t={t} />
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* ── Experience ── */}
