@@ -25,7 +25,7 @@ export default function Contact() {
       <div className="px-6">
         <div className="pt-6 pb-8">
           <div className="space-y-5 max-w-xl">
-            <p className="text-base leading-snug text-foreground/75 whitespace-pre-line">{t.subtitle}</p>
+            <p className="text-[30px] leading-snug text-foreground/75 whitespace-pre-line">{t.subtitle}</p>
           </div>
         </div>
       </div>

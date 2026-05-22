@@ -46,7 +46,7 @@ export default function Playground() {
       <div className="px-6">
         <div className="pt-6 pb-8">
           <div className="space-y-5 max-w-xl">
-            <p className="text-base leading-snug text-foreground/75">{t.playground.p1}</p>
+            <p className="text-[30px] leading-snug text-foreground/75">{t.playground.p1}</p>
           </div>
         </div>
       </div>
