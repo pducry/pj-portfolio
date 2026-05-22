@@ -6,8 +6,8 @@ export const translations = {
     bio: {
       label: "Bio",
       p1: "Crafting interfaces. Leading design teams that ship polished digital products. Exploring AI as a tool for motion and visual systems. Design Manager at Mercado Pago.",
-      p2a: "Previously led design across Rise New York & Partners, Meiuca, and Descomplica. Founder of",
-      p2b: ", a GenAI studio for motion and visual design.",
+      p2a: "Previously led design across DDB Unlimited, Descomplica, Work&Co. Founder of",
+      p2b: ", a Design studio for motion and visual design fueled by AI.",
       cta: "Get in touch",
     },
     projects: { type: "Type", year: "Year", role: "Role", name: "Project's Name" },
@@ -53,8 +53,8 @@ export const translations = {
     bio: {
       label: "Bio",
       p1: "Criando interfaces. Liderando times de design que entregam produtos digitais polidos. Explorando IA como ferramenta para motion e sistemas visuais. Design Manager no Mercado Pago.",
-      p2a: "Anteriormente liderei design no Rise New York & Partners, Meiuca e Descomplica. Fundador da",
-      p2b: ", um estúdio de GenAI para motion e design visual.",
+      p2a: "Anteriormente liderei design na DDB Unlimited, Descomplica e Work&Co. Fundador da",
+      p2b: ", um estúdio de design para motion e design visual potencializado por IA.",
       cta: "Entre em contato",
     },
     projects: { type: "Tipo", year: "Ano", role: "Cargo", name: "Nome do Projeto" },
