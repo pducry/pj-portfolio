@@ -5,7 +5,7 @@ export const translations = {
     nav: { bio: "Works", playground: "Playground", contact: "Contact" },
     bio: {
       label: "Bio",
-      p1: "Crafting interfaces and digital products. Leading and growing design teams. Exploring AI for process and craft. Design Manager at Mercado Pago. Previously led design across DDB Unlimited, Descomplica, Work&Co.",
+      p1: "Crafting interfaces and digital products, leading and growing design teams — with AI as a tool for process and craft. Design Manager at Mercado Pago. Previously led design across DDB Unlimited, Descomplica, Work&Co.",
       p2a: "Founder of",
       p2b: ", a Design studio for branding and visual fueled by AI.",
       cta: "Get in touch",
@@ -53,7 +53,7 @@ export const translations = {
     nav: { bio: "Works", playground: "Playground", contact: "Contato" },
     bio: {
       label: "Bio",
-      p1: "Criando interfaces e produtos digitais. Liderando e desenvolvendo times de design. Explorando IA para processo e execução. Design Manager no Mercado Pago. Anteriormente liderei design na DDB Unlimited, Descomplica e Work&Co.",
+      p1: "Criando interfaces e produtos digitais, liderando e desenvolvendo times de design — com IA como ferramenta para processo e execução. Design Manager no Mercado Pago. Anteriormente liderei design na DDB Unlimited, Descomplica e Work&Co.",
       p2a: "Fundador da",
       p2b: ", um estúdio de design para branding e visual potencializado por IA.",
       cta: "Entre em contato",
