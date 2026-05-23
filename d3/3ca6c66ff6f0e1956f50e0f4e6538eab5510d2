@@ -1,0 +1,20 @@
+src/components/mobile-menu.tsx
+  s_42df78b563cfeb::t_73b967c0bebb6a 137
+  s_42df78b563cfeb::t_7347de99db9855 50-58,77
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.0",
+  "base_commit_sha": "d33ca6c66ff6f0e1956f50e0f4e6538eab5510d2",
+  "prompts": {},
+  "sessions": {
+    "s_42df78b563cfeb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "53346d42-4fdf-4a67-a482-afe0cd7306c2",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "Pedro Julien <pducry@gmail.com>"
+    }
+  }
+}
