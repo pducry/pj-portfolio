@@ -41,7 +41,7 @@ export const translations = {
     ],
     playground: {
       label: "Playground",
-      p1: "A space for visual experimentation — motion, generative graphics, brand explorations, and creative research. These are initiatives that happen outside of client work, driven purely by curiosity and the desire to push visual boundaries.",
+      p1: "A space for visual experimentation — graphic design, hand-craft, calligraphy, typography, generative graphics, illustration, AI images and creative research. These are initiatives that happen in my creative adventures, driven purely by curiosity and the desire to push visual boundaries.",
     },
     contact: {
       label: "Contact",
@@ -89,7 +89,7 @@ export const translations = {
     ],
     playground: {
       label: "Playground",
-      p1: "Um espaço de experimentação visual — motion, gráficos generativos, explorações de marca e pesquisa criativa. São iniciativas que acontecem fora do trabalho com clientes, movidas pela curiosidade e pelo desejo de expandir os limites visuais.",
+      p1: "Um espaço de experimentação visual — design gráfico, hand-craft, caligrafia, tipografia, gráficos generativos, ilustração, imagens com IA e pesquisa criativa. São iniciativas que acontecem nas minhas aventuras criativas, movidas pela curiosidade e pelo desejo de expandir os limites visuais.",
     },
     contact: {
       label: "Contato",
