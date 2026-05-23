@@ -47,13 +47,21 @@ export function MobileMenu() {
       {/* Full-screen overlay */}
       <AnimatePresence>
         {open && (
+          <>
+            {/* Solid background — separate from motion to guarantee opacity */}
+            <div
+              className="fixed inset-0 z-[99] lg:hidden"
+              style={{ backgroundColor: theme === "dark" ? "#000000" : "#ffffff" }}
+              onClick={() => setOpen(false)}
+              aria-hidden="true"
+            />
+
           <motion.div
             initial={{ y: "-100%" }}
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ duration: 0.28, ease: [0.25, 1, 0.5, 1] }}
             className="fixed inset-0 z-[100] flex flex-col px-6"
-            style={{ backgroundColor: theme === "dark" ? "#000000" : "#ffffff" }}
           >
             {/* Top bar */}
             <div className="flex items-center justify-between py-6">
@@ -66,7 +74,7 @@ export function MobileMenu() {
               </Link>
               <button
                 onClick={() => setOpen(false)}
-                className="flex h-8 w-8 items-center justify-center text-2xl text-muted hover:text-foreground transition-colors"
+                className="flex h-10 w-10 items-center justify-center rounded-full text-3xl leading-none text-foreground hover:opacity-60 transition-opacity"
                 aria-label="Fechar menu"
               >
                 ×
@@ -126,6 +134,7 @@ export function MobileMenu() {
               </div>
             </motion.div>
           </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>
