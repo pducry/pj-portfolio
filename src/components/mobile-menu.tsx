@@ -52,7 +52,8 @@ export function MobileMenu() {
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ duration: 0.28, ease: [0.25, 1, 0.5, 1] }}
-            className="fixed inset-0 z-50 flex flex-col px-6 bg-white dark:bg-black"
+            className="fixed inset-0 z-[100] flex flex-col px-6"
+            style={{ backgroundColor: theme === "dark" ? "#000000" : "#ffffff" }}
           >
             {/* Top bar */}
             <div className="flex items-center justify-between py-6">
