@@ -74,15 +74,14 @@ function ProjectRow({ project, t }: { project: Project; t: Translation }) {
 type Entry = { company: string; role: string; years: string };
 
 const experience: Entry[] = [
-  { company: "Mercado Pago",            role: "Design Manager",   years: "2020—"      },
-  { company: "Rise New York & Partners",role: "Creative Director",years: "2018—2020"  },
-  { company: "Meiuca",                  role: "Head of Design",   years: "2017—2018"  },
-  { company: "Descomplica",             role: "Design Manager",   years: "2015—2017"  },
-  { company: "DDB Unlimited",           role: "Design Director",  years: "2013—2015"  },
-  { company: "Work & Co",               role: "Senior Designer",  years: "2011—2013"  },
-  { company: "Google Brand Studio",     role: "Senior Designer",  years: "2010—2011"  },
-  { company: "Y Dreams",                role: "Senior Designer",  years: "2008—2010"  },
-  { company: "Koi Factory",             role: "Senior Designer",  years: "2006—2008"  },
+  { company: "Mercado Pago",            role: "Design Manager",   years: "2025—"      },
+  { company: "Rise New York & Partners",role: "Creative Director",years: "2024—2025"  },
+  { company: "Meiuca",                  role: "Head of Design",   years: "2024—2024"  },
+  { company: "Descomplica",             role: "Design Manager",   years: "2019—2024"  },
+  { company: "DDB Unlimited",           role: "Design Director",  years: "2017—2019"  },
+  { company: "Work & Co",               role: "Senior Designer",  years: "2015—2017"  },
+  { company: "Google Brand Studio",     role: "Senior Designer",  years: "2015—2015"  },
+  { company: "Y Dreams",                role: "Senior Designer",  years: "2014—2015"  },
 ];
 
 type Project = { category: string; year: string; name: string; role: string; href?: string };
