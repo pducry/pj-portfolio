@@ -137,15 +137,15 @@ export default function Bio() {
       {/* ── Spacer ── */}
       <div className="h-[120px] lg:h-[200px]" />
 
-      {/* ── Projects — Craft | Build (full-bleed) ── */}
+      {/* ── Projects — Craft | Digital Artifacts (full-bleed) ── */}
       <div id="projects" className="border-t border-border">
         {/* Module sub-headers */}
         <div className="grid grid-cols-1 lg:grid-cols-2 border-b border-border">
           <div className="px-6 py-3 lg:border-r lg:border-border">
-            <span className="text-sm text-foreground/30 whitespace-nowrap">Craft</span>
+            <span className="text-sm text-foreground/30 whitespace-nowrap">{t.works.craft}</span>
           </div>
           <div className="hidden lg:block px-6 py-3">
-            <span className="text-sm text-foreground/30 whitespace-nowrap">Build</span>
+            <span className="text-sm text-foreground/30 whitespace-nowrap">{t.works.build}</span>
           </div>
         </div>
 
@@ -157,10 +157,10 @@ export default function Bio() {
             ))}
           </div>
 
-          {/* Build column — mobile header inline */}
+          {/* Digital Artifacts column — mobile header inline */}
           <div>
             <div className="lg:hidden px-6 py-3 border-t border-border">
-              <span className="text-sm text-foreground/30 whitespace-nowrap">Build</span>
+              <span className="text-sm text-foreground/30 whitespace-nowrap">{t.works.build}</span>
             </div>
             {buildProjects.map((project) => (
               <ProjectRow key={project.name} project={project} t={t} />

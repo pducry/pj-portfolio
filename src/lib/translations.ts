@@ -11,6 +11,7 @@ export const translations = {
       cta: "Get in touch",
     },
     projects: { type: "Type", year: "Year", role: "Role", name: "Project's Name" },
+    works: { craft: "Craft", build: "Digital Artifacts" },
     categories: {
       "Design System":   "Design System",
       "Brand Identity":  "Brand Identity",
@@ -58,6 +59,7 @@ export const translations = {
       cta: "Entre em contato",
     },
     projects: { type: "Tipo", year: "Ano", role: "Cargo", name: "Nome do Projeto" },
+    works: { craft: "Craft", build: "Artefatos Digitais" },
     categories: {
       "Design System":   "Sistema de Design",
       "Brand Identity":  "Identidade de Marca",
