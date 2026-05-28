@@ -1,4 +1,29 @@
+import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
+
+type Project = {
+  name: string;
+  role: string;
+  year: string;
+  category: "craft" | "ai";
+  href?: string;
+};
+
+const projects: Project[] = [
+  { category: "ai",    year: "2026", name: "Mercado Pago",              role: "Design Manager"  },
+  { category: "ai",    year: "2025", name: "Sute",                      role: "Head of Design",  href: "/sute" },
+  { category: "ai",    year: "2024", name: "Caju",                      role: "Head of Design"  },
+  { category: "ai",    year: "2024", name: "Mude",                      role: "Head of Design"  },
+  { category: "craft", year: "2026", name: "Artas",                     role: "Designer"        },
+  { category: "craft", year: "2020", name: "FFForma",                   role: "Founder"         },
+  { category: "craft", year: "2020", name: "My Phone",                  role: "Designer"        },
+  { category: "craft", year: "2018", name: "Royal Canin Design System", role: "Head of Design"  },
+];
+
+const PILL_LABELS = {
+  ai:    "AI Digital Artifacts",
+  craft: "Craft Design",
+} as const;
 
 type Entry = {
   company: string;
@@ -97,8 +122,36 @@ export default function Bio() {
           </div>
         </div>
 
+        {/* Projects */}
+        <div id="projects" className="pt-0">
+          <div className="py-3 border-b border-border">
+            <p className="text-xs text-muted">Projects</p>
+          </div>
+          {projects.map((project) => {
+            const row = (
+              <div className="group flex items-center gap-4 border-b border-border py-4 transition-colors hover:bg-foreground/[0.02]">
+                <span className="shrink-0 text-xs px-2 py-0.5 border border-border rounded-full text-muted whitespace-nowrap">
+                  {PILL_LABELS[project.category]}
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm font-medium text-foreground">{project.name}</p>
+                  <p className="text-xs text-muted mt-0.5">{project.role} · {project.year}</p>
+                </div>
+                {project.href && (
+                  <span className="text-sm text-muted transition-colors group-hover:text-foreground shrink-0">→</span>
+                )}
+              </div>
+            );
+            return project.href ? (
+              <Link key={project.name} href={project.href}>{row}</Link>
+            ) : (
+              <div key={project.name}>{row}</div>
+            );
+          })}
+        </div>
+
         {/* Experience table */}
-        <div id="experience" className="pt-0">
+        <div id="experience" className="pt-8">
           {experience.map((section) => (
             <div key={section.label}>
               {section.entries.map((entry, i) => (
