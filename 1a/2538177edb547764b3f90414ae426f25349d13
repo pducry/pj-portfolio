@@ -1,0 +1,32 @@
+src/lib/projects.ts
+  s_33b044536c6f44::t_902d0459869588 1-18
+src/app/works/page.tsx
+  s_33b044536c6f44::t_f31db8c414ecdd 47
+src/components/works-footer.tsx
+  s_33b044536c6f44::t_c9d19e99b09e15 1-64
+src/app/sute/page.tsx
+  s_33b044536c6f44::t_3ad94b2ac3d324 72-73
+  s_33b044536c6f44::t_6e5323081f5a03 3
+src/app/my-phone/page.tsx
+  s_33b044536c6f44::t_66447ce602af42 3
+  s_33b044536c6f44::t_6f8443c96efc81 62-63
+src/app/artas/page.tsx
+  s_33b044536c6f44::t_d248f7f47d245f 104-105
+  s_33b044536c6f44::t_5d31cd978483ed 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "1a2538177edb547764b3f90414ae426f25349d13",
+  "prompts": {},
+  "sessions": {
+    "s_33b044536c6f44": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b5078e18-7dc8-47f2-82c6-d208ab264b82",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Pedro Julien <pducry@gmail.com>"
+    }
+  }
+}
