@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLang } from "./language-provider";
 import { useTheme } from "./theme-provider";
@@ -9,6 +10,7 @@ import { translations } from "@/lib/translations";
 
 export function MobileMenu() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
   const { lang, toggle: toggleLang } = useLang();
   const { theme, toggle: toggleTheme } = useTheme();
   const t = translations[lang];
@@ -19,9 +21,11 @@ export function MobileMenu() {
     { href: "/contact",    label: t.nav.contact },
   ];
 
+  const close = () => setOpen(false);
+
   useEffect(() => {
     if (!open) return;
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") close(); };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
@@ -31,50 +35,45 @@ export function MobileMenu() {
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
+  const bg = theme === "dark" ? "#000000" : "#ffffff";
+
   return (
     <>
-      {/* Hamburger button */}
+      {/* Hamburger — 44×44 touch target */}
       <button
         onClick={() => setOpen(!open)}
-        className="lg:hidden flex flex-col justify-center items-center w-8 h-8 gap-[6px]"
+        className="lg:hidden flex flex-col justify-center items-center w-11 h-11 gap-[6px]"
         aria-label={open ? "Fechar menu" : "Abrir menu"}
+        aria-expanded={open}
       >
         <span className={`block h-px w-5 bg-foreground origin-center transition-all duration-300 ease-in-out ${open ? "translate-y-[9px] rotate-45" : ""}`} />
         <span className={`block h-px bg-foreground transition-all duration-300 ease-in-out ${open ? "w-0 opacity-0" : "w-5"}`} />
         <span className={`block h-px w-5 bg-foreground origin-center transition-all duration-300 ease-in-out ${open ? "-translate-y-[9px] -rotate-45" : ""}`} />
       </button>
 
-      {/* Full-screen overlay */}
       <AnimatePresence>
         {open && (
-          <>
-            {/* Solid background — separate from motion to guarantee opacity */}
-            <div
-              className="fixed inset-0 z-[99] lg:hidden"
-              style={{ backgroundColor: theme === "dark" ? "#000000" : "#ffffff" }}
-              onClick={() => setOpen(false)}
-              aria-hidden="true"
-            />
-
           <motion.div
             initial={{ y: "-100%" }}
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
-            transition={{ duration: 0.28, ease: [0.25, 1, 0.5, 1] }}
-            className="fixed inset-0 z-[100] flex flex-col px-6"
+            transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
+            className="fixed inset-0 z-[100] lg:hidden flex flex-col px-6"
+            style={{ backgroundColor: bg }}
           >
             {/* Top bar */}
-            <div className="flex items-center justify-between py-6">
+            <div className="flex items-center justify-between py-5 border-b border-border">
               <Link
                 href="/works"
-                onClick={() => setOpen(false)}
-                className="text-base font-medium text-foreground"
+                onClick={close}
+                className="flex items-center gap-2.5"
               >
-                Pedro Julien
+                <span className="w-2 h-2 rounded-full bg-red-500 shrink-0" />
+                <span className="text-sm font-medium text-foreground">Pedro Julien</span>
               </Link>
               <button
-                onClick={() => setOpen(false)}
-                className="flex h-10 w-10 items-center justify-center rounded-full text-3xl leading-none text-foreground hover:opacity-60 transition-opacity"
+                onClick={close}
+                className="flex h-11 w-11 items-center justify-center text-2xl text-foreground hover:opacity-60 transition-opacity"
                 aria-label="Fechar menu"
               >
                 ×
@@ -82,59 +81,76 @@ export function MobileMenu() {
             </div>
 
             {/* Nav links */}
-            <nav className="flex flex-col mt-8">
-              {links.map(({ href, label }, i) => (
-                <motion.div
-                  key={href}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.05 + i * 0.06, duration: 0.2 }}
-                >
-                  <Link
-                    href={href}
-                    onClick={() => setOpen(false)}
-                    className="flex items-center justify-between py-5 border-b border-border text-2xl font-medium text-foreground hover:text-muted transition-colors"
+            <nav className="flex flex-col flex-1">
+              {links.map(({ href, label }, i) => {
+                const isActive = pathname === href;
+                return (
+                  <motion.div
+                    key={href}
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.06 + i * 0.05, duration: 0.2 }}
                   >
-                    {label}
-                    <span className="text-muted text-xl">→</span>
-                  </Link>
-                </motion.div>
-              ))}
+                    <Link
+                      href={href}
+                      onClick={close}
+                      className={`flex items-center justify-between py-5 border-b border-border text-2xl transition-colors ${
+                        isActive
+                          ? "text-foreground font-medium"
+                          : "text-muted hover:text-foreground"
+                      }`}
+                    >
+                      {label}
+                      {isActive
+                        ? <span className="text-base text-foreground">●</span>
+                        : <span className="text-muted text-xl">→</span>
+                      }
+                    </Link>
+                  </motion.div>
+                );
+              })}
             </nav>
 
             {/* Bottom controls */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.25, duration: 0.2 }}
-              className="mt-auto pb-10 flex items-center gap-8 text-base"
+              transition={{ delay: 0.28, duration: 0.2 }}
+              className="pb-10 pt-6 flex items-center justify-between"
             >
-              <div className="flex items-center gap-2">
+              {/* Lang toggle */}
+              <div className="flex items-center gap-1 bg-foreground/[0.06] rounded-full p-0.5">
                 <button
-                  onClick={() => { lang === "pt" && toggleLang(); }}
-                  className={`transition-colors ${lang === "en" ? "text-foreground" : "text-muted"}`}
+                  onClick={() => { lang !== "en" && toggleLang(); }}
+                  className={`text-xs px-3 py-1.5 rounded-full transition-all min-w-[44px] ${
+                    lang === "en" ? "bg-background text-foreground shadow-sm" : "text-muted"
+                  }`}
                 >EN</button>
-                <span className="text-muted">/</span>
                 <button
-                  onClick={() => { lang === "en" && toggleLang(); }}
-                  className={`transition-colors ${lang === "pt" ? "text-foreground" : "text-muted"}`}
+                  onClick={() => { lang !== "pt" && toggleLang(); }}
+                  className={`text-xs px-3 py-1.5 rounded-full transition-all min-w-[44px] ${
+                    lang === "pt" ? "bg-background text-foreground shadow-sm" : "text-muted"
+                  }`}
                 >PT</button>
               </div>
 
-              <div className="flex items-center gap-2">
+              {/* Theme toggle */}
+              <div className="flex items-center gap-1 bg-foreground/[0.06] rounded-full p-0.5">
                 <button
-                  onClick={() => { theme === "dark" && toggleTheme(); }}
-                  className={`transition-colors ${theme === "light" ? "text-foreground" : "text-muted"}`}
+                  onClick={() => { theme !== "light" && toggleTheme(); }}
+                  className={`text-xs px-3 py-1.5 rounded-full transition-all min-w-[44px] ${
+                    theme === "light" ? "bg-background text-foreground shadow-sm" : "text-muted"
+                  }`}
                 >Light</button>
-                <span className="text-muted">/</span>
                 <button
-                  onClick={() => { theme === "light" && toggleTheme(); }}
-                  className={`transition-colors ${theme === "dark" ? "text-foreground" : "text-muted"}`}
+                  onClick={() => { theme !== "dark" && toggleTheme(); }}
+                  className={`text-xs px-3 py-1.5 rounded-full transition-all min-w-[44px] ${
+                    theme === "dark" ? "bg-background text-foreground shadow-sm" : "text-muted"
+                  }`}
                 >Dark</button>
               </div>
             </motion.div>
           </motion.div>
-          </>
         )}
       </AnimatePresence>
     </>
