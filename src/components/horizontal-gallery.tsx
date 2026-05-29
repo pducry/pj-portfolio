@@ -56,6 +56,7 @@ const images = [
   { src: "/gallery/pj_064.png", alt: "Project" },
   { src: "/gallery/pj_065.png", alt: "Project" },
   { src: "/gallery/pj_066.png", alt: "Project" },
+  { src: "/gallery/pj_068.png", alt: "Project" },
 ];
 
 function shuffle<T>(arr: T[]): T[] {
