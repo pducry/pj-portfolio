@@ -48,10 +48,10 @@ type Project = { category: string; year: string; name: string; role: string; hre
 
 const projects: Project[] = [
   { category: "Product Design", year: "2026", name: "Mercado Pago",              role: "Design Manager"  },
-  { category: "Product Design", year: "2025", name: "Sute",                      role: "Head of Design",  href: "/sute" },
+  { category: "Branding",        year: "2025", name: "Sute",                      role: "Head of Design",  href: "/sute" },
   { category: "Product Design", year: "2024", name: "Caju",                      role: "Head of Design"  },
   { category: "Product Design", year: "2024", name: "Mude",                      role: "Head of Design"  },
-  { category: "Digital Product", year: "2026", name: "Artas",                    role: "Designer"        },
+  { category: "Product Design",  year: "2026", name: "Artas",                    role: "Designer"        },
   { category: "Branding",        year: "2020", name: "FFForma",                  role: "Founder"         },
   { category: "Branding",        year: "2020", name: "My Phone",                 role: "Designer"        },
   { category: "Design System",   year: "2018", name: "Royal Canin Design System",role: "Head of Design"  },
