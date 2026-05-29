@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
+import { WorksFooter } from "@/components/works-footer";
 import { asset } from "@/lib/asset";
 
 const stack = ["Three.js", "WebGL", "ES Modules", "Firebase Auth", "Firestore", "Cloud Storage"];
@@ -99,6 +100,8 @@ export default function ArtasPage() {
           className="w-full h-auto"
         />
       </div>
+
+      <WorksFooter current="Artas" />
 
       <p className="px-6 pb-8 text-sm text-muted">© Pedro Julien 2026</p>
     </div>

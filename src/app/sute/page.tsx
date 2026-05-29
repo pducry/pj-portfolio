@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import { SiteHeader } from "@/components/site-header";
+import { WorksFooter } from "@/components/works-footer";
 import { asset } from "@/lib/asset";
 
 const images = [
@@ -68,6 +68,8 @@ export default function SutePage() {
           />
         ))}
       </div>
+
+      <WorksFooter current="Sute" />
 
       <p className="px-6 pb-8 text-sm text-muted">© Pedro Julien 2026</p>
     </div>
