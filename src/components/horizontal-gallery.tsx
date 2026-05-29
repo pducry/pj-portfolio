@@ -89,7 +89,7 @@ function GalleryItem({
       key={img.src}
       layout
       layoutId={img.src}
-      className="group overflow-hidden cursor-pointer"
+      className="group relative aspect-square overflow-hidden cursor-pointer"
       onClick={onClick}
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
@@ -103,9 +103,8 @@ function GalleryItem({
       <Image
         src={asset(img.src)}
         alt={img.alt}
-        width={1920}
-        height={1440}
-        className="w-full h-auto object-contain"
+        fill
+        className="object-cover"
         sizes={`(max-width: 640px) 100vw, ${Math.round(100 / columns)}vw`}
       />
     </motion.div>
