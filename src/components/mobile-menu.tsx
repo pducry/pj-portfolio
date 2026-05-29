@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLang } from "./language-provider";
 import { useTheme } from "./theme-provider";
+import { useFont } from "./font-provider";
 import { translations } from "@/lib/translations";
 
 export function MobileMenu() {
@@ -13,6 +14,7 @@ export function MobileMenu() {
   const pathname = usePathname();
   const { lang, toggle: toggleLang } = useLang();
   const { theme, toggle: toggleTheme } = useTheme();
+  const { font, toggle: toggleFont } = useFont();
   const t = translations[lang];
   const scrollY = useRef(0);
 
@@ -127,36 +129,24 @@ export function MobileMenu() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.25, duration: 0.2 }}
-              className="px-6 pt-6 pb-10 flex items-center justify-between shrink-0 border-t border-border"
+              className="px-6 pt-6 pb-10 flex flex-wrap items-center gap-3 shrink-0 border-t border-border"
             >
+              {/* Lang */}
               <div className="flex items-center gap-1 bg-foreground/[0.06] rounded-full p-0.5">
-                <button
-                  onClick={() => lang !== "en" && toggleLang()}
-                  className={`text-xs px-4 py-2 rounded-full transition-all ${
-                    lang === "en" ? "bg-background text-foreground shadow-sm" : "text-muted"
-                  }`}
-                >EN</button>
-                <button
-                  onClick={() => lang !== "pt" && toggleLang()}
-                  className={`text-xs px-4 py-2 rounded-full transition-all ${
-                    lang === "pt" ? "bg-background text-foreground shadow-sm" : "text-muted"
-                  }`}
-                >PT</button>
+                <button onClick={() => lang !== "en" && toggleLang()} className={`text-xs px-4 py-2 rounded-full transition-all ${lang === "en" ? "bg-background text-foreground shadow-sm" : "text-muted"}`}>EN</button>
+                <button onClick={() => lang !== "pt" && toggleLang()} className={`text-xs px-4 py-2 rounded-full transition-all ${lang === "pt" ? "bg-background text-foreground shadow-sm" : "text-muted"}`}>PT</button>
               </div>
 
+              {/* Font */}
               <div className="flex items-center gap-1 bg-foreground/[0.06] rounded-full p-0.5">
-                <button
-                  onClick={() => theme !== "light" && toggleTheme()}
-                  className={`text-xs px-4 py-2 rounded-full transition-all ${
-                    theme === "light" ? "bg-background text-foreground shadow-sm" : "text-muted"
-                  }`}
-                >Light</button>
-                <button
-                  onClick={() => theme !== "dark" && toggleTheme()}
-                  className={`text-xs px-4 py-2 rounded-full transition-all ${
-                    theme === "dark" ? "bg-background text-foreground shadow-sm" : "text-muted"
-                  }`}
-                >Dark</button>
+                <button onClick={() => font !== "sans" && toggleFont()} className={`text-xs px-4 py-2 rounded-full transition-all ${font === "sans" ? "bg-background text-foreground shadow-sm" : "text-muted"}`}>Sans</button>
+                <button onClick={() => font !== "serif" && toggleFont()} className={`text-xs px-4 py-2 rounded-full transition-all ${font === "serif" ? "bg-background text-foreground shadow-sm" : "text-muted"}`} style={{ fontFamily: "var(--font-lora), Georgia, serif" }}>Serif</button>
+              </div>
+
+              {/* Theme */}
+              <div className="flex items-center gap-1 bg-foreground/[0.06] rounded-full p-0.5">
+                <button onClick={() => theme !== "light" && toggleTheme()} className={`text-xs px-4 py-2 rounded-full transition-all ${theme === "light" ? "bg-background text-foreground shadow-sm" : "text-muted"}`}>Light</button>
+                <button onClick={() => theme !== "dark" && toggleTheme()} className={`text-xs px-4 py-2 rounded-full transition-all ${theme === "dark" ? "bg-background text-foreground shadow-sm" : "text-muted"}`}>Dark</button>
               </div>
             </motion.div>
           </motion.div>

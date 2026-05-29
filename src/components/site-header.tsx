@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "./theme-provider";
 import { useLang } from "./language-provider";
+import { useFont } from "./font-provider";
 import { MobileMenu } from "./mobile-menu";
 import { translations } from "@/lib/translations";
 
@@ -11,6 +12,7 @@ export function SiteHeader() {
   const pathname = usePathname();
   const { theme, toggle: toggleTheme } = useTheme();
   const { lang, toggle: toggleLang } = useLang();
+  const { font, toggle: toggleFont } = useFont();
   const t = translations[lang].nav;
 
   const navLinks = [
@@ -69,6 +71,31 @@ export function SiteHeader() {
             }`}
           >
             PT
+          </button>
+        </div>
+
+        {/* Font pill */}
+        <div className="flex items-center bg-foreground/[0.06] rounded-full p-0.5">
+          <button
+            onClick={() => font !== "sans" && toggleFont()}
+            className={`text-[11px] px-2.5 py-0.5 rounded-full transition-all ${
+              font === "sans"
+                ? "bg-background text-foreground shadow-sm"
+                : "text-muted hover:text-foreground"
+            }`}
+          >
+            Sans
+          </button>
+          <button
+            onClick={() => font !== "serif" && toggleFont()}
+            className={`text-[11px] px-2.5 py-0.5 rounded-full transition-all ${
+              font === "serif"
+                ? "bg-background text-foreground shadow-sm"
+                : "text-muted hover:text-foreground"
+            }`}
+            style={{ fontFamily: "var(--font-lora), Georgia, serif" }}
+          >
+            Serif
           </button>
         </div>
 

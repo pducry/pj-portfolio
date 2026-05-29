@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Sans } from "next/font/google";
+import { Instrument_Sans, Lora } from "next/font/google";
 import { Providers } from "@/components/providers";
 import "./globals.css";
 
@@ -7,6 +7,12 @@ const instrumentSans = Instrument_Sans({
   variable: "--font-instrument-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
+});
+
+const lora = Lora({
+  variable: "--font-lora",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -25,11 +31,11 @@ export default function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.remove('dark');}else{document.documentElement.classList.add('dark');}}catch(e){document.documentElement.classList.add('dark');}})();`,
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.remove('dark');}else{document.documentElement.classList.add('dark');}var f=localStorage.getItem('font');if(f==='serif'){document.documentElement.classList.add('font-serif-mode');}}catch(e){document.documentElement.classList.add('dark');}})();`,
           }}
         />
       </head>
-      <body className={`${instrumentSans.variable} ${instrumentSans.className} antialiased`}>
+      <body className={`${instrumentSans.variable} ${lora.variable} ${instrumentSans.className} antialiased`}>
         <Providers>{children}</Providers>
       </body>
     </html>
