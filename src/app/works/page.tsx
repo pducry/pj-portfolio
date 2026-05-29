@@ -115,10 +115,11 @@ export default function Bio() {
       <div className="px-6 pt-6 pb-8">
         <div className="space-y-5 max-w-xl">
           <p className="text-[30px] leading-snug text-foreground/75">{t.bio.p1}</p>
+          <p className="text-[30px] leading-snug text-foreground/75">{t.bio.p2}</p>
           <p className="text-[30px] leading-snug text-foreground/75">
-            {t.bio.p2a}{" "}
+            {t.bio.p3a}{" "}
             <a href="https://ffforma.design/" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium underline underline-offset-2 decoration-foreground/30 hover:decoration-foreground transition-colors">FFForma</a>
-            {t.bio.p2b}
+            {t.bio.p3b}
           </p>
           <a href="mailto:pducry@gmail.com" className="inline-flex items-center gap-2 text-[30px] text-foreground border-b border-foreground/30 pb-0.5 hover:border-foreground transition-colors">
             {t.bio.cta} →
