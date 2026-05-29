@@ -49,35 +49,28 @@ function WorksCarousel() {
 
 type Translation = (typeof translations)[keyof typeof translations];
 
-const PILL_LABELS = {
-  craft: { en: "Craft Design",         pt: "Craft Design"          },
-  ai:    { en: "AI Digital Artifacts", pt: "AI Digital Artifacts"  },
-} as const;
-
-function ProjectRow({ project, t, lang }: { project: Project; t: Translation; lang: "en" | "pt" }) {
-  const pillLabel = PILL_LABELS[project.type][lang];
+function ProjectRow({ project }: { project: Project }) {
+  const category = project.type === "ai" ? "AI Digital Artifacts" : "Craft Design";
 
   const inner = (
-    <>
-      <span className="shrink-0 self-center text-xs px-2 py-0.5 border border-border rounded-full text-muted whitespace-nowrap">
-        {pillLabel}
-      </span>
-      <div className="min-w-0 flex-1">
-        <p className="text-base text-foreground group-hover:text-background leading-snug truncate">{project.name}</p>
-        <p className="text-sm text-muted group-hover:text-background mt-1 leading-snug whitespace-nowrap">
-          {project.year} · {t.roles[project.role as keyof typeof t.roles]}
-        </p>
+    <div className="group grid items-baseline gap-x-8 border-b border-border px-6 py-4 lg:py-6 lg:grid-cols-[64px_220px_1fr_24px] transition-colors hover:bg-foreground/[0.02]">
+      {/* Mobile */}
+      <div className="lg:hidden">
+        <p className="text-base text-foreground leading-snug">{project.name}</p>
+        <p className="text-sm text-muted mt-1">{project.year} · {category}</p>
       </div>
-      <span className={`text-base transition-colors shrink-0 mt-0.5 ${project.href ? "text-foreground/40 group-hover:text-background" : "text-muted/40"}`}>→</span>
-    </>
+      {/* Desktop */}
+      <span className="hidden lg:block text-sm text-muted tabular-nums">{project.year}</span>
+      <span className="hidden lg:block text-sm text-muted">{category}</span>
+      <p className="hidden lg:block text-base text-foreground leading-snug">{project.name}</p>
+      <span className={`hidden lg:block text-base transition-colors ${project.href ? "text-muted/40 group-hover:text-foreground" : "invisible"}`}>→</span>
+    </div>
   );
 
-  const cls = `flex items-start gap-4 border-b border-border px-6 py-6 lg:py-10 ${project.href ? "group transition-colors hover:bg-foreground cursor-pointer" : ""}`;
-
   return project.href ? (
-    <Link href={project.href} className={cls}>{inner}</Link>
+    <Link href={project.href}>{inner}</Link>
   ) : (
-    <div className={cls}>{inner}</div>
+    <div>{inner}</div>
   );
 }
 
@@ -141,13 +134,13 @@ export default function Bio() {
       {/* ── Spacer ── */}
       <div className="h-[120px] lg:h-[200px]" />
 
-      {/* ── Projects — single column with category pills ── */}
+      {/* ── Works ── */}
       <div id="projects" className="border-t border-border">
         <div className="px-6 py-3 border-b border-border">
-          <span className="text-sm text-foreground/30 whitespace-nowrap">{t.works.craft} / {t.works.build}</span>
+          <span className="text-sm text-foreground/30">Works</span>
         </div>
         {projects.map((project) => (
-          <ProjectRow key={project.name} project={project} t={t} lang={lang} />
+          <ProjectRow key={project.name} project={project} />
         ))}
       </div>
 
