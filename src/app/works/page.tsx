@@ -2,28 +2,22 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 
 type Project = {
-  type: "craft" | "ai";
+  category: string;
   year: string;
   name: string;
-  role: string;
   href?: string;
 };
 
 const projects: Project[] = [
-  { type: "ai",    year: "2026", name: "Mercado Pago",              role: "Design Manager"  },
-  { type: "ai",    year: "2025", name: "Sute",                      role: "Head of Design",  href: "/sute" },
-  { type: "ai",    year: "2024", name: "Caju",                      role: "Head of Design"  },
-  { type: "ai",    year: "2024", name: "Mude",                      role: "Head of Design"  },
-  { type: "craft", year: "2026", name: "Artas",                     role: "Designer"        },
-  { type: "craft", year: "2020", name: "FFForma",                   role: "Founder"         },
-  { type: "craft", year: "2020", name: "My Phone",                  role: "Designer"        },
-  { type: "craft", year: "2018", name: "Royal Canin Design System", role: "Head of Design"  },
+  { category: "AI Digital Artifacts", year: "2026", name: "Mercado Pago"             },
+  { category: "AI Digital Artifacts", year: "2025", name: "Sute",       href: "/sute" },
+  { category: "AI Digital Artifacts", year: "2024", name: "Caju"                      },
+  { category: "AI Digital Artifacts", year: "2024", name: "Mude"                      },
+  { category: "Craft Design",         year: "2026", name: "Artas"                     },
+  { category: "Craft Design",         year: "2020", name: "FFForma"                   },
+  { category: "Craft Design",         year: "2020", name: "My Phone"                  },
+  { category: "Craft Design",         year: "2018", name: "Royal Canin Design System" },
 ];
-
-const PILL: Record<Project["type"], string> = {
-  ai:    "AI Digital Artifacts",
-  craft: "Craft Design",
-};
 
 export default function Works() {
   return (
@@ -31,23 +25,25 @@ export default function Works() {
       <SiteHeader />
 
       <main className="px-8 pb-24 md:px-12 lg:px-20">
-        <div className="border-b border-border py-3 mb-0">
+        <div className="border-b border-border py-3">
           <p className="text-xs text-muted">Works</p>
         </div>
 
         {projects.map((project) => {
           const row = (
-            <div className="group flex items-center gap-4 border-b border-border py-4 transition-colors hover:bg-foreground/[0.02]">
-              <span className="shrink-0 text-xs px-2 py-0.5 border border-border rounded-full text-muted whitespace-nowrap">
-                {PILL[project.type]}
-              </span>
-              <div className="min-w-0 flex-1">
+            <div className="group border-b border-border py-4 transition-colors hover:bg-foreground/[0.02]">
+              {/* Mobile */}
+              <div className="lg:hidden">
                 <p className="text-sm font-medium text-foreground">{project.name}</p>
-                <p className="text-xs text-muted mt-0.5">{project.role} · {project.year}</p>
+                <p className="text-xs text-muted mt-0.5">{project.category} · {project.year}</p>
               </div>
-              {project.href && (
-                <span className="text-sm text-muted transition-colors group-hover:text-foreground shrink-0">→</span>
-              )}
+              {/* Desktop */}
+              <div className="hidden lg:grid lg:grid-cols-[220px_64px_1fr_24px] lg:items-baseline lg:gap-x-4">
+                <p className="text-xs text-muted">{project.category}</p>
+                <p className="text-xs text-muted tabular-nums">{project.year}</p>
+                <p className="text-sm font-medium text-foreground">{project.name}</p>
+                <span className={`text-sm transition-colors ${project.href ? "text-muted group-hover:text-foreground" : "invisible"}`}>→</span>
+              </div>
             </div>
           );
 
