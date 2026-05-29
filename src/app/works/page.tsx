@@ -49,20 +49,30 @@ function WorksCarousel() {
 
 type Translation = (typeof translations)[keyof typeof translations];
 
-function ProjectRow({ project, t }: { project: Project; t: Translation }) {
+const PILL_LABELS = {
+  craft: { en: "Craft Design",         pt: "Craft Design"          },
+  ai:    { en: "AI Digital Artifacts", pt: "AI Digital Artifacts"  },
+} as const;
+
+function ProjectRow({ project, t, lang }: { project: Project; t: Translation; lang: "en" | "pt" }) {
+  const pillLabel = PILL_LABELS[project.type][lang];
+
   const inner = (
     <>
-      <div className="min-w-0">
+      <span className="shrink-0 self-center text-xs px-2 py-0.5 border border-border rounded-full text-muted whitespace-nowrap">
+        {pillLabel}
+      </span>
+      <div className="min-w-0 flex-1">
         <p className="text-base text-foreground group-hover:text-background leading-snug truncate">{project.name}</p>
         <p className="text-sm text-muted group-hover:text-background mt-1 leading-snug whitespace-nowrap">
-          {t.categories[project.category as keyof typeof t.categories]} · {project.year} · {t.roles[project.role as keyof typeof t.roles]}
+          {project.year} · {t.roles[project.role as keyof typeof t.roles]}
         </p>
       </div>
       <span className={`text-base transition-colors shrink-0 mt-0.5 ${project.href ? "text-foreground/40 group-hover:text-background" : "text-muted/40"}`}>→</span>
     </>
   );
 
-  const cls = `grid items-start grid-cols-[1fr_auto] gap-3 border-b border-border px-6 py-6 lg:py-10 ${project.href ? "group transition-colors hover:bg-foreground cursor-pointer" : ""}`;
+  const cls = `flex items-start gap-4 border-b border-border px-6 py-6 lg:py-10 ${project.href ? "group transition-colors hover:bg-foreground cursor-pointer" : ""}`;
 
   return project.href ? (
     <Link href={project.href} className={cls}>{inner}</Link>
@@ -84,20 +94,17 @@ const experience: Entry[] = [
   { company: "Y Dreams",                role: "Senior Designer",  years: "2014—2015"  },
 ];
 
-type Project = { category: string; year: string; name: string; role: string; href?: string };
+type Project = { type: "craft" | "ai"; year: string; name: string; role: string; href?: string };
 
-const craftProjects: Project[] = [
-  { category: "Digital Product", year: "2026", name: "Artas",                     role: "Designer"       },
-  { category: "Brand Identity",  year: "2020", name: "FFForma",                   role: "Founder"        },
-  { category: "Brand Identity",  year: "2020", name: "My Phone",                  role: "Designer"       },
-  { category: "Design System",   year: "2018", name: "Royal Canin Design System", role: "Head of Design" },
-];
-
-const buildProjects: Project[] = [
-  { category: "Digital Product", year: "2026", name: "Mercado Pago",              role: "Design Manager" },
-  { category: "Digital Product", year: "2025", name: "Sute",                      role: "Head of Design", href: "/sute" },
-  { category: "Digital Product", year: "2024", name: "Caju",                      role: "Head of Design" },
-  { category: "Digital Product", year: "2024", name: "Mude",                      role: "Head of Design" },
+const projects: Project[] = [
+  { type: "ai",    year: "2026", name: "Mercado Pago",              role: "Design Manager" },
+  { type: "ai",    year: "2025", name: "Sute",                      role: "Head of Design", href: "/sute" },
+  { type: "ai",    year: "2024", name: "Caju",                      role: "Head of Design" },
+  { type: "ai",    year: "2024", name: "Mude",                      role: "Head of Design" },
+  { type: "craft", year: "2026", name: "Artas",                     role: "Designer"       },
+  { type: "craft", year: "2020", name: "FFForma",                   role: "Founder"        },
+  { type: "craft", year: "2020", name: "My Phone",                  role: "Designer"       },
+  { type: "craft", year: "2018", name: "Royal Canin Design System", role: "Head of Design" },
 ];
 
 const clients = [
@@ -106,8 +113,6 @@ const clients = [
   "Art Directors Club","Cisco","Descomplica","Neom",
 ];
 
-const TOP      = "lg:grid-cols-[180px_110px_1fr_auto]";
-const PROJ_COL = "lg:grid-cols-[220px_110px_260px_1fr_32px]";
 
 export default function Bio() {
   const { lang } = useLang();
@@ -136,36 +141,14 @@ export default function Bio() {
       {/* ── Spacer ── */}
       <div className="h-[120px] lg:h-[200px]" />
 
-      {/* ── Projects — Craft | Digital Artifacts (full-bleed) ── */}
+      {/* ── Projects — single column with category pills ── */}
       <div id="projects" className="border-t border-border">
-        {/* Module sub-headers */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 border-b border-border">
-          <div className="px-6 py-3 lg:border-r lg:border-border">
-            <span className="text-sm text-foreground/30 whitespace-nowrap">{t.works.craft}</span>
-          </div>
-          <div className="hidden lg:block px-6 py-3">
-            <span className="text-sm text-foreground/30 whitespace-nowrap">{t.works.build}</span>
-          </div>
+        <div className="px-6 py-3 border-b border-border">
+          <span className="text-sm text-foreground/30 whitespace-nowrap">{t.works.craft} / {t.works.build}</span>
         </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2">
-          {/* Craft column */}
-          <div className="lg:border-r lg:border-border">
-            {craftProjects.map((project) => (
-              <ProjectRow key={project.name} project={project} t={t} />
-            ))}
-          </div>
-
-          {/* Digital Artifacts column — mobile header inline */}
-          <div>
-            <div className="lg:hidden px-6 py-3 border-t border-border">
-              <span className="text-sm text-foreground/30 whitespace-nowrap">{t.works.build}</span>
-            </div>
-            {buildProjects.map((project) => (
-              <ProjectRow key={project.name} project={project} t={t} />
-            ))}
-          </div>
-        </div>
+        {projects.map((project) => (
+          <ProjectRow key={project.name} project={project} t={t} lang={lang} />
+        ))}
       </div>
 
       {/* ── Experience (full-bleed) ── */}
@@ -178,7 +161,7 @@ export default function Bio() {
         {experience.map((entry) => (
           <div
             key={entry.company}
-            className={`grid items-center border-b border-border ${PROJ_COL} gap-x-8 px-6 py-3 lg:py-3`}
+            className="grid items-center border-b border-border lg:grid-cols-[220px_110px_260px_1fr_32px] gap-x-8 px-6 py-3 lg:py-3"
           >
             <span className="hidden text-base text-muted lg:block whitespace-nowrap">
               {t.roles[entry.role as keyof typeof t.roles]}
