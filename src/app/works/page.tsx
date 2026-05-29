@@ -53,7 +53,7 @@ const projects: Project[] = [
   { category: "Product Design", year: "2024", name: "Mude",                      role: "Head of Design"  },
   { category: "Product Design",  year: "2026", name: "Artas",                    role: "Designer"        },
   { category: "Branding",        year: "2020", name: "FFForma",                  role: "Founder"         },
-  { category: "Branding",        year: "2020", name: "My Phone",                 role: "Designer"        },
+  { category: "Branding",        year: "2020", name: "My Phone",                 role: "Designer",        href: "/my-phone" },
   { category: "Design System",   year: "2018", name: "Royal Canin Design System",role: "Head of Design"  },
 ];
 
