@@ -171,7 +171,7 @@ export default function Bio() {
         {experience.map((entry) => (
           <div
             key={entry.company}
-            className="grid items-baseline gap-x-6 border-b border-border px-6 py-5 grid-cols-[80px_1fr] lg:grid-cols-[120px_180px_1fr]"
+            className="grid items-baseline gap-x-6 border-b border-border px-6 py-6 grid-cols-[80px_1fr] lg:grid-cols-[120px_180px_1fr]"
           >
             <span className="text-sm text-muted tabular-nums whitespace-nowrap">{entry.years}</span>
             <span className="hidden lg:block text-sm text-muted whitespace-nowrap">{t.roles[entry.role as keyof typeof t.roles]}</span>
