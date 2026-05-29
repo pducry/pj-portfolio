@@ -6,7 +6,7 @@ export const translations = {
     bio: {
       label: "Bio",
       p1: "Design crafted with precision and intention.",
-      p2: "Leading teams by staying close to the work.",
+      p2: "Lead by doing — a leader who makes.",
       p3: "Using AI as a creative force.",
       p4a: "Founder of",
       p4b: ".",
@@ -56,7 +56,7 @@ export const translations = {
     bio: {
       label: "Bio",
       p1: "Design criado com precisão e intenção.",
-      p2: "Liderando times de perto, pelo fazer.",
+      p2: "Liderar fazendo — ser o exemplo.",
       p3: "IA como força criativa.",
       p4a: "Fundador da",
       p4b: ".",
