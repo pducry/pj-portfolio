@@ -5,9 +5,7 @@ export const translations = {
     nav: { bio: "Works", playground: "Playground", contact: "Contact" },
     bio: {
       label: "Bio",
-      p1: "Design crafted with precision and intention.",
-      p2: "Lead by doing — a leader who makes.",
-      p3: "Using AI as a creative force.",
+      p1: "A designer who crafts with intention, leads through making, and uses AI as a creative force.",
       p4a: "Founder of",
       p4b: ".",
       cta: "Get in touch",
@@ -55,9 +53,7 @@ export const translations = {
     nav: { bio: "Works", playground: "Playground", contact: "Contato" },
     bio: {
       label: "Bio",
-      p1: "Design criado com precisão e intenção.",
-      p2: "Liderar fazendo — ser o exemplo.",
-      p3: "IA como força criativa.",
+      p1: "Um designer que cria com intenção, lidera fazendo e usa IA como força criativa.",
       p4a: "Fundador da",
       p4b: ".",
       cta: "Entre em contato",
