@@ -39,6 +39,18 @@ export default function ArtasPage() {
         <span className="text-sm text-muted whitespace-nowrap">Designer</span>
       </div>
 
+      {/* Stack */}
+      <div className="px-6 border-t border-border py-4 flex flex-wrap items-center gap-2">
+        {stack.map((tag) => (
+          <span key={tag} className="rounded-full border border-border px-3 py-1 text-xs text-muted">
+            {tag}
+          </span>
+        ))}
+        <span className="rounded-full border border-foreground px-3 py-1 text-xs text-foreground font-medium">
+          Claude Code
+        </span>
+      </div>
+
       {/* Description */}
       <div className="px-6 border-t border-b border-border py-6">
         <div className="max-w-xl space-y-3">
@@ -86,26 +98,6 @@ export default function ArtasPage() {
           playsInline
           className="w-full h-auto"
         />
-      </div>
-
-      {/* Stack */}
-      <div className="px-6 pb-6">
-        <div className="border-t border-border pt-6">
-          <p className="text-xs text-muted mb-4">Stack</p>
-          <div className="flex flex-wrap gap-2">
-            {stack.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border border-border px-3 py-1 text-xs text-muted"
-              >
-                {tag}
-              </span>
-            ))}
-            <span className="rounded-full border border-border px-3 py-1 text-xs text-foreground font-medium">
-              Claude Code
-            </span>
-          </div>
-        </div>
       </div>
 
       <p className="px-6 pb-8 text-sm text-muted">© Pedro Julien 2026</p>
