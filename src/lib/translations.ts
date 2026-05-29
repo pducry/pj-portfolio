@@ -5,7 +5,7 @@ export const translations = {
     nav: { bio: "Works", playground: "Playground", contact: "Contact" },
     bio: {
       label: "Bio",
-      p1: "Designer with 20+ years in product design and branding — crafting with intention, leading through making, and using AI as a creative force.",
+      p1: "Designer with 20+ years in product design and branding — crafting with intention, leading by doing, and using AI as a creative force.",
       p4a: "Founder of",
       p4b: ".",
       cta: "Get in touch",
