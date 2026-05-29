@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { SiteHeader } from "@/components/site-header";
+import { asset } from "@/lib/asset";
 
 const images = [
   { src: "/sute/1.png",  alt: "Sute — 1"  },
@@ -58,16 +59,13 @@ export default function SutePage() {
       {/* Images */}
       <div className="px-6 py-6 space-y-6">
         {images.map((img) => (
-          <div key={img.src} className="relative w-full overflow-hidden">
-            <Image
-              src={img.src}
-              alt={img.alt}
-              width={1600}
-              height={900}
-              className="w-full h-auto"
-              sizes="100vw"
-            />
-          </div>
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            key={img.src}
+            src={asset(img.src)}
+            alt={img.alt}
+            className="w-full h-auto"
+          />
         ))}
       </div>
 

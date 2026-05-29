@@ -1,16 +1,16 @@
 import Link from "next/link";
-import Image from "next/image";
 import { SiteHeader } from "@/components/site-header";
+import { asset } from "@/lib/asset";
 
 const images = [
-  { src: "/my-phone/1.png",  alt: "My Phone — 1" },
-  { src: "/my-phone/2.png",  alt: "My Phone — 2" },
-  { src: "/my-phone/3.png",  alt: "My Phone — 3" },
-  { src: "/my-phone/4.png",  alt: "My Phone — 4" },
-  { src: "/my-phone/5.png",  alt: "My Phone — 5" },
-  { src: "/my-phone/6.png",  alt: "My Phone — 6" },
-  { src: "/my-phone/7.jpg",  alt: "My Phone — 7" },
-  { src: "/my-phone/8.jpg",  alt: "My Phone — 8" },
+  { src: "/my-phone/1.png", alt: "My Phone — 1" },
+  { src: "/my-phone/2.png", alt: "My Phone — 2" },
+  { src: "/my-phone/3.png", alt: "My Phone — 3" },
+  { src: "/my-phone/4.png", alt: "My Phone — 4" },
+  { src: "/my-phone/5.png", alt: "My Phone — 5" },
+  { src: "/my-phone/6.png", alt: "My Phone — 6" },
+  { src: "/my-phone/7.jpg", alt: "My Phone — 7" },
+  { src: "/my-phone/8.jpg", alt: "My Phone — 8" },
 ];
 
 export default function MyPhonePage() {
@@ -48,16 +48,13 @@ export default function MyPhonePage() {
       {/* Images */}
       <div className="px-6 py-6 space-y-6">
         {images.map((img) => (
-          <div key={img.src} className="relative w-full overflow-hidden">
-            <Image
-              src={img.src}
-              alt={img.alt}
-              width={1600}
-              height={900}
-              className="w-full h-auto"
-              sizes="100vw"
-            />
-          </div>
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            key={img.src}
+            src={asset(img.src)}
+            alt={img.alt}
+            className="w-full h-auto"
+          />
         ))}
       </div>
 
