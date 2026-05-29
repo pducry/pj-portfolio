@@ -52,7 +52,7 @@ type Translation = (typeof translations)[keyof typeof translations];
 function ProjectRow({ project }: { project: Project }) {
 
   const inner = (
-    <div className="group grid items-baseline gap-x-6 border-b border-border px-6 py-4 transition-colors hover:bg-foreground/[0.02] grid-cols-[48px_1fr_auto] lg:grid-cols-[64px_200px_180px_1fr_24px]">
+    <div className="group grid items-baseline gap-x-6 border-b border-border px-6 py-5 transition-colors hover:bg-foreground/[0.02] grid-cols-[48px_1fr_auto] lg:grid-cols-[64px_200px_180px_1fr_24px]">
       <span className="text-sm text-muted tabular-nums whitespace-nowrap">{project.year}</span>
       <span className="text-sm text-muted whitespace-nowrap lg:hidden">{project.name}</span>
       <span className="hidden lg:block text-sm text-muted whitespace-nowrap">{project.category}</span>
@@ -149,7 +149,7 @@ export default function Bio() {
         {experience.map((entry) => (
           <div
             key={entry.company}
-            className="grid items-center border-b border-border lg:grid-cols-[220px_110px_260px_1fr_32px] gap-x-8 px-6 py-3 lg:py-3"
+            className="grid items-center border-b border-border lg:grid-cols-[220px_110px_260px_1fr_32px] gap-x-8 px-6 py-5"
           >
             <span className="hidden text-base text-muted lg:block whitespace-nowrap">
               {t.roles[entry.role as keyof typeof t.roles]}

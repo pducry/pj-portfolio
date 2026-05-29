@@ -39,7 +39,7 @@ export default function Contact() {
               href={href}
               target={href.startsWith("mailto") ? undefined : "_blank"}
               rel="noopener noreferrer"
-              className="flex items-center justify-between border-b border-border py-4 text-base text-foreground/70 transition-colors hover:text-foreground group"
+              className="flex items-center justify-between border-b border-border py-5 text-base text-foreground/70 transition-colors hover:text-foreground group"
             >
               <span>{label}</span>
               <span className="text-muted/40 transition-colors group-hover:text-foreground">→</span>
