@@ -50,20 +50,23 @@ function WorksCarousel() {
 type Translation = (typeof translations)[keyof typeof translations];
 
 function ProjectRow({ project }: { project: Project }) {
+  const linked = !!project.href;
+  const base = "group grid items-baseline gap-x-6 border-b border-border px-6 py-5 transition-colors grid-cols-[48px_1fr_auto] lg:grid-cols-[64px_200px_180px_1fr_24px]";
+  const hover = linked ? "hover:bg-foreground cursor-pointer" : "";
 
   const inner = (
-    <div className="group grid items-baseline gap-x-6 border-b border-border px-6 py-5 transition-colors hover:bg-foreground/[0.02] grid-cols-[48px_1fr_auto] lg:grid-cols-[64px_200px_180px_1fr_24px]">
-      <span className="text-sm text-muted tabular-nums whitespace-nowrap">{project.year}</span>
-      <span className="text-sm text-muted whitespace-nowrap lg:hidden">{project.name}</span>
-      <span className="hidden lg:block text-sm text-muted whitespace-nowrap">{project.category}</span>
-      <span className="hidden lg:block text-sm text-muted whitespace-nowrap">{project.role}</span>
-      <span className="hidden lg:block text-base text-foreground whitespace-nowrap">{project.name}</span>
-      <span className={`text-sm transition-colors justify-self-end ${project.href ? "text-muted/40 group-hover:text-foreground" : "invisible"}`}>→</span>
+    <div className={`${base} ${hover}`}>
+      <span className={`text-sm tabular-nums whitespace-nowrap transition-colors ${linked ? "text-muted group-hover:text-background" : "text-muted"}`}>{project.year}</span>
+      <span className={`text-sm whitespace-nowrap lg:hidden transition-colors ${linked ? "text-muted group-hover:text-background" : "text-muted"}`}>{project.name}</span>
+      <span className={`hidden lg:block text-sm whitespace-nowrap transition-colors ${linked ? "text-muted group-hover:text-background" : "text-muted"}`}>{project.category}</span>
+      <span className={`hidden lg:block text-sm whitespace-nowrap transition-colors ${linked ? "text-muted group-hover:text-background" : "text-muted"}`}>{project.role}</span>
+      <span className={`hidden lg:block text-base whitespace-nowrap transition-colors ${linked ? "text-foreground group-hover:text-background" : "text-foreground"}`}>{project.name}</span>
+      <span className={`text-sm justify-self-end transition-colors ${linked ? "text-muted/40 group-hover:text-background" : "invisible"}`}>→</span>
     </div>
   );
 
-  return project.href ? (
-    <Link href={project.href}>{inner}</Link>
+  return linked ? (
+    <Link href={project.href!}>{inner}</Link>
   ) : (
     <div>{inner}</div>
   );
