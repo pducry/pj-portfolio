@@ -150,21 +150,11 @@ export default function Bio() {
         {experience.map((entry) => (
           <div
             key={entry.company}
-            className="grid items-center border-b border-border lg:grid-cols-[220px_110px_260px_1fr_32px] gap-x-8 px-6 py-5"
+            className="grid items-baseline gap-x-6 border-b border-border px-6 py-5 grid-cols-[80px_1fr] lg:grid-cols-[120px_200px_1fr]"
           >
-            <span className="hidden text-base text-muted lg:block whitespace-nowrap">
-              {t.roles[entry.role as keyof typeof t.roles]}
-            </span>
-            <span className="hidden lg:block" />
-            <span className="hidden text-base text-muted lg:block whitespace-nowrap">{entry.years}</span>
-            <p className="hidden text-base text-foreground lg:block whitespace-nowrap truncate">{entry.company}</p>
-            <span className="hidden lg:block" />
-            <div className="lg:hidden flex items-start justify-between gap-3 w-full">
-              <div className="min-w-0">
-                <p className="text-base text-foreground leading-snug">{entry.company}</p>
-                <p className="text-sm text-muted mt-1 leading-snug">{t.roles[entry.role as keyof typeof t.roles]} · {entry.years}</p>
-              </div>
-            </div>
+            <span className="text-sm text-muted tabular-nums whitespace-nowrap">{entry.years}</span>
+            <span className="hidden lg:block text-sm text-muted whitespace-nowrap">{t.roles[entry.role as keyof typeof t.roles]}</span>
+            <p className="text-base text-foreground whitespace-nowrap">{entry.company}</p>
           </div>
         ))}
       </div>
