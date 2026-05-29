@@ -50,13 +50,12 @@ function WorksCarousel() {
 type Translation = (typeof translations)[keyof typeof translations];
 
 function ProjectRow({ project }: { project: Project }) {
-  const category = project.type === "ai" ? "AI Digital Artifacts" : "Craft Design";
 
   const inner = (
     <div className="group grid items-baseline gap-x-6 border-b border-border px-6 py-4 transition-colors hover:bg-foreground/[0.02] grid-cols-[48px_1fr_auto] lg:grid-cols-[64px_200px_180px_1fr_24px]">
       <span className="text-sm text-muted tabular-nums whitespace-nowrap">{project.year}</span>
       <span className="text-sm text-muted whitespace-nowrap lg:hidden">{project.name}</span>
-      <span className="hidden lg:block text-sm text-muted whitespace-nowrap">{category}</span>
+      <span className="hidden lg:block text-sm text-muted whitespace-nowrap">{project.category}</span>
       <span className="hidden lg:block text-sm text-muted whitespace-nowrap">{project.role}</span>
       <span className="hidden lg:block text-base text-foreground whitespace-nowrap">{project.name}</span>
       <span className={`text-sm transition-colors justify-self-end ${project.href ? "text-muted/40 group-hover:text-foreground" : "invisible"}`}>→</span>
@@ -83,17 +82,17 @@ const experience: Entry[] = [
   { company: "Y Dreams",                role: "Senior Designer",  years: "2014—2015"  },
 ];
 
-type Project = { type: "craft" | "ai"; year: string; name: string; role: string; href?: string };
+type Project = { category: string; year: string; name: string; role: string; href?: string };
 
 const projects: Project[] = [
-  { type: "ai",    year: "2026", name: "Mercado Pago",              role: "Design Manager" },
-  { type: "ai",    year: "2025", name: "Sute",                      role: "Head of Design", href: "/sute" },
-  { type: "ai",    year: "2024", name: "Caju",                      role: "Head of Design" },
-  { type: "ai",    year: "2024", name: "Mude",                      role: "Head of Design" },
-  { type: "craft", year: "2026", name: "Artas",                     role: "Designer"       },
-  { type: "craft", year: "2020", name: "FFForma",                   role: "Founder"        },
-  { type: "craft", year: "2020", name: "My Phone",                  role: "Designer"       },
-  { type: "craft", year: "2018", name: "Royal Canin Design System", role: "Head of Design" },
+  { category: "Product Design", year: "2026", name: "Mercado Pago",              role: "Design Manager" },
+  { category: "Product Design", year: "2025", name: "Sute",                      role: "Head of Design", href: "/sute" },
+  { category: "Product Design", year: "2024", name: "Caju",                      role: "Head of Design" },
+  { category: "Product Design", year: "2024", name: "Mude",                      role: "Head of Design" },
+  { category: "Digital Product", year: "2026", name: "Artas",                    role: "Designer"       },
+  { category: "Branding",       year: "2020", name: "FFForma",                   role: "Founder"        },
+  { category: "Branding",       year: "2020", name: "My Phone",                  role: "Designer"       },
+  { category: "Design System",  year: "2018", name: "Royal Canin Design System", role: "Head of Design" },
 ];
 
 const clients = [
