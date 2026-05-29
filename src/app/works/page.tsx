@@ -54,11 +54,11 @@ function ProjectRow({ project }: { project: Project }) {
 
   const inner = (
     <div className="group grid items-baseline gap-x-6 border-b border-border px-6 py-4 transition-colors hover:bg-foreground/[0.02] grid-cols-[48px_1fr_auto] lg:grid-cols-[64px_200px_180px_1fr_24px]">
-      <span className="text-sm text-muted tabular-nums">{project.year}</span>
-      <span className="text-sm text-muted truncate lg:hidden">{project.name}</span>
-      <span className="hidden lg:block text-sm text-muted truncate">{category}</span>
-      <span className="hidden lg:block text-sm text-muted truncate">{project.role}</span>
-      <span className="hidden lg:block text-base text-foreground truncate">{project.name}</span>
+      <span className="text-sm text-muted tabular-nums whitespace-nowrap">{project.year}</span>
+      <span className="text-sm text-muted whitespace-nowrap lg:hidden">{project.name}</span>
+      <span className="hidden lg:block text-sm text-muted whitespace-nowrap">{category}</span>
+      <span className="hidden lg:block text-sm text-muted whitespace-nowrap">{project.role}</span>
+      <span className="hidden lg:block text-base text-foreground whitespace-nowrap">{project.name}</span>
       <span className={`text-sm transition-colors justify-self-end ${project.href ? "text-muted/40 group-hover:text-foreground" : "invisible"}`}>→</span>
     </div>
   );
