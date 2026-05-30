@@ -26,7 +26,6 @@ export function MobileMenu() {
 
   const close = () => setOpen(false);
 
-  // Escape key
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") close(); };
@@ -59,7 +58,7 @@ export function MobileMenu() {
 
   return (
     <>
-      {/* Hamburger — 44×44 touch target, mobile only */}
+      {/* Hamburger */}
       <button
         onClick={() => setOpen((v) => !v)}
         className="lg:hidden flex flex-col justify-center items-center w-11 h-11 gap-[6px]"
@@ -73,7 +72,6 @@ export function MobileMenu() {
 
       <AnimatePresence>
         {open && (
-          /* Overlay — bg-background uses the CSS variable, always correct regardless of hydration */
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -96,59 +94,45 @@ export function MobileMenu() {
               </button>
             </div>
 
-            {/* Nav links */}
-            <nav className="flex flex-col flex-1 px-6 overflow-y-auto">
-              {links.map(({ href, label }, i) => {
+            {/* Nav links — always visible, no opacity animation */}
+            <nav className="flex flex-col px-6" style={{ flex: 1 }}>
+              {links.map(({ href, label }) => {
                 const isActive = pathname === href;
                 return (
-                  <motion.div
+                  <Link
                     key={href}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.05 + i * 0.05, duration: 0.2, ease: "easeOut" }}
+                    href={href}
+                    onClick={close}
+                    className="flex items-center justify-between border-b border-border py-6"
                   >
-                    <Link
-                      href={href}
-                      onClick={close}
-                      className={`flex items-center justify-between py-6 border-b border-border text-2xl transition-colors ${
-                        isActive ? "text-foreground font-medium" : "text-muted"
-                      }`}
-                    >
+                    <span className={`text-3xl font-medium ${isActive ? "text-foreground" : "text-foreground/60"}`}>
                       {label}
-                      <span className={`text-base ${isActive ? "text-foreground" : "text-muted"}`}>
-                        {isActive ? "●" : "→"}
-                      </span>
-                    </Link>
-                  </motion.div>
+                    </span>
+                    <span className={`text-lg ${isActive ? "text-foreground" : "text-muted"}`}>
+                      {isActive ? "●" : "→"}
+                    </span>
+                  </Link>
                 );
               })}
             </nav>
 
             {/* Bottom controls */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.25, duration: 0.2 }}
-              className="px-6 pt-6 pb-10 flex flex-wrap items-center gap-3 shrink-0 border-t border-border"
-            >
-              {/* Lang */}
+            <div className="px-6 pt-5 pb-10 flex flex-wrap gap-3 shrink-0 border-t border-border">
               <div className="flex items-center gap-1 bg-foreground/[0.06] rounded-full p-0.5">
                 <button onClick={() => lang !== "en" && toggleLang()} className={`text-xs px-4 py-2 rounded-full transition-all ${lang === "en" ? "bg-background text-foreground shadow-sm" : "text-muted"}`}>EN</button>
                 <button onClick={() => lang !== "pt" && toggleLang()} className={`text-xs px-4 py-2 rounded-full transition-all ${lang === "pt" ? "bg-background text-foreground shadow-sm" : "text-muted"}`}>PT</button>
               </div>
 
-              {/* Font */}
               <div className="flex items-center gap-1 bg-foreground/[0.06] rounded-full p-0.5">
                 <button onClick={() => font !== "sans" && toggleFont()} className={`text-xs px-4 py-2 rounded-full transition-all ${font === "sans" ? "bg-background text-foreground shadow-sm" : "text-muted"}`}>Sans</button>
                 <button onClick={() => font !== "serif" && toggleFont()} className={`text-xs px-4 py-2 rounded-full transition-all ${font === "serif" ? "bg-background text-foreground shadow-sm" : "text-muted"}`} style={{ fontFamily: "var(--font-lora), Georgia, serif" }}>Serif</button>
               </div>
 
-              {/* Theme */}
               <div className="flex items-center gap-1 bg-foreground/[0.06] rounded-full p-0.5">
                 <button onClick={() => theme !== "light" && toggleTheme()} className={`text-xs px-4 py-2 rounded-full transition-all ${theme === "light" ? "bg-background text-foreground shadow-sm" : "text-muted"}`}>Light</button>
                 <button onClick={() => theme !== "dark" && toggleTheme()} className={`text-xs px-4 py-2 rounded-full transition-all ${theme === "dark" ? "bg-background text-foreground shadow-sm" : "text-muted"}`}>Dark</button>
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
