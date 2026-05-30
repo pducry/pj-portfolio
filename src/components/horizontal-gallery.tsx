@@ -8,6 +8,11 @@ import { asset } from "@/lib/asset";
 const images = [
   { src: "/gallery/Binder-Box-Mockup-Dusk-Series-01.png", alt: "Project" },
   { src: "/gallery/Cards-Mockup-Dusk-Series.jpg", alt: "Project" },
+  { src: "/gallery/FFForma41.png",  alt: "Project" },
+  { src: "/gallery/FFForma50b.png", alt: "Project" },
+  { src: "/gallery/FFForma52.png",  alt: "Project" },
+  { src: "/gallery/FFForma53.png",  alt: "Project" },
+  { src: "/gallery/FFForma67.png",  alt: "Project" },
   { src: "/gallery/4.png",   alt: "Project" },
   { src: "/gallery/43.png",  alt: "Project" },
   { src: "/gallery/44.png",  alt: "Project" },
