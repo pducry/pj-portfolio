@@ -90,7 +90,7 @@ function GalleryItem({
       key={img.src}
       layout
       layoutId={img.src}
-      className="group relative aspect-square overflow-hidden cursor-pointer"
+      className="group relative aspect-video overflow-hidden cursor-pointer"
       onClick={onClick}
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
