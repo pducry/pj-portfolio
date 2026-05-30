@@ -47,7 +47,7 @@ export default function ArtasPage() {
             {tag}
           </span>
         ))}
-        <span className="rounded-full border border-foreground px-3 py-1 text-xs text-foreground font-medium">
+        <span className="rounded-full border border-border px-3 py-1 text-xs text-muted">
           Claude Code
         </span>
       </div>
