@@ -7,6 +7,14 @@ import { asset } from "@/lib/asset";
 
 const images = [
   { src: "/gallery/Binder-Box-Mockup-Dusk-Series-01.png", alt: "Project" },
+  { src: "/gallery/43.png",  alt: "Project" },
+  { src: "/gallery/69.png",  alt: "Project" },
+  { src: "/gallery/78.png",  alt: "Project" },
+  { src: "/gallery/80.png",  alt: "Project" },
+  { src: "/gallery/87.png",  alt: "Project" },
+  { src: "/gallery/89.png",  alt: "Project" },
+  { src: "/gallery/93.png",  alt: "Project" },
+  { src: "/gallery/105.png", alt: "Project" },
   { src: "/gallery/pj_005.png", alt: "Project" },
   { src: "/gallery/pj_006.png", alt: "Project" },
   { src: "/gallery/pj_009.png", alt: "Project" },
