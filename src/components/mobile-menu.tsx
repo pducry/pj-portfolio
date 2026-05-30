@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useLang } from "./language-provider";
 import { useTheme } from "./theme-provider";
 import { useFont } from "./font-provider";
@@ -19,9 +19,9 @@ export function MobileMenu() {
   const scrollY = useRef(0);
 
   const links = [
-    { href: "/works",      label: t.nav.bio },
-    { href: "/playground", label: t.nav.playground },
-    { href: "/contact",    label: t.nav.contact },
+    { href: "/works",      label: t.nav.bio        },
+    { href: "/playground", label: t.nav.playground  },
+    { href: "/contact",    label: t.nav.contact     },
   ];
 
   const close = () => setOpen(false);
@@ -33,7 +33,6 @@ export function MobileMenu() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  // iOS-safe scroll lock
   useEffect(() => {
     if (open) {
       scrollY.current = window.scrollY;
@@ -56,6 +55,11 @@ export function MobileMenu() {
     };
   }, [open]);
 
+  // explicit bg color — no CSS variable dependency
+  const bg = theme === "dark" ? "#161616" : "#FFFAEA";
+  const fg = theme === "dark" ? "#ededed" : "#0a0a0a";
+  const border = theme === "dark" ? "#2a2a2a" : "#e5e5e5";
+
   return (
     <>
       {/* Hamburger */}
@@ -65,9 +69,9 @@ export function MobileMenu() {
         aria-label={open ? "Fechar menu" : "Abrir menu"}
         aria-expanded={open}
       >
-        <span className={`block h-px w-5 bg-foreground origin-center transition-all duration-300 ${open ? "translate-y-[9px] rotate-45" : ""}`} />
-        <span className={`block h-px bg-foreground transition-all duration-300 ${open ? "w-0 opacity-0" : "w-5"}`} />
-        <span className={`block h-px w-5 bg-foreground origin-center transition-all duration-300 ${open ? "-translate-y-[9px] -rotate-45" : ""}`} />
+        <span className={`block h-px w-5 origin-center transition-all duration-300 ${open ? "translate-y-[9px] rotate-45" : ""}`} style={{ backgroundColor: fg }} />
+        <span className={`block h-px origin-center transition-all duration-300 ${open ? "w-0 opacity-0" : "w-5"}`} style={{ backgroundColor: fg }} />
+        <span className={`block h-px w-5 origin-center transition-all duration-300 ${open ? "-translate-y-[9px] -rotate-45" : ""}`} style={{ backgroundColor: fg }} />
       </button>
 
       <AnimatePresence>
@@ -77,25 +81,27 @@ export function MobileMenu() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15 }}
-            className="fixed inset-0 z-[200] bg-background flex flex-col"
+            style={{ backgroundColor: bg }}
+            className="fixed inset-0 z-[999] flex flex-col"
           >
             {/* Top bar */}
-            <div className="flex items-center justify-between px-6 py-5 border-b border-border shrink-0">
+            <div className="flex items-center justify-between px-6 py-5 shrink-0" style={{ borderBottom: `1px solid ${border}` }}>
               <Link href="/works" onClick={close} className="flex items-center gap-2.5">
                 <span className="w-2 h-2 rounded-full bg-red-500 shrink-0" />
-                <span className="text-sm font-medium text-foreground">Pedro Julien</span>
+                <span className="text-sm font-medium" style={{ color: fg }}>Pedro Julien</span>
               </Link>
               <button
                 onClick={close}
-                className="flex h-11 w-11 items-center justify-center text-2xl leading-none text-foreground"
+                className="flex h-11 w-11 items-center justify-center text-3xl leading-none"
+                style={{ color: fg }}
                 aria-label="Fechar menu"
               >
                 ×
               </button>
             </div>
 
-            {/* Nav links — always visible, no opacity animation */}
-            <nav className="flex flex-col px-6" style={{ flex: 1 }}>
+            {/* Nav links */}
+            <nav className="flex flex-col flex-1 px-6">
               {links.map(({ href, label }) => {
                 const isActive = pathname === href;
                 return (
@@ -103,12 +109,16 @@ export function MobileMenu() {
                     key={href}
                     href={href}
                     onClick={close}
-                    className="flex items-center justify-between border-b border-border py-6"
+                    className="flex items-center justify-between py-7"
+                    style={{ borderBottom: `1px solid ${border}` }}
                   >
-                    <span className={`text-3xl font-medium ${isActive ? "text-foreground" : "text-foreground/60"}`}>
+                    <span
+                      className="text-3xl font-medium"
+                      style={{ color: isActive ? fg : `${fg}99` }}
+                    >
                       {label}
                     </span>
-                    <span className={`text-lg ${isActive ? "text-foreground" : "text-muted"}`}>
+                    <span className="text-lg" style={{ color: `${fg}66` }}>
                       {isActive ? "●" : "→"}
                     </span>
                   </Link>
@@ -117,20 +127,26 @@ export function MobileMenu() {
             </nav>
 
             {/* Bottom controls */}
-            <div className="px-6 pt-5 pb-10 flex flex-wrap gap-3 shrink-0 border-t border-border">
-              <div className="flex items-center gap-1 bg-foreground/[0.06] rounded-full p-0.5">
-                <button onClick={() => lang !== "en" && toggleLang()} className={`text-xs px-4 py-2 rounded-full transition-all ${lang === "en" ? "bg-background text-foreground shadow-sm" : "text-muted"}`}>EN</button>
-                <button onClick={() => lang !== "pt" && toggleLang()} className={`text-xs px-4 py-2 rounded-full transition-all ${lang === "pt" ? "bg-background text-foreground shadow-sm" : "text-muted"}`}>PT</button>
+            <div
+              className="px-6 pt-5 pb-10 flex flex-wrap gap-3 shrink-0"
+              style={{ borderTop: `1px solid ${border}` }}
+            >
+              {/* Lang */}
+              <div className="flex items-center rounded-full p-0.5" style={{ backgroundColor: `${fg}10` }}>
+                <button onClick={() => lang !== "en" && toggleLang()} className="text-xs px-4 py-2 rounded-full transition-all" style={{ backgroundColor: lang === "en" ? bg : "transparent", color: lang === "en" ? fg : `${fg}66` }}>EN</button>
+                <button onClick={() => lang !== "pt" && toggleLang()} className="text-xs px-4 py-2 rounded-full transition-all" style={{ backgroundColor: lang === "pt" ? bg : "transparent", color: lang === "pt" ? fg : `${fg}66` }}>PT</button>
               </div>
 
-              <div className="flex items-center gap-1 bg-foreground/[0.06] rounded-full p-0.5">
-                <button onClick={() => font !== "sans" && toggleFont()} className={`text-xs px-4 py-2 rounded-full transition-all ${font === "sans" ? "bg-background text-foreground shadow-sm" : "text-muted"}`}>Sans</button>
-                <button onClick={() => font !== "serif" && toggleFont()} className={`text-xs px-4 py-2 rounded-full transition-all ${font === "serif" ? "bg-background text-foreground shadow-sm" : "text-muted"}`} style={{ fontFamily: "var(--font-lora), Georgia, serif" }}>Serif</button>
+              {/* Font */}
+              <div className="flex items-center rounded-full p-0.5" style={{ backgroundColor: `${fg}10` }}>
+                <button onClick={() => font !== "sans" && toggleFont()} className="text-xs px-4 py-2 rounded-full transition-all" style={{ backgroundColor: font === "sans" ? bg : "transparent", color: font === "sans" ? fg : `${fg}66` }}>Sans</button>
+                <button onClick={() => font !== "serif" && toggleFont()} className="text-xs px-4 py-2 rounded-full transition-all" style={{ backgroundColor: font === "serif" ? bg : "transparent", color: font === "serif" ? fg : `${fg}66`, fontFamily: "var(--font-lora), Georgia, serif" }}>Serif</button>
               </div>
 
-              <div className="flex items-center gap-1 bg-foreground/[0.06] rounded-full p-0.5">
-                <button onClick={() => theme !== "light" && toggleTheme()} className={`text-xs px-4 py-2 rounded-full transition-all ${theme === "light" ? "bg-background text-foreground shadow-sm" : "text-muted"}`}>Light</button>
-                <button onClick={() => theme !== "dark" && toggleTheme()} className={`text-xs px-4 py-2 rounded-full transition-all ${theme === "dark" ? "bg-background text-foreground shadow-sm" : "text-muted"}`}>Dark</button>
+              {/* Theme */}
+              <div className="flex items-center rounded-full p-0.5" style={{ backgroundColor: `${fg}10` }}>
+                <button onClick={() => theme !== "light" && toggleTheme()} className="text-xs px-4 py-2 rounded-full transition-all" style={{ backgroundColor: theme === "light" ? bg : "transparent", color: theme === "light" ? fg : `${fg}66` }}>Light</button>
+                <button onClick={() => theme !== "dark" && toggleTheme()} className="text-xs px-4 py-2 rounded-full transition-all" style={{ backgroundColor: theme === "dark" ? bg : "transparent", color: theme === "dark" ? fg : `${fg}66` }}>Dark</button>
               </div>
             </div>
           </motion.div>
