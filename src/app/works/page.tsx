@@ -1,46 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useLang } from "@/components/language-provider";
 import { translations } from "@/lib/translations";
 import { SiteHeader } from "@/components/site-header";
-import { asset } from "@/lib/asset";
-
-// ─── Carousel ───────────────────────────────────────────────────────────────
-
-const carouselImages = [
-  "/gallery/pj_001.png", "/gallery/pj_002.png", "/gallery/pj_003.png",
-  "/gallery/pj_004.png", "/gallery/pj_005.png", "/gallery/pj_006.png",
-  "/gallery/pj_007.png", "/gallery/pj_008.png", "/gallery/pj_009.png",
-  "/gallery/pj_010.png", "/gallery/pj_011.png", "/gallery/pj_012.png",
-  "/gallery/pj_013.png", "/gallery/pj_014.png", "/gallery/pj_015.png",
-  "/gallery/pj_016.png", "/gallery/pj_017.png", "/gallery/pj_018.png",
-  "/gallery/pj_020.png", "/gallery/pj_021.png", "/gallery/pj_023.png",
-  "/gallery/pj_026.png", "/gallery/pj_027.png", "/gallery/pj_028.png",
-];
-
-function WorksCarousel() {
-  const [current, setCurrent] = useState(0);
-  useEffect(() => {
-    const id = setInterval(() => setCurrent((c) => (c + 1) % carouselImages.length), 350);
-    return () => clearInterval(id);
-  }, []);
-  return (
-    <div className="relative w-full overflow-hidden" style={{ aspectRatio: "16/9" }}>
-      {carouselImages.map((src, i) => (
-        <div
-          key={src}
-          className="absolute inset-0 transition-opacity duration-150"
-          style={{ opacity: i === current ? 1 : 0 }}
-        >
-          <Image src={asset(src)} alt="" fill className="object-cover" sizes="100vw" priority={i === 0} />
-        </div>
-      ))}
-    </div>
-  );
-}
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -234,8 +198,6 @@ export default function Bio() {
           </div>
         </div>
       </div>
-
-      <div className="mt-16"><WorksCarousel /></div>
 
       <p className="mt-16 px-6 text-sm text-muted pb-8">{t.copyright}</p>
     </div>
