@@ -6,7 +6,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLang } from "./language-provider";
 import { useTheme } from "./theme-provider";
-import { useFont } from "./font-provider";
 import { translations } from "@/lib/translations";
 
 export function MobileMenu() {
@@ -15,7 +14,6 @@ export function MobileMenu() {
   const pathname = usePathname();
   const { lang, toggle: toggleLang } = useLang();
   const { theme, toggle: toggleTheme } = useTheme();
-  const { font, toggle: toggleFont } = useFont();
   const t = translations[lang];
   const scrollY = useRef(0);
 
@@ -121,12 +119,6 @@ export function MobileMenu() {
               {l.toUpperCase()}
             </button>
           ))}
-        </div>
-
-        {/* Font */}
-        <div style={{ display: "flex", borderRadius: 999, padding: 2, backgroundColor: pill }}>
-          <button onClick={() => font !== "sans" && toggleFont()} style={{ padding: "6px 16px", borderRadius: 999, border: "none", cursor: "pointer", fontSize: 12, backgroundColor: font === "sans" ? bg : "transparent", color: font === "sans" ? fg : `${fg}66`, fontWeight: font === "sans" ? 500 : 400 }}>Sans</button>
-          <button onClick={() => font !== "serif" && toggleFont()} style={{ padding: "6px 16px", borderRadius: 999, border: "none", cursor: "pointer", fontSize: 12, fontFamily: "var(--font-lora), Georgia, serif", backgroundColor: font === "serif" ? bg : "transparent", color: font === "serif" ? fg : `${fg}66`, fontWeight: font === "serif" ? 500 : 400 }}>Serif</button>
         </div>
 
         {/* Theme */}

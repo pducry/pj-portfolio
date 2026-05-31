@@ -25,18 +25,6 @@
   --font-sans: var(--font-instrument-sans);
 }
 
-/* Serif mode — Lora applied globally, inheriting all existing size tokens */
-html.font-serif-mode body,
-html.font-serif-mode p,
-html.font-serif-mode span,
-html.font-serif-mode a,
-html.font-serif-mode button,
-html.font-serif-mode h1,
-html.font-serif-mode h2,
-html.font-serif-mode h3,
-html.font-serif-mode li {
-  font-family: var(--font-lora), Georgia, serif;
-}
 
 html {
   font-size: 15px;
