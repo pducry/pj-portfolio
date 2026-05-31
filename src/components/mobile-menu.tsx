@@ -143,11 +143,11 @@ export function MobileMenu() {
 
   return (
     <>
-      {/* Hamburger */}
+      {/* Hamburger — lg:hidden keeps it mobile-only; no display in inline style to avoid override */}
       <button
         onClick={() => setOpen((v) => !v)}
-        className="lg:hidden"
-        style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", width: 44, height: 44, gap: 6, background: "none", border: "none", cursor: "pointer" }}
+        className="lg:hidden flex flex-col justify-center items-center"
+        style={{ width: 44, height: 44, gap: 6, background: "none", border: "none", cursor: "pointer" }}
         aria-label={open ? "Fechar menu" : "Abrir menu"}
         aria-expanded={open}
       >
