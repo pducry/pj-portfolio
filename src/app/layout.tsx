@@ -21,6 +21,12 @@ export const metadata: Metadata = {
     "Brazilian/Swiss designer and creative director with 18+ years of experience in digital products and branding.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
