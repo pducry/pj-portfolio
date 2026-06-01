@@ -11,7 +11,9 @@ const images = [
   { src: "/sute/6.jpg",  alt: "Sute — 6"  },
   { src: "/sute/7.png",  alt: "Sute — 7"  },
   { src: "/sute/8.png",  alt: "Sute — 8"  },
-  { src: "/sute/10.png", alt: "Sute — 10" },
+  { src: "/sute/10.png",      alt: "Sute — 10"  },
+  { src: "/sute/sute_001.png", alt: "Sute — 001" },
+  { src: "/sute/sute_002.png", alt: "Sute — 002" },
 ];
 
 export default function SutePage() {
