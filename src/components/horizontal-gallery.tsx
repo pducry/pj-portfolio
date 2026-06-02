@@ -80,6 +80,8 @@ const images = [
   { src: "/gallery/pj_065.png", alt: "Project" },
   { src: "/gallery/pj_067.png", alt: "Project" },
   { src: "/gallery/pj_068.png", alt: "Project" },
+  { src: "/gallery/Play3.png", alt: "Project" },
+  { src: "/gallery/Play4.png", alt: "Project" },
 ];
 
 function shuffle<T>(arr: T[]): T[] {
