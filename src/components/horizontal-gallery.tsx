@@ -46,7 +46,6 @@ const images = [
   { src: "/gallery/pj_029.png", alt: "Project" },
   { src: "/gallery/pj_030.png", alt: "Project" },
   { src: "/gallery/pj_031.png", alt: "Project" },
-  { src: "/gallery/pj_032.png", alt: "Project" },
   { src: "/gallery/pj_033.png", alt: "Project" },
   { src: "/gallery/pj_034.png", alt: "Project" },
   { src: "/gallery/pj_035.png", alt: "Project" },
