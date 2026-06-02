@@ -1,0 +1,19 @@
+src/lib/projects.ts
+  s_b4c10ef52d3ce2::t_c6911c1bcf94ff 18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "dd99ea4c5661cb280667b277cc23eb7f25c52a84",
+  "prompts": {},
+  "sessions": {
+    "s_b4c10ef52d3ce2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "747f34ab-30ef-46c9-aa43-00f137d16d90",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Pedro Julien <pducry@gmail.com>"
+    }
+  }
+}
