@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useLang } from "@/components/language-provider";
 import { translations } from "@/lib/translations";
 import { SiteHeader } from "@/components/site-header";
+import { Reveal } from "@/components/reveal";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -81,7 +82,11 @@ function ProjectRow({ project }: { project: Project }) {
     </div>
   );
 
-  return linked ? <Link href={project.href!}>{inner}</Link> : <div>{inner}</div>;
+  return (
+    <Reveal>
+      {linked ? <Link href={project.href!}>{inner}</Link> : <div>{inner}</div>}
+    </Reveal>
+  );
 }
 
 // ─── Page ────────────────────────────────────────────────────────────────────
@@ -123,62 +128,67 @@ export default function Bio() {
 
       {/* Works */}
       <div id="projects" className="border-t border-border">
-        <div className="px-6 py-3 border-b border-border">
-          <span className="text-sm text-foreground/30">Works</span>
-        </div>
+        <Reveal>
+          <div className="px-6 py-3 border-b border-border">
+            <span className="text-sm text-foreground/30">Works</span>
+          </div>
+        </Reveal>
         {projects.map((p) => <ProjectRow key={p.name} project={p} />)}
       </div>
 
       {/* Experience */}
       <div id="experience" className="mt-16 lg:mt-20">
-        <ModuleHeader label={t.experience.past} />
+        <Reveal>
+          <ModuleHeader label={t.experience.past} />
+        </Reveal>
         {experience.map((entry) => (
-          <div
-            key={entry.company}
-            className="grid items-baseline gap-x-6 border-b border-border px-6 py-6 grid-cols-[80px_1fr] lg:grid-cols-[120px_180px_1fr]"
-          >
-            <span className="text-sm text-muted tabular-nums whitespace-nowrap">{entry.years}</span>
-            <span className="hidden lg:block text-sm text-muted whitespace-nowrap">{t.roles[entry.role as keyof typeof t.roles]}</span>
-            <div>
-              <p className="text-base text-foreground">{entry.company}</p>
-              <p className="text-xs text-muted mt-0.5 lg:hidden">{t.roles[entry.role as keyof typeof t.roles]}</p>
+          <Reveal key={entry.company}>
+            <div className="grid items-baseline gap-x-6 border-b border-border px-6 py-6 grid-cols-[80px_1fr] lg:grid-cols-[120px_180px_1fr]">
+              <span className="text-sm text-muted tabular-nums whitespace-nowrap">{entry.years}</span>
+              <span className="hidden lg:block text-sm text-muted whitespace-nowrap">{t.roles[entry.role as keyof typeof t.roles]}</span>
+              <div>
+                <p className="text-base text-foreground">{entry.company}</p>
+                <p className="text-xs text-muted mt-0.5 lg:hidden">{t.roles[entry.role as keyof typeof t.roles]}</p>
+              </div>
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
 
       {/* Footer */}
       <div className="mt-16 lg:mt-20">
         {/* Desktop header */}
-        <div className="hidden lg:grid grid-cols-3 gap-24 px-6 py-3 border-t border-b border-border">
-          <span className="text-sm text-foreground/30">{t.footer.skills}</span>
-          <span className="text-sm text-foreground/30">{t.footer.clients}</span>
-          <span className="text-sm text-foreground/30">{t.footer.contact}</span>
-        </div>
+        <Reveal>
+          <div className="hidden lg:grid grid-cols-3 gap-24 px-6 py-3 border-t border-b border-border">
+            <span className="text-sm text-foreground/30">{t.footer.skills}</span>
+            <span className="text-sm text-foreground/30">{t.footer.clients}</span>
+            <span className="text-sm text-foreground/30">{t.footer.contact}</span>
+          </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 gap-0 lg:grid-cols-3 lg:gap-24 lg:mt-3 lg:px-6">
           {/* Skills */}
-          <div>
+          <Reveal>
             <div className="lg:hidden px-6 py-3 border-t border-b border-border">
               <span className="text-sm text-foreground/30">{t.footer.skills}</span>
             </div>
             <div className="px-6 lg:px-0 py-6 lg:py-0 space-y-3 lg:space-y-4">
               {t.skills.map((s) => <p key={s} className="text-base text-foreground/60">{s}</p>)}
             </div>
-          </div>
+          </Reveal>
 
           {/* Clients */}
-          <div>
+          <Reveal delay={0.08}>
             <div className="lg:hidden px-6 py-3 border-t border-b border-border">
               <span className="text-sm text-foreground/30">{t.footer.clients}</span>
             </div>
             <div className="px-6 lg:px-0 py-6 lg:py-0 space-y-3 lg:space-y-4">
               {clients.map((c) => <p key={c} className="text-base text-foreground/60">{c}</p>)}
             </div>
-          </div>
+          </Reveal>
 
           {/* Contact */}
-          <div>
+          <Reveal delay={0.16}>
             <div className="lg:hidden px-6 py-3 border-t border-b border-border">
               <span className="text-sm text-foreground/30">{t.footer.contact}</span>
             </div>
@@ -195,11 +205,13 @@ export default function Bio() {
                 </a>
               ))}
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
 
-      <p className="mt-16 px-6 text-sm text-muted pb-8">{t.copyright}</p>
+      <Reveal>
+        <p className="mt-16 px-6 text-sm text-muted pb-8">{t.copyright}</p>
+      </Reveal>
     </div>
   );
 }
