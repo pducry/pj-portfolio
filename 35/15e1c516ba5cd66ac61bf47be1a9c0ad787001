@@ -1,0 +1,19 @@
+src/app/foracle/page.tsx
+  s_05ac5c9aba7bea::t_80b27305f60858 11-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "3515e1c516ba5cd66ac61bf47be1a9c0ad787001",
+  "prompts": {},
+  "sessions": {
+    "s_05ac5c9aba7bea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0e83d8f6-455e-4ab7-b598-d56863efa08e",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "Pedro Julien <pducry@gmail.com>"
+    }
+  }
+}
