@@ -8,19 +8,14 @@ import { asset } from "@/lib/asset";
 const sections: { columns: number; images: string[] }[] = [
   {
     columns: 1,
-    images: ["/projects/foracle/Foracle00.png"],
-  },
-  {
-    columns: 2,
-    images: ["/projects/foracle/Foracle01.png", "/projects/foracle/Foracle02.png"],
-  },
-  {
-    columns: 1,
-    images: ["/projects/foracle/Foracle03.png"],
-  },
-  {
-    columns: 2,
-    images: ["/projects/foracle/Foracle05.png", "/projects/foracle/Foracle06.png"],
+    images: [
+      "/projects/foracle/Foracle00.png",
+      "/projects/foracle/Foracle01.png",
+      "/projects/foracle/Foracle02.png",
+      "/projects/foracle/Foracle03.png",
+      "/projects/foracle/Foracle05.png",
+      "/projects/foracle/Foracle06.png",
+    ],
   },
 ];
 
