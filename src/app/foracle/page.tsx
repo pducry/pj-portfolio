@@ -1,7 +1,6 @@
 "use client";
 
 import { SiteHeader } from "@/components/site-header";
-import Image from "next/image";
 import Link from "next/link";
 import { asset } from "@/lib/asset";
 
@@ -9,31 +8,19 @@ import { asset } from "@/lib/asset";
 const sections: { columns: number; images: string[] }[] = [
   {
     columns: 1,
-    images: ["/gallery/pj_001.png", "/gallery/pj_002.png"],
+    images: ["/projects/foracle/Foracle00.png"],
   },
   {
     columns: 2,
-    images: ["/gallery/pj_003.png", "/gallery/pj_004.png", "/gallery/pj_005.png", "/gallery/pj_006.png"],
-  },
-  {
-    columns: 3,
-    images: ["/gallery/pj_007.png", "/gallery/pj_008.png", "/gallery/pj_009.png", "/gallery/pj_010.png", "/gallery/pj_011.png", "/gallery/pj_012.png"],
+    images: ["/projects/foracle/Foracle01.png", "/projects/foracle/Foracle02.png"],
   },
   {
     columns: 1,
-    images: ["/gallery/pj_013.png"],
+    images: ["/projects/foracle/Foracle03.png"],
   },
   {
     columns: 2,
-    images: ["/gallery/pj_014.png", "/gallery/pj_015.png"],
-  },
-  {
-    columns: 3,
-    images: ["/gallery/pj_016.png", "/gallery/pj_017.png", "/gallery/pj_018.png"],
-  },
-  {
-    columns: 1,
-    images: ["/gallery/pj_019.png", "/gallery/pj_020.png"],
+    images: ["/projects/foracle/Foracle05.png", "/projects/foracle/Foracle06.png"],
   },
 ];
 
