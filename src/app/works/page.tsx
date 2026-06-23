@@ -10,6 +10,7 @@ import { Reveal } from "@/components/reveal";
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 import { projects, type Project } from "@/lib/projects";
+import { GitHubActivity } from "@/components/github-activity";
 
 type Entry = { company: string; role: string; years: string };
 
@@ -154,6 +155,9 @@ export default function Bio() {
           </Reveal>
         ))}
       </div>
+
+      {/* GitHub Activity */}
+      <GitHubActivity />
 
       {/* Footer */}
       <div className="mt-16 lg:mt-20">
