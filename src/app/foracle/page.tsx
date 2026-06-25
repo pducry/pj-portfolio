@@ -4,6 +4,10 @@ import { SiteHeader } from "@/components/site-header";
 import Link from "next/link";
 import { asset } from "@/lib/asset";
 
+const links = [
+  { label: "Live project", href: "https://www.goforacle.com/", external: true },
+];
+
 // Each section defines how many columns and which images
 const sections: { columns: number; images: string[] }[] = [
   {
@@ -24,47 +28,50 @@ export default function ForaclePage() {
     <div className="animate-fade-in">
       <SiteHeader />
 
-      {/* ── Intro ── */}
-      <div className="px-6">
-
-        {/* Back link */}
-        <div className="pt-1 pb-4">
-          <Link
-            href="/works"
-            className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-foreground transition-colors"
-          >
-            ← Works
-          </Link>
-        </div>
-
-        {/* Title + meta — same line */}
-        <div className="border-t border-border py-4 flex flex-wrap items-baseline gap-x-10 gap-y-1">
-          <span className="text-base text-foreground whitespace-nowrap">Foracle</span>
-          <span className="text-sm text-muted whitespace-nowrap">Digital Product</span>
-          <span className="text-sm text-muted whitespace-nowrap">2025</span>
-          <span className="text-sm text-muted whitespace-nowrap">Design Director</span>
-          <a
-            href="https://www.goforacle.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-muted hover:text-foreground transition-colors whitespace-nowrap ml-auto"
-          >
-            goforacle.com →
-          </a>
-        </div>
-
-        {/* Description row */}
-        <div className="border-t border-border py-6 border-b border-border">
-          <p className="text-base leading-snug text-foreground/70 max-w-xl">
-            Foracle is a free font recommendation platform built on human and AI curation. Designed
-            to give back to the design community — type designers, typographers, and font enthusiasts
-            — by surfacing and amplifying the best free typefaces from around the world.
-          </p>
-        </div>
-
+      {/* Back */}
+      <div className="px-6 pt-1 pb-4">
+        <Link
+          href="/works"
+          className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-foreground transition-colors"
+        >
+          ← Works
+        </Link>
       </div>
 
-      {/* ── Image sections ── */}
+      {/* Title + meta */}
+      <div className="px-6 border-t border-border py-4 flex flex-wrap items-baseline gap-x-10 gap-y-1">
+        <span className="text-base text-foreground whitespace-nowrap">Foracle</span>
+        <span className="text-sm text-muted whitespace-nowrap">Digital Product</span>
+        <span className="text-sm text-muted whitespace-nowrap">2025</span>
+        <span className="text-sm text-muted whitespace-nowrap">Design Director</span>
+      </div>
+
+      {/* Description */}
+      <div className="px-6 border-t border-b border-border py-6">
+        <p className="text-base leading-snug text-foreground/70 max-w-xl">
+          Foracle is a free font recommendation platform built on human and AI curation. Designed
+          to give back to the design community — type designers, typographers, and font enthusiasts
+          — by surfacing and amplifying the best free typefaces from around the world.
+        </p>
+      </div>
+
+      {/* Links */}
+      <div className="border-b border-border">
+        {links.map(({ label, href }) => (
+          <a
+            key={label}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center justify-between px-6 py-5 border-b border-border last:border-b-0 transition-colors hover:bg-foreground hover:text-background"
+          >
+            <span className="text-sm text-foreground group-hover:text-background transition-colors">{label}</span>
+            <span className="text-sm text-muted group-hover:text-background transition-colors">↗</span>
+          </a>
+        ))}
+      </div>
+
+      {/* Image sections */}
       <div className="px-6 pt-3 pb-16 space-y-3">
         {sections.map((section, si) => (
           <div
