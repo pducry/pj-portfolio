@@ -1,0 +1,19 @@
+src/app/foracle/page.tsx
+  s_2f454a1b804559::t_afb9f5126fad6b 7-10,31-39,41-47,49-60,62-63,66,68-69,71,74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "4a779d3c77dbe0495765999c68191a9ef559b248",
+  "prompts": {},
+  "sessions": {
+    "s_2f454a1b804559": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c8c1fd65-2d35-4dc3-87e5-bf64ab200380",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Pedro Julien <pducry@gmail.com>"
+    }
+  }
+}
