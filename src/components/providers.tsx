@@ -9,8 +9,8 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider>
       <LanguageProvider>
+        <CustomCursor />
         <PasswordGate>
-          <CustomCursor />
           {children}
         </PasswordGate>
       </LanguageProvider>
