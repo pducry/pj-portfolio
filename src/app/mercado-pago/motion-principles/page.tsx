@@ -10,60 +10,102 @@ const principles = [
   {
     id: "immediacy",
     label: "Immediacy",
+    tagline: "For functional experiences.",
     description:
-      "The shortest path between intent and action. Motion that gets out of the way and lets the product breathe.",
-    video: "/videos/mp/01_TransicionPantalla-Inmediatez.mp4",
-    sharedVideo: "/videos/mp/01_TransicionPantalla-SharedElement-Inmediatez.mp4",
+      "Adds clarity and efficiency to the task — acting as a silent guide with immediate feedback. Motion gets out of the way and lets the product breathe.",
+    examples: [
+      {
+        label: "Screen Transition",
+        sublabel: "Direct. No ceremony.",
+        file: "/videos/mp/01_TransicionPantalla-Inmediatez.mp4",
+      },
+      {
+        label: "Shared Element",
+        sublabel: "Object continuity across screens.",
+        file: "/videos/mp/01_TransicionPantalla-SharedElement-Inmediatez.mp4",
+      },
+      {
+        label: "In-App — Home & Transfers",
+        sublabel: "Principle applied at product scale.",
+        file: "/videos/mp/02_Home-Transferencias-Flow-MLA_1.mp4",
+      },
+    ],
   },
   {
     id: "focus",
     label: "Focus",
+    tagline: "For balanced experiences.",
     description:
-      "Motion as a guide. When something matters, animation makes sure the eye knows where to go.",
-    video: "/videos/mp/02_TransicionPantalla-Foco.mp4",
-    sharedVideo: "/videos/mp/02_TransicionPantalla-SharedElement-Foco.mp4",
+      "Organizes motion around the protagonist element to create hierarchy and guide attention. When something matters, animation makes sure the eye knows where to go.",
+    examples: [
+      {
+        label: "Screen Transition",
+        sublabel: "Intentional. Attention-led.",
+        file: "/videos/mp/02_TransicionPantalla-Foco.mp4",
+      },
+      {
+        label: "Shared Element",
+        sublabel: "The focal object leads the transition.",
+        file: "/videos/mp/02_TransicionPantalla-SharedElement-Foco.mp4",
+      },
+      {
+        label: "Micro-interaction",
+        sublabel: "Component-level response to user action.",
+        file: "/videos/mp/02_Microinteraccion-Foco-2.mp4",
+      },
+      {
+        label: "In-App — Cards",
+        sublabel: "Principle applied at product scale.",
+        file: "/videos/mp/05_Tarjetas-SolicitudFisica-Flow-MLA.mp4",
+      },
+    ],
   },
   {
     id: "immersion",
     label: "Immersion",
+    tagline: "For expressive experiences.",
     description:
-      "Deep transitions that build a sense of place. The product feels like somewhere, not just something.",
-    video: "/videos/mp/03_TransicionPantalla-Inmersion.mp4",
-    sharedVideo: "/videos/mp/03_TransicionPantalla-SharedElement-Inmersion.mp4",
+      "Becomes the story — using cinematic resources to generate presence and depth. Transitions that build a sense of place.",
+    examples: [
+      {
+        label: "Screen Transition",
+        sublabel: "Deep. Builds a sense of place.",
+        file: "/videos/mp/03_TransicionPantalla-Inmersion.mp4",
+      },
+      {
+        label: "Shared Element",
+        sublabel: "Continuity as a storytelling device.",
+        file: "/videos/mp/03_TransicionPantalla-SharedElement-Inmersion.mp4",
+      },
+      {
+        label: "Expressive",
+        sublabel: "Motion as character.",
+        file: "/videos/mp/expresivo2.mp4",
+      },
+      {
+        label: "In-App — Payments",
+        sublabel: "Principle applied at product scale.",
+        file: "/videos/mp/08-Pagos-Flow-MLA.mp4",
+      },
+    ],
   },
 ];
 
-const microVideos = [
-  { label: "Focus", file: "/videos/mp/02_Microinteraccion-Foco-2.mp4" },
-  { label: "Expressive", file: "/videos/mp/expresivo2.mp4" },
-];
-
-const flowVideos = [
-  { label: "Home & Transfers", file: "/videos/mp/02_Home-Transferencias-Flow-MLA_1.mp4" },
-  { label: "Cards", file: "/videos/mp/05_Tarjetas-SolicitudFisica-Flow-MLA.mp4" },
-  { label: "Payments", file: "/videos/mp/08-Pagos-Flow-MLA.mp4" },
-];
-
-function VideoClip({ src, label }: { src: string; label?: string }) {
+function VideoClip({ file, label, sublabel }: { file: string; label: string; sublabel: string }) {
   return (
     <div className="space-y-3">
       <video
-        src={asset(src)}
+        src={asset(file)}
         autoPlay
         muted
         loop
         playsInline
         className="w-full h-auto bg-foreground/5"
       />
-      {label && <p className="text-xs text-muted">{label}</p>}
-    </div>
-  );
-}
-
-function SectionDivider({ label }: { label: string }) {
-  return (
-    <div className="px-6 py-3 border-t border-b border-border">
-      <span className="text-sm text-foreground/30">{label}</span>
+      <div className="space-y-0.5">
+        <p className="text-sm text-foreground">{label}</p>
+        <p className="text-xs text-muted">{sublabel}</p>
+      </div>
     </div>
   );
 }
@@ -101,75 +143,38 @@ function MotionPrinciplesContent() {
           </p>
           <p className="text-base leading-snug text-foreground/70">
             Three principles. Each one a different relationship between the product and the person
-            using it.
+            using it. The typology is chosen by the intention of the screen, not by style or
+            technique.
           </p>
         </div>
       </div>
 
-      {/* Screen Transitions — 3 principles */}
-      <Reveal>
-        <div className="mt-16">
-          <SectionDivider label="Screen Transitions" />
-          <div className="px-6 pt-8 pb-12 grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-6">
-            {principles.map((p) => (
-              <div key={p.id} className="space-y-5">
-                <VideoClip src={p.video} />
-                <div className="space-y-1.5">
-                  <p className="text-sm text-foreground">{p.label}</p>
-                  <p className="text-sm text-muted leading-snug">{p.description}</p>
+      {/* Principles */}
+      {principles.map((principle) => (
+        <Reveal key={principle.id}>
+          <div className="mt-16">
+            {/* Principle header */}
+            <div className="px-6 py-5 border-t border-b border-border">
+              <div className="max-w-xl space-y-1">
+                <div className="flex items-baseline gap-4">
+                  <h2 className="text-base text-foreground">{principle.label}</h2>
+                  <span className="text-sm text-muted">{principle.tagline}</span>
                 </div>
+                <p className="text-sm text-muted leading-snug">{principle.description}</p>
               </div>
-            ))}
-          </div>
-        </div>
-      </Reveal>
+            </div>
 
-      {/* Shared Element Transitions */}
-      <Reveal>
-        <div>
-          <SectionDivider label="Shared Element" />
-          <div className="px-6 pt-8 pb-12 grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-6">
-            {principles.map((p) => (
-              <div key={p.id} className="space-y-5">
-                <VideoClip src={p.sharedVideo} />
-                <p className="text-sm text-foreground">{p.label}</p>
-              </div>
-            ))}
+            {/* Videos grid */}
+            <div className={`px-6 pt-8 pb-12 grid grid-cols-1 gap-10 lg:gap-6 ${principle.examples.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
+              {principle.examples.map((ex) => (
+                <VideoClip key={ex.label} file={ex.file} label={ex.label} sublabel={ex.sublabel} />
+              ))}
+            </div>
           </div>
-        </div>
-      </Reveal>
+        </Reveal>
+      ))}
 
-      {/* Micro-interactions & Expressive */}
-      <Reveal>
-        <div>
-          <SectionDivider label="Micro-interactions" />
-          <div className="px-6 pt-8 pb-12 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-6 max-w-2xl">
-            {microVideos.map((v) => (
-              <div key={v.label} className="space-y-5">
-                <VideoClip src={v.file} />
-                <p className="text-sm text-foreground">{v.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Reveal>
-
-      {/* App Flows */}
-      <Reveal>
-        <div>
-          <SectionDivider label="In-App" />
-          <div className="px-6 pt-8 pb-16 grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-6">
-            {flowVideos.map((v) => (
-              <div key={v.label} className="space-y-5">
-                <VideoClip src={v.file} />
-                <p className="text-sm text-foreground">{v.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Reveal>
-
-      <p className="px-6 pb-8 text-sm text-muted">© Pedro Julien 2026</p>
+      <p className="mt-8 px-6 pb-8 text-sm text-muted">© Pedro Julien 2026</p>
     </div>
   );
 }
