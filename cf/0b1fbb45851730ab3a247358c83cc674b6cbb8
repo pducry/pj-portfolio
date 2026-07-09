@@ -1,0 +1,30 @@
+src/lib/translations.ts
+  s_e4ed636df29c73::t_0feb89c1daabd0 53
+  s_e4ed636df29c73::t_c0556d0fa0a348 8
+src/components/password-gate.tsx
+  s_e4ed636df29c73::t_2e0a0b249d51d4 5-13
+  s_e4ed636df29c73::t_92e69153651d8d 21,24,31-32
+src/app/mercado-pago/motion-principles/page.tsx
+  s_e4ed636df29c73::t_733947ea6475a3 1-12,15-20,23-28,31-36,38-42,44-46,48,50-55,57,67-93,95-97,101-102,105-108,110-111,114,118,120-129,132,136-144,147,151-159,162,166-183
+  s_e4ed636df29c73::t_5ae71eb7400167 13-14,21-22,29-30,37,43,47,49,56,58-66,94,98-100,103-104,109,112-113,115-117,119,130-131,133-135,145-146,148-150,160-161,163-165
+src/lib/projects.ts
+  s_e4ed636df29c73::t_117dfdfe97e9e1 10
+src/app/mercado-pago/page.tsx
+  s_e4ed636df29c73::t_23120b56f1e67c 1-109
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "cf0b1fbb45851730ab3a247358c83cc674b6cbb8",
+  "prompts": {},
+  "sessions": {
+    "s_e4ed636df29c73": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "68c5fceb-0b65-4a95-b458-e5ff04ad7e91",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Pedro Julien <pducry@gmail.com>"
+    }
+  }
+}
