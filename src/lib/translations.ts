@@ -5,7 +5,7 @@ export const translations = {
     nav: { bio: "Works", playground: "Playground", contact: "Contact" },
     bio: {
       label: "Bio",
-      p1: "Designer with 20+ years shaping product design and branding experiences — from early ideation and visual craft to shipped products and solutions, leading by doing, and using AI as a creative force.",
+      p1: "Designer with 20+ years shaping product design and branding experiences. From early ideation and visual craft to shipped products and solutions, using AI as a creative force. Hands-on by nature, I lead by doing, staying close to the craft across strategy, design, and build.",
       p4a: "Founder of",
       p4b: ".",
       cta: "Get in touch",
@@ -50,7 +50,7 @@ export const translations = {
     nav: { bio: "Works", playground: "Playground", contact: "Contato" },
     bio: {
       label: "Bio",
-      p1: "Designer com mais de 20 anos moldando produtos digitais e experiências de branding — da ideação inicial ao craft visual refinado até produtos e soluções entregues, liderando fazendo e usando IA como força criativa.",
+      p1: "Designer com mais de 20 anos moldando produtos digitais e experiências de branding. Da ideação inicial ao craft visual refinado até produtos e soluções entregues, usando IA como força criativa. Hands-on por natureza, lidero fazendo, mantendo proximidade com o craft em estratégia, design e execução.",
       p4a: "Fundador da",
       p4b: ".",
       cta: "Entre em contato",

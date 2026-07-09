@@ -2,10 +2,15 @@
 
 import { useState, useEffect } from "react";
 
-const PASS = "pjpj";
-const STORAGE_KEY = "pj-auth";
-
-export function PasswordGate({ children }: { children: React.ReactNode }) {
+export function PasswordGate({
+  children,
+  password = "pjpj",
+  storageKey = "pj-auth",
+}: {
+  children: React.ReactNode;
+  password?: string;
+  storageKey?: string;
+}) {
   const [authed, setAuthed] = useState(false);
   const [input, setInput] = useState("");
   const [error, setError] = useState(false);
@@ -13,18 +18,18 @@ export function PasswordGate({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     setMounted(true);
-    if (sessionStorage.getItem(STORAGE_KEY) === "true") {
+    if (sessionStorage.getItem(storageKey) === "true") {
       setAuthed(true);
     }
-  }, []);
+  }, [storageKey]);
 
   if (!mounted) return null;
   if (authed) return <>{children}</>;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (input === PASS) {
-      sessionStorage.setItem(STORAGE_KEY, "true");
+    if (input === password) {
+      sessionStorage.setItem(storageKey, "true");
       setAuthed(true);
     } else {
       setError(true);

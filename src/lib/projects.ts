@@ -7,7 +7,7 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  { category: "Product Design", year: "2026", name: "Mercado Pago",              role: "Design Manager"  },
+  { category: "Product Design", year: "2026", name: "Mercado Pago",              role: "Design Manager",  href: "/mercado-pago" },
   { category: "Product Design", year: "2026", name: "Foracle",                   role: "Designer",        href: "/foracle"   },
   { category: "Product Design", year: "2024", name: "Caju",                      role: "Head of Design"  },
   { category: "Product Design", year: "2024", name: "Mude",                      role: "Head of Design"  },
