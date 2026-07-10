@@ -10,23 +10,28 @@ const principles = [
   {
     id: "immediacy",
     label: "Immediacy",
-    tagline: "For functional experiences.",
+    tagline: "Functional experiences.",
     description:
-      "Adds clarity and efficiency to the task — acting as a silent guide with immediate feedback. Motion gets out of the way and lets the product breathe.",
+      "Adds clarity and efficiency to the task, acting as a silent guide with immediate feedback. Motion gets out of the way and lets the product breathe.",
+    duration: "150–500ms",
+    rule: "In a fintech experience, it should always feel fast and efficient.",
     examples: [
       {
         label: "Screen Transition",
-        sublabel: "Direct. No ceremony.",
+        context: "Payments hub — the transition feels agile and reacts in real time.",
+        duration: "300ms",
         file: "/videos/mp/01_TransicionPantalla-Inmediatez.mp4",
       },
       {
         label: "Shared Element",
-        sublabel: "Object continuity across screens.",
+        context: "Payment list detail — the avatar travels seamlessly between screens.",
+        duration: "350ms",
         file: "/videos/mp/01_TransicionPantalla-SharedElement-Inmediatez.mp4",
       },
       {
-        label: "In-App — Home & Transfers",
-        sublabel: "Principle applied at product scale.",
+        label: "In-App Flow",
+        context: "Quick transfer — agile action with immediate confirmation.",
+        duration: "Full flow",
         file: "/videos/mp/02_Home-Transferencias-Flow-MLA_1.mp4",
       },
     ],
@@ -34,28 +39,34 @@ const principles = [
   {
     id: "focus",
     label: "Focus",
-    tagline: "For balanced experiences.",
+    tagline: "Balanced experiences.",
     description:
-      "Organizes motion around the protagonist element to create hierarchy and guide attention. When something matters, animation makes sure the eye knows where to go.",
+      "Organizes motion around the protagonist element to create hierarchy and guide attention. When something matters, the animation makes sure the eye knows where to go.",
+    duration: "500–3000ms",
+    rule: "The shared element is reserved for transitions where it reinforces a real relationship between screens.",
     examples: [
       {
         label: "Screen Transition",
-        sublabel: "Intentional. Attention-led.",
+        context: "Cards — carousel with 180° card rotation.",
+        duration: "950ms",
         file: "/videos/mp/02_TransicionPantalla-Foco.mp4",
       },
       {
         label: "Shared Element",
-        sublabel: "The focal object leads the transition.",
+        context: "Banking tab — the piggy bank guides the transition between screens.",
+        duration: "700ms",
         file: "/videos/mp/02_TransicionPantalla-SharedElement-Foco.mp4",
       },
       {
         label: "Micro-interaction",
-        sublabel: "Component-level response to user action.",
+        context: "Activity detail — expansion with chevron feedback.",
+        duration: "350ms",
         file: "/videos/mp/02_Microinteraccion-Foco-2.mp4",
       },
       {
-        label: "In-App — Cards",
-        sublabel: "Principle applied at product scale.",
+        label: "In-App Flow",
+        context: "Card request — immersive full-screen experience up to final confirmation.",
+        duration: "Full flow",
         file: "/videos/mp/05_Tarjetas-SolicitudFisica-Flow-MLA.mp4",
       },
     ],
@@ -63,35 +74,66 @@ const principles = [
   {
     id: "immersion",
     label: "Immersion",
-    tagline: "For expressive experiences.",
+    tagline: "Expressive experiences.",
     description:
-      "Becomes the story — using cinematic resources to generate presence and depth. Transitions that build a sense of place.",
+      "Becomes the story — using cinematic resources to generate presence and depth. For high-value emotional moments: onboarding, celebrations, premium product reveals.",
+    duration: "1000–5000ms",
+    rule: "Expressive illustration can take center stage and fill the entire screen in celebrations, special states, or high emotional-value moments.",
     examples: [
       {
         label: "Screen Transition",
-        sublabel: "Deep. Builds a sense of place.",
+        context: "Scoring — the transition highlights and celebrates the user's milestone.",
+        duration: "2500ms",
         file: "/videos/mp/03_TransicionPantalla-Inmersion.mp4",
       },
       {
         label: "Shared Element",
-        sublabel: "Continuity as a storytelling device.",
+        context: "Credit card onboarding — the card expands creating an atmosphere of prestige.",
+        duration: "3000ms",
         file: "/videos/mp/03_TransicionPantalla-SharedElement-Inmersion.mp4",
       },
       {
         label: "Expressive",
-        sublabel: "Motion as character.",
+        context: "Card request — slow rotation with cinematic lighting and reflections.",
+        duration: "5000ms",
         file: "/videos/mp/expresivo2.mp4",
       },
       {
-        label: "In-App — Payments",
-        sublabel: "Principle applied at product scale.",
+        label: "In-App Flow",
+        context: "Bill payment — accompanying the user through to final confirmation.",
+        duration: "Full flow",
         file: "/videos/mp/08-Pagos-Flow-MLA.mp4",
       },
     ],
   },
 ];
 
-function VideoClip({ file, label, sublabel }: { file: string; label: string; sublabel: string }) {
+const foundations = [
+  {
+    label: "Gestures",
+    body: "Motion responds to user gestures — confirming punctual actions and accompanying continuous interactions. Tap, long press, swipe, scroll: each gesture type has its own motion response.",
+  },
+  {
+    label: "Stagger",
+    body: "Components move in sequence to create rhythm, hierarchy, and focus. Stagger adds small delays between elements — 50ms steps for simple components, 2–3 steps for complex experiences.",
+  },
+  {
+    label: "Skeleton",
+    body: "Skeletons maintain structure and hierarchy during content loading. They appear only for dynamic content; static content loads directly on screen.",
+  },
+];
+
+function VideoClip({
+  file,
+  label,
+  context,
+  duration,
+}: {
+  file: string;
+  label: string;
+  context: string;
+  duration: string;
+}) {
   return (
     <div className="space-y-3">
       <video
@@ -102,9 +144,12 @@ function VideoClip({ file, label, sublabel }: { file: string; label: string; sub
         playsInline
         className="w-full h-auto bg-foreground/5"
       />
-      <div className="space-y-0.5">
-        <p className="text-sm text-foreground">{label}</p>
-        <p className="text-xs text-muted">{sublabel}</p>
+      <div className="space-y-1 border-t border-border pt-3">
+        <div className="flex items-baseline justify-between gap-2">
+          <p className="text-sm text-foreground">{label}</p>
+          <span className="text-xs text-muted tabular-nums shrink-0">{duration}</span>
+        </div>
+        <p className="text-xs text-muted leading-snug">{context}</p>
       </div>
     </div>
   );
@@ -137,37 +182,68 @@ function MotionPrinciplesContent() {
       <div className="px-6 border-t border-b border-border py-6">
         <div className="max-w-xl space-y-3">
           <p className="text-base leading-snug text-foreground/70">
-            How Mercado Pago moves. A shared language of motion built for a product that operates
-            across 11 verticals and 7 countries — so that every transition, micro-interaction, and
+            How Mercado Pago moves. A shared language of motion built for a product operating across
+            11 verticals and 7 countries — so that every transition, micro-interaction, and
             expressive moment feels like it comes from the same place.
           </p>
           <p className="text-base leading-snug text-foreground/70">
-            Three principles. Each one a different relationship between the product and the person
-            using it. The typology is chosen by the intention of the screen, not by style or
-            technique.
+            Motion should feel agile and reliable — starting with speed, ending with serenity.
+            Three typologies translate design principles into behavior. The typology is chosen by
+            the intention of the screen, not by style or technique.
           </p>
         </div>
       </div>
 
+      {/* Foundations */}
+      <Reveal>
+        <div className="mt-16">
+          <div className="px-6 py-3 border-t border-b border-border">
+            <span className="text-sm text-foreground/30">Foundations</span>
+          </div>
+          <div className="px-6 pt-6 pb-12 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 max-w-4xl">
+            {foundations.map((f) => (
+              <div key={f.label} className="space-y-1.5">
+                <p className="text-sm text-foreground">{f.label}</p>
+                <p className="text-sm text-muted leading-snug">{f.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Reveal>
+
       {/* Principles */}
       {principles.map((principle) => (
         <Reveal key={principle.id}>
-          <div className="mt-16">
+          <div className="mt-8">
             {/* Principle header */}
             <div className="px-6 py-5 border-t border-b border-border">
-              <div className="max-w-xl space-y-1">
-                <div className="flex items-baseline gap-4">
+              <div className="max-w-2xl space-y-2">
+                <div className="flex flex-wrap items-baseline gap-x-6 gap-y-1">
                   <h2 className="text-base text-foreground">{principle.label}</h2>
                   <span className="text-sm text-muted">{principle.tagline}</span>
+                  <span className="text-xs text-muted/60 tabular-nums">{principle.duration}</span>
                 </div>
                 <p className="text-sm text-muted leading-snug">{principle.description}</p>
+                <p className="text-xs text-foreground/35 leading-snug border-l border-border pl-3 mt-1">
+                  {principle.rule}
+                </p>
               </div>
             </div>
 
             {/* Videos grid */}
-            <div className={`px-6 pt-8 pb-12 grid grid-cols-1 gap-10 lg:gap-6 ${principle.examples.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
+            <div
+              className={`px-6 pt-8 pb-12 grid grid-cols-1 gap-10 lg:gap-6 ${
+                principle.examples.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"
+              }`}
+            >
               {principle.examples.map((ex) => (
-                <VideoClip key={ex.label} file={ex.file} label={ex.label} sublabel={ex.sublabel} />
+                <VideoClip
+                  key={ex.label}
+                  file={ex.file}
+                  label={ex.label}
+                  context={ex.context}
+                  duration={ex.duration}
+                />
               ))}
             </div>
           </div>
