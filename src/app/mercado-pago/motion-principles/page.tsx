@@ -14,7 +14,7 @@ const principles = [
     description:
       "Adds clarity and efficiency to the task, acting as a silent guide with immediate feedback. Motion gets out of the way and lets the product breathe.",
     duration: "150–500ms",
-    rule: "In a fintech experience, it should always feel fast and efficient.",
+    rule: "",
     examples: [
       {
         label: "Screen Transition",
@@ -218,9 +218,11 @@ function MotionPrinciplesContent() {
                   <span className="text-xs text-muted/60 tabular-nums">{principle.duration}</span>
                 </div>
                 <p className="text-sm text-muted leading-snug">{principle.description}</p>
-                <p className="text-xs text-foreground/35 leading-snug border-l border-border pl-3 mt-1">
-                  {principle.rule}
-                </p>
+                {principle.rule && (
+                  <p className="text-xs text-foreground/35 leading-snug border-l border-border pl-3 mt-1">
+                    {principle.rule}
+                  </p>
+                )}
               </div>
             </div>
 
