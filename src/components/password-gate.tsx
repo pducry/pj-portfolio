@@ -47,7 +47,6 @@ export function PasswordGate({
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Password"
-          autoFocus
           className={`w-full border-b bg-transparent pb-2 text-base lg:text-[13px] tracking-widest text-foreground outline-none transition-colors placeholder:text-muted ${
             error ? "border-red-400" : "border-border focus:border-foreground"
           }`}
