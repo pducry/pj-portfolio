@@ -93,12 +93,6 @@ const principles = [
         file: "/videos/mp/03_TransicionPantalla-SharedElement-Inmersion.mp4",
       },
       {
-        label: "Expressive",
-        context: "Card request, slow rotation with cinematic lighting and reflections.",
-        duration: "5000ms",
-        file: "/videos/mp/expresivo2.mp4",
-      },
-      {
         label: "In-App Flow",
         context: "Bill payment, accompanying the user through to final confirmation.",
         duration: "Full flow",
