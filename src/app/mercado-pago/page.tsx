@@ -49,14 +49,16 @@ function MercadoPagoContent() {
       <div className="px-6 border-t border-b border-border py-6">
         <div className="max-w-xl space-y-3">
           <p className="text-base leading-snug text-foreground/70">
-            Leading design for Mercado Pago — Latin America&apos;s largest fintech, operating across
-            11 products and 7 countries. Responsible for the design craft and strategic direction
+            Leading design for Mercado Pago — Latin America&apos;s largest fintech, with over 60 million
+            active users across 7 countries. Responsible for design craft and strategic direction
             across product design, design systems, and motion — working at the intersection of scale,
             speed, and quality.
           </p>
           <p className="text-base leading-snug text-foreground/70">
-            Hands-on by nature: prototyping, building tools with Claude Code, and staying close to
-            the craft while growing and directing the team.
+            UX as a business lever: design decisions at this scale touch millions of real financial
+            interactions daily. My role is to keep quality high and intentional — directing a team
+            of designers while staying close to the craft through prototyping, tooling, and hands-on
+            creative direction.
           </p>
         </div>
       </div>
