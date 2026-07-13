@@ -4,14 +4,14 @@ import { WorksFooter } from "@/components/works-footer";
 import { asset } from "@/lib/asset";
 
 const images = [
-  { src: "/my-phone/1.png", alt: "My Phone — 1" },
-  { src: "/my-phone/2.png", alt: "My Phone — 2" },
-  { src: "/my-phone/3.png", alt: "My Phone — 3" },
-  { src: "/my-phone/4.png", alt: "My Phone — 4" },
-  { src: "/my-phone/5.png", alt: "My Phone — 5" },
-  { src: "/my-phone/6.png", alt: "My Phone — 6" },
-  { src: "/my-phone/7.jpg", alt: "My Phone — 7" },
-  { src: "/my-phone/8.jpg", alt: "My Phone — 8" },
+  { src: "/my-phone/1.png", alt: "My Phone, 1" },
+  { src: "/my-phone/2.png", alt: "My Phone, 2" },
+  { src: "/my-phone/3.png", alt: "My Phone, 3" },
+  { src: "/my-phone/4.png", alt: "My Phone, 4" },
+  { src: "/my-phone/5.png", alt: "My Phone, 5" },
+  { src: "/my-phone/6.png", alt: "My Phone, 6" },
+  { src: "/my-phone/7.jpg", alt: "My Phone, 7" },
+  { src: "/my-phone/8.jpg", alt: "My Phone, 8" },
 ];
 
 export default function MyPhonePage() {
@@ -38,10 +38,10 @@ export default function MyPhonePage() {
       <div className="px-6 border-t border-b border-border py-6">
         <div className="max-w-xl space-y-3">
           <p className="text-base leading-snug text-foreground/70">
-            My Phone is a branding project exploring the visual identity of a personal device brand — built around the idea that technology should feel human, tactile, and distinctly yours.
+            My Phone is a branding project exploring the visual identity of a personal device brand, built around the idea that technology should feel human, tactile, and distinctly yours.
           </p>
           <p className="text-base leading-snug text-foreground/70">
-            The work covers brand identity, visual language, typography, and art direction — designed to feel bold and minimal at the same time.
+            The work covers brand identity, visual language, typography, and art direction, designed to feel bold and minimal at the same time.
           </p>
         </div>
       </div>

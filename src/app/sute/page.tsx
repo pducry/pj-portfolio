@@ -4,16 +4,16 @@ import { WorksFooter } from "@/components/works-footer";
 import { asset } from "@/lib/asset";
 
 const images = [
-  { src: "/sute/1.png",  alt: "Sute — 1"  },
-  { src: "/sute/3.png",  alt: "Sute — 3"  },
-  { src: "/sute/4.png",  alt: "Sute — 4"  },
-  { src: "/sute/5.png",  alt: "Sute — 5"  },
-  { src: "/sute/6.jpg",  alt: "Sute — 6"  },
-  { src: "/sute/7.png",  alt: "Sute — 7"  },
-  { src: "/sute/8.png",  alt: "Sute — 8"  },
-  { src: "/sute/10.png",      alt: "Sute — 10"  },
-  { src: "/sute/sute_001.png", alt: "Sute — 001" },
-  { src: "/sute/sute_002.png", alt: "Sute — 002" },
+  { src: "/sute/1.png",  alt: "Sute, 1"  },
+  { src: "/sute/3.png",  alt: "Sute, 3"  },
+  { src: "/sute/4.png",  alt: "Sute, 4"  },
+  { src: "/sute/5.png",  alt: "Sute, 5"  },
+  { src: "/sute/6.jpg",  alt: "Sute, 6"  },
+  { src: "/sute/7.png",  alt: "Sute, 7"  },
+  { src: "/sute/8.png",  alt: "Sute, 8"  },
+  { src: "/sute/10.png",      alt: "Sute, 10"  },
+  { src: "/sute/sute_001.png", alt: "Sute, 001" },
+  { src: "/sute/sute_002.png", alt: "Sute, 002" },
 ];
 
 export default function SutePage() {
@@ -41,7 +41,7 @@ export default function SutePage() {
         <div className="max-w-xl space-y-3">
           <p className="text-base leading-snug text-foreground/70">
             Sute is a digital product built to bring order to complex information
-            landscapes — taking what is normally dense, fragmented data and making it
+            landscapes, taking what is normally dense, fragmented data and making it
             feel calm, navigable, and human.
           </p>
           <p className="text-base leading-snug text-foreground/70">

@@ -5,15 +5,15 @@ import Link from "next/link";
 import { RevealMedia, type MediaItem } from "@/components/reveal-media";
 
 const media: MediaItem[] = [
-  { type: "image", src: "/projects/combustion/combustion1.png", alt: "Combustion — 1" },
-  { type: "image", src: "/projects/combustion/combustion2.png", alt: "Combustion — 2" },
-  { type: "image", src: "/projects/combustion/combustion3.png", alt: "Combustion — 3" },
-  { type: "image", src: "/projects/combustion/combustion4.png", alt: "Combustion — 4" },
-  { type: "image", src: "/projects/combustion/combustion5.png", alt: "Combustion — 5" },
-  { type: "image", src: "/projects/combustion/combustion6.png", alt: "Combustion — 6" },
-  { type: "image", src: "/projects/combustion/combustion7.png", alt: "Combustion — 7" },
-  { type: "image", src: "/projects/combustion/combustion8.png", alt: "Combustion — 8" },
-  { type: "image", src: "/projects/combustion/combustion9.png", alt: "Combustion — 9" },
+  { type: "image", src: "/projects/combustion/combustion1.png", alt: "Combustion, 1" },
+  { type: "image", src: "/projects/combustion/combustion2.png", alt: "Combustion, 2" },
+  { type: "image", src: "/projects/combustion/combustion3.png", alt: "Combustion, 3" },
+  { type: "image", src: "/projects/combustion/combustion4.png", alt: "Combustion, 4" },
+  { type: "image", src: "/projects/combustion/combustion5.png", alt: "Combustion, 5" },
+  { type: "image", src: "/projects/combustion/combustion6.png", alt: "Combustion, 6" },
+  { type: "image", src: "/projects/combustion/combustion7.png", alt: "Combustion, 7" },
+  { type: "image", src: "/projects/combustion/combustion8.png", alt: "Combustion, 8" },
+  { type: "image", src: "/projects/combustion/combustion9.png", alt: "Combustion, 9" },
 ];
 
 export default function CombustionPage() {
@@ -24,7 +24,7 @@ export default function CombustionPage() {
       {/* Fixed header */}
       <SiteHeader />
 
-      {/* Fixed left panel — desktop only */}
+      {/* Fixed left panel, desktop only */}
       <div className="hidden lg:flex fixed top-[57px] left-0 bottom-0 w-[40%] z-30 flex-col justify-end px-12 xl:px-20 pb-16 border-r border-border/40 bg-background">
         <div className="space-y-8 max-w-sm">
 
@@ -56,7 +56,7 @@ export default function CombustionPage() {
           <div className="space-y-3 text-sm leading-relaxed text-muted border-t border-border/40 pt-6">
             <p>
               Rebranding of a São Paulo-based sound design studio with a strong international presence.
-              A new visual identity built to match the weight and reach of their work — bold, precise
+              A new visual identity built to match the weight and reach of their work, bold, precise
               and unmistakably sonic.
             </p>
           </div>
@@ -91,7 +91,7 @@ export default function CombustionPage() {
             </div>
           </div>
           <p className="text-sm text-muted leading-relaxed">
-            Rebranding of a São Paulo-based sound design studio — bold, precise
+            Rebranding of a São Paulo-based sound design studio, bold, precise
             and unmistakably sonic.
           </p>
           <Link href="/" className="inline-flex items-center gap-2 text-xs text-muted">

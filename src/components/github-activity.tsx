@@ -40,7 +40,7 @@ function parseEvent(event: GitHubEvent): ActivityItem | null {
         id: event.id,
         date,
         repo,
-        description: event.payload.ref_type === "repository" ? "new repo" : `branch: ${event.payload.ref ?? "—"}`,
+        description: event.payload.ref_type === "repository" ? "new repo" : `branch: ${event.payload.ref ?? ""}`,
       };
     case "PullRequestEvent":
       return { id: event.id, date, repo, description: event.payload.pull_request?.title ?? "pull request" };

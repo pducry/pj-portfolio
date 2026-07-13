@@ -18,19 +18,19 @@ const principles = [
     examples: [
       {
         label: "Screen Transition",
-        context: "Payments hub — the transition feels agile and reacts in real time.",
+        context: "Payments hub, the transition feels agile and reacts in real time.",
         duration: "300ms",
         file: "/videos/mp/01_TransicionPantalla-Inmediatez.mp4",
       },
       {
         label: "Shared Element",
-        context: "Payment list detail — the avatar travels seamlessly between screens.",
+        context: "Payment list detail, the avatar travels seamlessly between screens.",
         duration: "350ms",
         file: "/videos/mp/01_TransicionPantalla-SharedElement-Inmediatez.mp4",
       },
       {
         label: "In-App Flow",
-        context: "Quick transfer — agile action with immediate confirmation.",
+        context: "Quick transfer, agile action with immediate confirmation.",
         duration: "Full flow",
         file: "/videos/mp/02_Home-Transferencias-Flow-MLA_1.mp4",
       },
@@ -47,25 +47,25 @@ const principles = [
     examples: [
       {
         label: "Screen Transition",
-        context: "Cards — carousel with 180° card rotation.",
+        context: "Cards, carousel with 180° card rotation.",
         duration: "950ms",
         file: "/videos/mp/02_TransicionPantalla-Foco.mp4",
       },
       {
         label: "Shared Element",
-        context: "Banking tab — the piggy bank guides the transition between screens.",
+        context: "Banking tab, the piggy bank guides the transition between screens.",
         duration: "700ms",
         file: "/videos/mp/02_TransicionPantalla-SharedElement-Foco.mp4",
       },
       {
         label: "Micro-interaction",
-        context: "Activity detail — expansion with chevron feedback.",
+        context: "Activity detail, expansion with chevron feedback.",
         duration: "350ms",
         file: "/videos/mp/02_Microinteraccion-Foco-2.mp4",
       },
       {
         label: "In-App Flow",
-        context: "Card request — immersive full-screen experience up to final confirmation.",
+        context: "Card request, immersive full-screen experience up to final confirmation.",
         duration: "Full flow",
         file: "/videos/mp/05_Tarjetas-SolicitudFisica-Flow-MLA.mp4",
       },
@@ -76,31 +76,31 @@ const principles = [
     label: "Immersion",
     tagline: "Expressive experiences.",
     description:
-      "Becomes the story — using cinematic resources to generate presence and depth. For high-value emotional moments: onboarding, celebrations, premium product reveals.",
+      "Becomes the story, using cinematic resources to generate presence and depth. For high-value emotional moments: onboarding, celebrations, premium product reveals.",
     duration: "1000–5000ms",
     rule: "Expressive illustration can take center stage and fill the entire screen in celebrations, special states, or high emotional-value moments.",
     examples: [
       {
         label: "Screen Transition",
-        context: "Scoring — the transition highlights and celebrates the user's milestone.",
+        context: "Scoring, the transition highlights and celebrates the user's milestone.",
         duration: "2500ms",
         file: "/videos/mp/03_TransicionPantalla-Inmersion.mp4",
       },
       {
         label: "Shared Element",
-        context: "Credit card onboarding — the card expands creating an atmosphere of prestige.",
+        context: "Credit card onboarding, the card expands creating an atmosphere of prestige.",
         duration: "3000ms",
         file: "/videos/mp/03_TransicionPantalla-SharedElement-Inmersion.mp4",
       },
       {
         label: "Expressive",
-        context: "Card request — slow rotation with cinematic lighting and reflections.",
+        context: "Card request, slow rotation with cinematic lighting and reflections.",
         duration: "5000ms",
         file: "/videos/mp/expresivo2.mp4",
       },
       {
         label: "In-App Flow",
-        context: "Bill payment — accompanying the user through to final confirmation.",
+        context: "Bill payment, accompanying the user through to final confirmation.",
         duration: "Full flow",
         file: "/videos/mp/08-Pagos-Flow-MLA.mp4",
       },
@@ -111,11 +111,11 @@ const principles = [
 const foundations = [
   {
     label: "Gestures",
-    body: "Motion responds to user gestures — confirming punctual actions and accompanying continuous interactions. Tap, long press, swipe, scroll: each gesture type has its own motion response.",
+    body: "Motion responds to user gestures, confirming punctual actions and accompanying continuous interactions. Tap, long press, swipe, scroll: each gesture type has its own motion response.",
   },
   {
     label: "Stagger",
-    body: "Components move in sequence to create rhythm, hierarchy, and focus. Stagger adds small delays between elements — 50ms steps for simple components, 2–3 steps for complex experiences.",
+    body: "Components move in sequence to create rhythm, hierarchy, and focus. Stagger adds small delays between elements, 50ms steps for simple components, 2–3 steps for complex experiences.",
   },
   {
     label: "Skeleton",
@@ -183,11 +183,11 @@ function MotionPrinciplesContent() {
         <div className="max-w-xl space-y-3">
           <p className="text-base leading-snug text-foreground/70">
             How Mercado Pago moves. A shared language of motion built for a product operating across
-            11 verticals and 7 countries — so that every transition, micro-interaction, and
+            11 verticals and 7 countries, so that every transition, micro-interaction, and
             expressive moment feels like it comes from the same place.
           </p>
           <p className="text-base leading-snug text-foreground/70">
-            Motion should feel agile and reliable — starting with speed, ending with serenity.
+            Motion should feel agile and reliable, starting with speed, ending with serenity.
             Three typologies translate design principles into behavior. The typology is chosen by
             the intention of the screen, not by style or technique.
           </p>

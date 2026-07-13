@@ -57,17 +57,17 @@ export default function ArtasPage() {
         <div className="max-w-xl space-y-3">
           <p className="text-base leading-snug text-foreground/70">
             Artas is a social art platform that reimagines how visual art is discovered and shared online.
-            Instead of a flat grid gallery, it opens with an immersive 3D spatial navigation experience —
+            Instead of a flat grid gallery, it opens with an immersive 3D spatial navigation experience:
             a starfield universe where artworks float as explorable nodes.
           </p>
           <p className="text-base leading-snug text-foreground/70">
-            Built with Three.js and Unreal Bloom post-processing — full WebGL pipeline with a 10,000-particle
+            Built with Three.js and Unreal Bloom post-processing, full WebGL pipeline with a 10,000-particle
             starfield. 6,100+ lines of handcrafted vanilla JS, modular ES6 architecture, Firebase backend.
             Zero frameworks, zero bundlers.
           </p>
           <p className="text-base leading-snug text-foreground/70">
             The entire project was designed and built using <span className="text-foreground font-medium">AI and Claude Code</span> as
-            the primary development tool — an experiment in human + AI co-creation at every stage, from
+            the primary development tool, an experiment in human + AI co-creation at every stage, from
             concept to shipped product.
           </p>
         </div>

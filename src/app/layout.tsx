@@ -11,7 +11,7 @@ const instrumentSans = Instrument_Sans({
 
 
 export const metadata: Metadata = {
-  title: "Pedro Julien — Creative Director",
+  title: "Pedro Julien Creative Director",
   description:
     "Brazilian/Swiss designer and creative director with 18+ years of experience in digital products and branding.",
 };

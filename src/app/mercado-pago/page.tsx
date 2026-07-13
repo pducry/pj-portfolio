@@ -41,7 +41,7 @@ function MercadoPagoContent() {
       <div className="px-6 border-t border-border py-4 flex flex-wrap items-baseline gap-x-10 gap-y-1">
         <span className="text-base text-foreground whitespace-nowrap">Mercado Pago</span>
         <span className="text-sm text-muted whitespace-nowrap">Product Design</span>
-        <span className="text-sm text-muted whitespace-nowrap">2025—</span>
+        <span className="text-sm text-muted whitespace-nowrap">2025–</span>
         <span className="text-sm text-muted whitespace-nowrap">Design Manager</span>
       </div>
 
@@ -49,14 +49,14 @@ function MercadoPagoContent() {
       <div className="px-6 border-t border-b border-border py-6">
         <div className="max-w-xl space-y-3">
           <p className="text-base leading-snug text-foreground/70">
-            Leading design for Mercado Pago — Latin America&apos;s largest fintech, with over 60 million
+            Leading design for Mercado Pago, Latin America&apos;s largest fintech, with over 60 million
             active users across 7 countries. Responsible for design craft and strategic direction
-            across product design, design systems, and motion — working at the intersection of scale,
+            across product design, design systems, and motion, working at the intersection of scale,
             speed, and quality.
           </p>
           <p className="text-base leading-snug text-foreground/70">
             UX as a business lever: design decisions at this scale touch millions of real financial
-            interactions daily. My role is to keep quality high and intentional — directing a team
+            interactions daily. My role is to keep quality high and intentional, directing a team
             of designers while staying close to the craft through prototyping, tooling, and hands-on
             creative direction.
           </p>

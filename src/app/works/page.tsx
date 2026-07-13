@@ -15,14 +15,14 @@ import { GitHubActivity } from "@/components/github-activity";
 type Entry = { company: string; role: string; years: string };
 
 const experience: Entry[] = [
-  { company: "Mercado Pago",            role: "Design Manager",   years: "2025—"      },
-  { company: "Rise New York & Partners",role: "Creative Director",years: "2024—2025"  },
-  { company: "Meiuca",                  role: "Head of Design",   years: "2024—2024"  },
-  { company: "Descomplica",             role: "Design Manager",   years: "2019—2024"  },
-  { company: "DDB Unlimited",           role: "Design Director",  years: "2017—2019"  },
-  { company: "Work & Co",               role: "Senior Designer",  years: "2015—2017"  },
-  { company: "Google Brand Studio",     role: "Senior Designer",  years: "2015—2015"  },
-  { company: "Y Dreams",                role: "Senior Designer",  years: "2014—2015"  },
+  { company: "Mercado Pago",            role: "Design Manager",   years: "2025–"      },
+  { company: "Rise New York & Partners",role: "Creative Director",years: "2024–2025"  },
+  { company: "Meiuca",                  role: "Head of Design",   years: "2024–2024"  },
+  { company: "Descomplica",             role: "Design Manager",   years: "2019–2024"  },
+  { company: "DDB Unlimited",           role: "Design Director",  years: "2017–2019"  },
+  { company: "Work & Co",               role: "Senior Designer",  years: "2015–2017"  },
+  { company: "Google Brand Studio",     role: "Senior Designer",  years: "2015–2015"  },
+  { company: "Y Dreams",                role: "Senior Designer",  years: "2014–2015"  },
 ];
 
 const clients = [

@@ -50,8 +50,8 @@ export default function ForaclePage() {
       <div className="px-6 border-t border-b border-border py-6">
         <p className="text-base leading-snug text-foreground/70 max-w-xl">
           Foracle is a free font recommendation platform built on human and AI curation. Designed
-          to give back to the design community — type designers, typographers, and font enthusiasts
-          — by surfacing and amplifying the best free typefaces from around the world.
+          to give back to the design community, type designers, typographers, and font enthusiasts
+         , by surfacing and amplifying the best free typefaces from around the world.
         </p>
       </div>
 
@@ -84,7 +84,7 @@ export default function ForaclePage() {
               <img
                 key={ii}
                 src={asset(src)}
-                alt={`Foracle — ${si + 1}.${ii + 1}`}
+                alt={`Foracle, ${si + 1}.${ii + 1}`}
                 className="w-full h-auto object-contain block"
               />
             ))}

@@ -5,15 +5,15 @@ import Link from "next/link";
 import { RevealMedia, type MediaItem } from "@/components/reveal-media";
 
 const media: MediaItem[] = [
-  { type: "image", src: "/projects/mude/Mude2.png", alt: "Mude — 2" },
-  { type: "image", src: "/projects/mude/Mude1.png", alt: "Mude — 1" },
-  { type: "image", src: "/projects/mude/Mude3.png", alt: "Mude — 3" },
-  { type: "image", src: "/projects/mude/Mude4.png", alt: "Mude — 4" },
-  { type: "image", src: "/projects/mude/Mude5.png", alt: "Mude — 5" },
-  { type: "image", src: "/projects/mude/Mude6.png", alt: "Mude — 6" },
-  { type: "image", src: "/projects/mude/Mude7.png", alt: "Mude — 7" },
-  { type: "image", src: "/projects/mude/Mude8.png", alt: "Mude — 8" },
-  { type: "image", src: "/projects/mude/Mude9.png", alt: "Mude — 9" },
+  { type: "image", src: "/projects/mude/Mude2.png", alt: "Mude, 2" },
+  { type: "image", src: "/projects/mude/Mude1.png", alt: "Mude, 1" },
+  { type: "image", src: "/projects/mude/Mude3.png", alt: "Mude, 3" },
+  { type: "image", src: "/projects/mude/Mude4.png", alt: "Mude, 4" },
+  { type: "image", src: "/projects/mude/Mude5.png", alt: "Mude, 5" },
+  { type: "image", src: "/projects/mude/Mude6.png", alt: "Mude, 6" },
+  { type: "image", src: "/projects/mude/Mude7.png", alt: "Mude, 7" },
+  { type: "image", src: "/projects/mude/Mude8.png", alt: "Mude, 8" },
+  { type: "image", src: "/projects/mude/Mude9.png", alt: "Mude, 9" },
 ];
 
 export default function MudePage() {
@@ -24,13 +24,13 @@ export default function MudePage() {
       {/* Fixed header */}
       <SiteHeader />
 
-      {/* Fixed left panel — desktop only */}
+      {/* Fixed left panel, desktop only */}
       <div className="hidden lg:flex fixed top-[57px] left-0 bottom-0 w-[40%] z-30 flex-col justify-end px-12 xl:px-20 pb-16 border-r border-border/40 bg-background">
         <div className="space-y-8 max-w-sm">
 
           <h1 className="text-4xl font-semibold tracking-tight">Mude</h1>
 
-          {/* Meta — same line */}
+          {/* Meta, same line */}
           <div className="flex flex-wrap gap-x-8 gap-y-3">
             <div className="space-y-1">
               <p className="text-[10px] font-medium uppercase tracking-widest text-muted">Year</p>
@@ -50,7 +50,7 @@ export default function MudePage() {
           <div className="space-y-3 text-sm leading-relaxed text-muted border-t border-border/40 pt-6">
             <p>
               Mude is a wellness app designed to help people build sustainable mindfulness habits.
-              Motivating and calm — encouraging consistency without adding pressure.
+              Motivating and calm, encouraging consistency without adding pressure.
             </p>
             <p>
               Organizes daily wellness practices into digestible routines using gentle prompts and
@@ -76,7 +76,7 @@ export default function MudePage() {
         </div>
       </div>
 
-      {/* Right scrollable content — offset by left panel width */}
+      {/* Right scrollable content, offset by left panel width */}
       <div className="lg:ml-[40%] pt-[57px]">
 
         {/* Mobile info */}
