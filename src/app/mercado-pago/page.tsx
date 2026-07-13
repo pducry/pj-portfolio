@@ -13,6 +13,13 @@ const subProjects = [
     role: "Design Manager",
     href: "/mercado-pago/motion-principles",
   },
+  {
+    year: "2026",
+    category: "Visual",
+    name: "Artificial Intelligence Art Direction",
+    role: "Design Manager",
+    href: "",
+  },
 ];
 
 function MercadoPagoContent() {
@@ -62,37 +69,41 @@ function MercadoPagoContent() {
           </div>
         </Reveal>
 
-        {subProjects.map((p) => (
-          <Reveal key={p.name}>
-            <Link href={p.href}>
-              <div className="group grid items-baseline gap-x-6 border-b border-border px-6 py-5 transition-colors hover:bg-foreground cursor-pointer grid-cols-[48px_1fr_auto] lg:grid-cols-[64px_200px_180px_1fr_24px]">
-                <span className="text-sm tabular-nums whitespace-nowrap text-muted transition-colors group-hover:text-background">
-                  {p.year}
-                </span>
-                <div className="lg:hidden">
-                  <span className="text-sm whitespace-nowrap text-foreground transition-colors group-hover:text-background">
-                    {p.name}
-                  </span>
-                  <p className="text-xs mt-0.5 text-muted transition-colors group-hover:text-background">
-                    {p.category}
-                  </p>
-                </div>
-                <span className="hidden lg:block text-sm whitespace-nowrap text-muted transition-colors group-hover:text-background">
-                  {p.category}
-                </span>
-                <span className="hidden lg:block text-sm whitespace-nowrap text-muted transition-colors group-hover:text-background">
-                  {p.role}
-                </span>
-                <span className="hidden lg:block text-base whitespace-nowrap text-foreground transition-colors group-hover:text-background">
+        {subProjects.map((p) => {
+          const linked = !!p.href;
+          const row = (
+            <div className={`group grid items-baseline gap-x-6 border-b border-border px-6 py-5 transition-colors grid-cols-[48px_1fr_auto] lg:grid-cols-[64px_200px_180px_1fr_24px] ${linked ? "hover:bg-foreground cursor-pointer" : ""}`}>
+              <span className={`text-sm tabular-nums whitespace-nowrap text-muted ${linked ? "transition-colors group-hover:text-background" : ""}`}>
+                {p.year}
+              </span>
+              <div className="lg:hidden">
+                <span className={`text-sm whitespace-nowrap text-foreground ${linked ? "transition-colors group-hover:text-background" : ""}`}>
                   {p.name}
                 </span>
-                <span className="text-sm justify-self-end text-muted/40 transition-colors group-hover:text-background">
-                  →
-                </span>
+                <p className={`text-xs mt-0.5 text-muted ${linked ? "transition-colors group-hover:text-background" : ""}`}>
+                  {p.category}
+                </p>
               </div>
-            </Link>
-          </Reveal>
-        ))}
+              <span className={`hidden lg:block text-sm whitespace-nowrap text-muted ${linked ? "transition-colors group-hover:text-background" : ""}`}>
+                {p.category}
+              </span>
+              <span className={`hidden lg:block text-sm whitespace-nowrap text-muted ${linked ? "transition-colors group-hover:text-background" : ""}`}>
+                {p.role}
+              </span>
+              <span className={`hidden lg:block text-base whitespace-nowrap text-foreground ${linked ? "transition-colors group-hover:text-background" : ""}`}>
+                {p.name}
+              </span>
+              <span className={`text-sm justify-self-end ${linked ? "text-muted/40 transition-colors group-hover:text-background" : "invisible"}`}>
+                →
+              </span>
+            </div>
+          );
+          return (
+            <Reveal key={p.name}>
+              {linked ? <Link href={p.href}>{row}</Link> : <div>{row}</div>}
+            </Reveal>
+          );
+        })}
       </div>
 
       <p className="mt-16 px-6 pb-8 text-sm text-muted">© Pedro Julien 2026</p>
