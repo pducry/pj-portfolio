@@ -1,0 +1,20 @@
+src/app/mercado-pago/page.tsx
+  s_e4ed636df29c73::t_7f3c1cb42e227c 16-22
+  s_e4ed636df29c73::t_e1b3a7dca7e783 72-80,83-85,87-106
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "a844ba3e108e06c25f4cfc82684a7fb3d0fa91f7",
+  "prompts": {},
+  "sessions": {
+    "s_e4ed636df29c73": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "68c5fceb-0b65-4a95-b458-e5ff04ad7e91",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Pedro Julien <pducry@gmail.com>"
+    }
+  }
+}
