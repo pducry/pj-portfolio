@@ -58,7 +58,7 @@ function MercadoPagoContent() {
             UX as a business lever: design decisions at this scale touch millions of real financial
             interactions daily. My role is to keep quality high and intentional, directing a team
             of designers while staying close to the craft through prototyping, tooling, and hands-on
-            creative direction.
+            UX and creative direction.
           </p>
         </div>
       </div>
