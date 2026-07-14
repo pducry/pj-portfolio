@@ -41,9 +41,9 @@ const principles = [
     label: "Focus",
     tagline: "Balanced experiences.",
     description:
-      "Organizes motion around the protagonist element to create hierarchy and guide attention. When something matters, the animation makes sure the eye knows where to go.",
+      "Organizes motion around the protagonist element to create hierarchy and guide attention. When something matters, the animation makes sure the eye knows where to go. The shared element is reserved for transitions where it reinforces a real relationship between screens.",
     duration: "500–3000ms",
-    rule: "The shared element is reserved for transitions where it reinforces a real relationship between screens.",
+    rule: "",
     examples: [
       {
         label: "Screen Transition",
@@ -76,9 +76,9 @@ const principles = [
     label: "Immersion",
     tagline: "Expressive experiences.",
     description:
-      "Becomes the story, using cinematic resources to generate presence and depth. For high-value emotional moments: onboarding, celebrations, premium product reveals.",
+      "Becomes the story, using cinematic resources to generate presence and depth. For high-value emotional moments: onboarding, celebrations, premium product reveals. Expressive illustration can take center stage and fill the entire screen in celebrations, special states, or high emotional-value moments.",
     duration: "1000–5000ms",
-    rule: "Expressive illustration can take center stage and fill the entire screen in celebrations, special states, or high emotional-value moments.",
+    rule: "",
     examples: [
       {
         label: "Screen Transition",
