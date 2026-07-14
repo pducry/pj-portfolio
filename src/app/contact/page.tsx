@@ -89,6 +89,8 @@ const recognition = [
 ];
 
 const clients = [
+  "Mercado Pago",
+  "Mercado Livre",
   "Google",
   "Facebook",
   "Nike",
