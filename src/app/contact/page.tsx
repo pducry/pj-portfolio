@@ -14,7 +14,7 @@ const experience: Entry[] = [
   {
     company: "Mercado Pago",
     role: "Design Manager",
-    years: "2020–",
+    years: "2026–",
     description:
       "Responsible for elevating design quality standards and driving creative excellence across teams. Acts as both leader and team player, fostering collaboration between design, product, and business areas. With a strong focus on visual craft and creativity, guiding the team to deliver cohesive, innovative, and impactful experiences that strengthen Mercado Livre's and Mercado Pago's brand and digital product presence.",
   },
