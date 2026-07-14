@@ -1,10 +1,13 @@
+"use client";
+
 import { SiteHeader } from "@/components/site-header";
+import { Reveal } from "@/components/reveal";
 
 type Entry = {
   company: string;
   role: string;
   years: string;
-  description?: string;
+  description: string;
 };
 
 type Section = { label: string; entries: Entry[] };
@@ -37,7 +40,7 @@ const experience: Section[] = [
         role: "Design Manager",
         years: "2019–2024",
         description:
-          "Conducted thorough industry research to determine the direction of branding experiences and digital products. Created and led the first branding refresh, setting new positioning and values. Designed and built design systems, modular and scalable design patterns, hired and built design teams, set process and culture.",
+          "Conducted thorough industry research to determine the direction of branding experiences and digital products. Created and led the first branding refresh, setting new positioning and values. Designed and built design systems, modular and scalable design patterns — hired and built design teams, setting process and culture.",
       },
       {
         company: "Meiuca",
@@ -51,7 +54,7 @@ const experience: Section[] = [
         role: "Design Director",
         years: "2017–2019",
         description:
-          "Led the design team to push conventional boundaries with unique concepts and identities. Responsible for the digital global soccer account of Adidas, creating part of the design modular system structure. Developed the global design system for Royal Canin, including photography, iconography, and digital assets.",
+          "Led the design team to push conventional boundaries with unique concepts and identities. Responsible for the digital global soccer account of Adidas, creating part of the design modular system. Developed the global design system for Royal Canin, including photography, iconography, and digital assets.",
       },
       {
         company: "Work & Co",
@@ -127,127 +130,150 @@ export default function Contact() {
     <div className="animate-fade-in">
       <SiteHeader />
 
-      <main className="px-6 pb-24">
-        {/* Intro */}
-        <div className="grid grid-cols-1 gap-8 pt-8 pb-12 border-b border-border lg:grid-cols-[180px_1fr] lg:gap-16">
-          <div>
-            <p className="text-[13px] text-foreground/40">About</p>
-          </div>
-          <div className="space-y-4 max-w-2xl">
-            <p className="text-[14px] leading-relaxed text-foreground/70">
-              With 18+ years of professional experience, Pedro is a Brazilian/Swiss
-              designer and creative director working at the intersection of digital
-              products and branding experience. He plays a central and strategic role
-              across all stages of a project — from understanding business strategy to
-              delivering final prototypes. A team player, believer in the power of
-              collaboration and team diversity. Also an enthusiast of creative
-              frameworks between men and machines.
+      {/* Intro */}
+      <div className="px-6 pt-6 pb-8">
+        <div className="max-w-xl space-y-5">
+          <p className="text-2xl lg:text-[30px] leading-snug text-foreground/75">
+            With 18+ years of professional experience, Pedro is a Brazilian/Swiss
+            designer and creative director working at the intersection of digital
+            products and branding experience — from understanding business strategy
+            to delivering final prototypes.
+          </p>
+          <p className="text-2xl lg:text-[30px] leading-snug text-foreground/75">
+            Fueled by curiosity, founder of{" "}
+            <span className="text-foreground font-medium">FFForma</span>, a studio
+            crafting new motion and visual solutions using GenAI for the creative
+            industry.
+          </p>
+          <blockquote className="border-l border-border pl-4 pt-1">
+            <p className="text-lg lg:text-[22px] leading-relaxed text-muted italic">
+              "I do believe in the power of craft leading by business needs, always
+              collaborating with teams to achieve better results — whether it's concept
+              design, a user-centered approach or leading creative teams."
             </p>
-            <p className="text-[14px] leading-relaxed text-foreground/70">
-              Fueled by curiosity, Pedro finds himself in a process of continuous
-              iteration and experimentation. Founder of{" "}
-              <span className="text-foreground font-medium">FFForma</span>, a studio
-              crafting new motion and visual solutions using GenAI for the creative
-              industry.
-            </p>
-            <blockquote className="border-l border-border pl-4 pt-1">
-              <p className="text-[13px] leading-relaxed text-foreground/40 italic">
-                "I do believe in the power of craft leading by business needs, always
-                collaborating with teams to achieve better results. Whether it's concept
-                design, a user-centered approach or leading creative teams, I am always
-                excited by the challenges of balancing creative, strategic and management
-                skills to successfully deliver solutions as part of a team."
-              </p>
-            </blockquote>
-          </div>
+          </blockquote>
         </div>
+      </div>
 
-        {/* Experience */}
-        <div id="experience">
-          {experience.map((section) =>
-            section.entries.map((entry, i) => (
-              <div
-                key={entry.company}
-                className="grid items-start border-b border-border py-5 transition-colors hover:bg-foreground/[0.02] lg:grid-cols-[180px_1fr]"
-              >
-                <div className="hidden lg:block">
-                  <p className="text-[13px] text-foreground/40">{i === 0 ? section.label : ""}</p>
-                  <p className="text-[13px] text-foreground/40 mt-0.5">{entry.years}</p>
-                </div>
+      <div className="h-8 lg:h-16" />
+
+      {/* Experience */}
+      <div id="experience" className="border-t border-border">
+        <Reveal>
+          <div className="px-6 py-3 border-b border-border">
+            <span className="text-sm text-foreground/30">Experience</span>
+          </div>
+        </Reveal>
+
+        {experience.map((section) =>
+          section.entries.map((entry, i) => (
+            <Reveal key={entry.company}>
+              <div className="grid items-start gap-x-6 border-b border-border px-6 py-6 grid-cols-[80px_1fr] lg:grid-cols-[120px_180px_1fr]">
+                {/* Years + section label */}
                 <div>
-                  <p className="text-[14px] font-medium text-foreground">{entry.company}</p>
-                  <p className="text-[13px] text-foreground/40 mt-0.5 mb-3">{entry.role}</p>
+                  <span className="text-sm text-muted tabular-nums whitespace-nowrap">
+                    {entry.years}
+                  </span>
+                  {i === 0 && (
+                    <p className="text-xs text-muted mt-1">{section.label}</p>
+                  )}
+                </div>
+
+                {/* Role — desktop only */}
+                <span className="hidden lg:block text-sm text-muted whitespace-nowrap">
+                  {entry.role}
+                </span>
+
+                {/* Company + description */}
+                <div>
+                  <p className="text-base text-foreground">{entry.company}</p>
+                  <p className="text-xs text-muted mt-0.5 lg:hidden">{entry.role}</p>
                   {entry.description && (
-                    <p className="text-[13px] leading-relaxed text-foreground/55 max-w-2xl">
+                    <p className="text-sm text-muted mt-2 leading-relaxed max-w-prose">
                       {entry.description}
                     </p>
                   )}
-                  {i === 0 && (
-                    <p className="text-[13px] text-foreground/40 mt-2 lg:hidden">{section.label}</p>
-                  )}
                 </div>
               </div>
-            ))
-          )}
-        </div>
+            </Reveal>
+          ))
+        )}
+      </div>
 
-        {/* Footer grid */}
-        <div className="mt-16 grid grid-cols-2 gap-8 border-t border-border pt-12 lg:grid-cols-4 lg:gap-12">
-          <div>
-            <p className="text-[11px] text-foreground/30 uppercase tracking-widest mb-6">
-              Skills
-            </p>
-            <div className="space-y-2.5">
+      {/* Footer: Skills · Recognition · Clients · Contact */}
+      <div className="mt-16 lg:mt-20">
+        <Reveal>
+          <div className="hidden lg:grid grid-cols-4 gap-16 px-6 py-3 border-t border-b border-border">
+            <span className="text-sm text-foreground/30">Skills</span>
+            <span className="text-sm text-foreground/30">Recognition</span>
+            <span className="text-sm text-foreground/30">Clients</span>
+            <span className="text-sm text-foreground/30">Contact</span>
+          </div>
+        </Reveal>
+
+        <div className="grid grid-cols-1 gap-0 lg:grid-cols-4 lg:gap-16 lg:mt-3 lg:px-6">
+
+          {/* Skills */}
+          <Reveal>
+            <div className="lg:hidden px-6 py-3 border-t border-b border-border">
+              <span className="text-sm text-foreground/30">Skills</span>
+            </div>
+            <div className="px-6 lg:px-0 py-6 lg:py-0 space-y-3 lg:space-y-4">
               {skills.map((s) => (
-                <p key={s} className="text-[13px] text-foreground/60">{s}</p>
+                <p key={s} className="text-base text-foreground/60">{s}</p>
               ))}
             </div>
-          </div>
+          </Reveal>
 
-          <div>
-            <p className="text-[11px] text-foreground/30 uppercase tracking-widest mb-6">
-              Recognition
-            </p>
-            <div className="space-y-2.5">
+          {/* Recognition */}
+          <Reveal delay={0.06}>
+            <div className="lg:hidden px-6 py-3 border-t border-b border-border">
+              <span className="text-sm text-foreground/30">Recognition</span>
+            </div>
+            <div className="px-6 lg:px-0 py-6 lg:py-0 space-y-3 lg:space-y-4">
               {recognition.map((r) => (
-                <p key={r} className="text-[13px] text-foreground/60">{r}</p>
+                <p key={r} className="text-base text-foreground/60">{r}</p>
               ))}
             </div>
-          </div>
+          </Reveal>
 
-          <div>
-            <p className="text-[11px] text-foreground/30 uppercase tracking-widest mb-6">
-              Clients
-            </p>
-            <div className="space-y-2.5">
+          {/* Clients */}
+          <Reveal delay={0.12}>
+            <div className="lg:hidden px-6 py-3 border-t border-b border-border">
+              <span className="text-sm text-foreground/30">Clients</span>
+            </div>
+            <div className="px-6 lg:px-0 py-6 lg:py-0 space-y-3 lg:space-y-4">
               {clients.map((c) => (
-                <p key={c} className="text-[13px] text-foreground/60">{c}</p>
+                <p key={c} className="text-base text-foreground/60">{c}</p>
               ))}
             </div>
-          </div>
+          </Reveal>
 
-          <div>
-            <p className="text-[11px] text-foreground/30 uppercase tracking-widest mb-6">
-              Contact
-            </p>
-            <div className="space-y-2.5">
+          {/* Contact */}
+          <Reveal delay={0.18}>
+            <div className="lg:hidden px-6 py-3 border-t border-b border-border">
+              <span className="text-sm text-foreground/30">Contact</span>
+            </div>
+            <div className="px-6 lg:px-0 py-6 lg:py-0 space-y-3 lg:space-y-4">
               {contactLinks.map(({ label, href }) => (
                 <a
                   key={label}
                   href={href}
                   target={href.startsWith("mailto") ? undefined : "_blank"}
                   rel="noopener noreferrer"
-                  className="block text-[13px] text-foreground/60 transition-colors hover:text-foreground"
+                  className="block text-base text-foreground/60 transition-colors hover:text-foreground"
                 >
                   {label}
                 </a>
               ))}
             </div>
-          </div>
+          </Reveal>
         </div>
+      </div>
 
-        <p className="mt-12 text-[12px] text-foreground/30">© Pedro Julien 2026</p>
-      </main>
+      <Reveal>
+        <p className="mt-16 px-6 text-sm text-muted pb-8">© Pedro Julien 2026</p>
+      </Reveal>
     </div>
   );
 }
