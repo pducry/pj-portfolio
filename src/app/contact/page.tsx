@@ -26,18 +26,18 @@ const experience: Entry[] = [
       "Shaped the agency's creative vision and brought innovative concepts to life. Oversaw the strategic direction of projects, ensuring alignment with client objectives while pushing boundaries to deliver cutting-edge solutions. Led and inspired a multidisciplinary team, fostering collaboration and maintaining high creative standards.",
   },
   {
+    company: "Meiuca",
+    role: "Head of Design",
+    years: "2024–2024",
+    description:
+      "Pushed the boundaries of digital design and product vision, creating visually stunning and functional products that resonate with users. Led the team in delivering exceptional digital experiences through a strategic mindset and collaborative creative environment.",
+  },
+  {
     company: "Descomplica",
     role: "Design Manager",
     years: "2019–2024",
     description:
       "Conducted thorough industry research to determine the direction of branding experiences and digital products. Created and led the first branding refresh, setting new positioning and values. Designed and built design systems, modular and scalable design patterns — hired and built design teams, setting process and culture.",
-  },
-  {
-    company: "Meiuca",
-    role: "Head of Design",
-    years: "2024",
-    description:
-      "Pushed the boundaries of digital design and product vision, creating visually stunning and functional products that resonate with users. Led the team in delivering exceptional digital experiences through a strategic mindset and collaborative creative environment.",
   },
   {
     company: "DDB Unlimited",
@@ -155,7 +155,7 @@ export default function Contact() {
 
         {experience.map((entry) => (
           <Reveal key={entry.company}>
-            <div className="grid items-start gap-x-6 border-b border-border px-6 py-6 grid-cols-[80px_1fr] lg:grid-cols-[120px_1fr]">
+            <div className="grid items-start gap-x-12 border-b border-border px-6 py-6 grid-cols-[80px_1fr] lg:grid-cols-[120px_1fr]">
               {/* Years */}
               <span className="text-sm text-muted tabular-nums whitespace-nowrap pt-0.5">
                 {entry.years}
