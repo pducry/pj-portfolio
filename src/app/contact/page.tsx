@@ -10,67 +10,55 @@ type Entry = {
   description: string;
 };
 
-type Section = { label: string; entries: Entry[] };
-
-const experience: Section[] = [
+const experience: Entry[] = [
   {
-    label: "Current",
-    entries: [
-      {
-        company: "Mercado Pago",
-        role: "Design Manager",
-        years: "2020–",
-        description:
-          "Responsible for elevating design quality standards and driving creative excellence across teams. Acts as both leader and team player, fostering collaboration between design, product, and business areas. With a strong focus on visual craft and creativity, guiding the team to deliver cohesive, innovative, and impactful experiences that strengthen Mercado Livre's and Mercado Pago's brand and digital product presence.",
-      },
-    ],
+    company: "Mercado Pago",
+    role: "Design Manager",
+    years: "2020–",
+    description:
+      "Responsible for elevating design quality standards and driving creative excellence across teams. Acts as both leader and team player, fostering collaboration between design, product, and business areas. With a strong focus on visual craft and creativity, guiding the team to deliver cohesive, innovative, and impactful experiences that strengthen Mercado Livre's and Mercado Pago's brand and digital product presence.",
   },
   {
-    label: "Past",
-    entries: [
-      {
-        company: "Rise New York & Partners",
-        role: "Creative Director",
-        years: "2024–2025",
-        description:
-          "Shaped the agency's creative vision and brought innovative concepts to life. Oversaw the strategic direction of projects, ensuring alignment with client objectives while pushing boundaries to deliver cutting-edge solutions. Led and inspired a multidisciplinary team, fostering collaboration and maintaining high creative standards.",
-      },
-      {
-        company: "Descomplica",
-        role: "Design Manager",
-        years: "2019–2024",
-        description:
-          "Conducted thorough industry research to determine the direction of branding experiences and digital products. Created and led the first branding refresh, setting new positioning and values. Designed and built design systems, modular and scalable design patterns — hired and built design teams, setting process and culture.",
-      },
-      {
-        company: "Meiuca",
-        role: "Head of Design",
-        years: "2024",
-        description:
-          "Pushed the boundaries of digital design and product vision, creating visually stunning and functional products that resonate with users. Led the team in delivering exceptional digital experiences through a strategic mindset and collaborative creative environment.",
-      },
-      {
-        company: "DDB Unlimited",
-        role: "Design Director",
-        years: "2017–2019",
-        description:
-          "Led the design team to push conventional boundaries with unique concepts and identities. Responsible for the digital global soccer account of Adidas, creating part of the design modular system. Developed the global design system for Royal Canin, including photography, iconography, and digital assets.",
-      },
-      {
-        company: "Work & Co",
-        role: "Senior Designer",
-        years: "2015–2017",
-        description:
-          "Led digital product design projects for clients including Facebook and Santander. Responsible for ensuring the team's work communicates effectively with the highest quality, solving business challenges and meeting user needs across all stages of design development.",
-      },
-      {
-        company: "Google Brand Studio",
-        role: "Senior Designer",
-        years: "2015",
-        description:
-          "Created interactive digital projects for Google's Cultural Institute, including Performing Arts With Google — a fully immersive 360° experience allowing anyone to step on stage with world-renowned actors, singers, and dancers.",
-      },
-    ],
+    company: "Rise New York & Partners",
+    role: "Creative Director",
+    years: "2024–2025",
+    description:
+      "Shaped the agency's creative vision and brought innovative concepts to life. Oversaw the strategic direction of projects, ensuring alignment with client objectives while pushing boundaries to deliver cutting-edge solutions. Led and inspired a multidisciplinary team, fostering collaboration and maintaining high creative standards.",
+  },
+  {
+    company: "Descomplica",
+    role: "Design Manager",
+    years: "2019–2024",
+    description:
+      "Conducted thorough industry research to determine the direction of branding experiences and digital products. Created and led the first branding refresh, setting new positioning and values. Designed and built design systems, modular and scalable design patterns — hired and built design teams, setting process and culture.",
+  },
+  {
+    company: "Meiuca",
+    role: "Head of Design",
+    years: "2024",
+    description:
+      "Pushed the boundaries of digital design and product vision, creating visually stunning and functional products that resonate with users. Led the team in delivering exceptional digital experiences through a strategic mindset and collaborative creative environment.",
+  },
+  {
+    company: "DDB Unlimited",
+    role: "Design Director",
+    years: "2017–2019",
+    description:
+      "Led the design team to push conventional boundaries with unique concepts and identities. Responsible for the digital global soccer account of Adidas, creating part of the design modular system. Developed the global design system for Royal Canin, including photography, iconography, and digital assets.",
+  },
+  {
+    company: "Work & Co",
+    role: "Senior Designer",
+    years: "2015–2017",
+    description:
+      "Led digital product design projects for clients including Facebook and Santander. Responsible for ensuring the team's work communicates effectively with the highest quality, solving business challenges and meeting user needs across all stages of design development.",
+  },
+  {
+    company: "Google Brand Studio",
+    role: "Senior Designer",
+    years: "2015",
+    description:
+      "Created interactive digital projects for Google's Cultural Institute, including Performing Arts With Google — a fully immersive 360° experience allowing anyone to step on stage with world-renowned actors, singers, and dancers.",
   },
 ];
 
@@ -165,39 +153,29 @@ export default function Contact() {
           </div>
         </Reveal>
 
-        {experience.map((section) =>
-          section.entries.map((entry, i) => (
-            <Reveal key={entry.company}>
-              <div className="grid items-start gap-x-6 border-b border-border px-6 py-6 grid-cols-[80px_1fr] lg:grid-cols-[120px_180px_1fr]">
-                {/* Years + section label */}
-                <div>
-                  <span className="text-sm text-muted tabular-nums whitespace-nowrap">
-                    {entry.years}
-                  </span>
-                  {i === 0 && (
-                    <p className="text-xs text-muted mt-1">{section.label}</p>
-                  )}
-                </div>
+        {experience.map((entry) => (
+          <Reveal key={entry.company}>
+            <div className="grid items-start gap-x-6 border-b border-border px-6 py-6 grid-cols-[80px_1fr] lg:grid-cols-[120px_1fr]">
+              {/* Years */}
+              <span className="text-sm text-muted tabular-nums whitespace-nowrap pt-0.5">
+                {entry.years}
+              </span>
 
-                {/* Role — desktop only */}
-                <span className="hidden lg:block text-sm text-muted whitespace-nowrap">
+              {/* Role label → Company → Description */}
+              <div>
+                <p className="text-xs text-muted uppercase tracking-widest mb-1">
                   {entry.role}
-                </span>
-
-                {/* Company + description */}
-                <div>
-                  <p className="text-base text-foreground">{entry.company}</p>
-                  <p className="text-xs text-muted mt-0.5 lg:hidden">{entry.role}</p>
-                  {entry.description && (
-                    <p className="text-sm text-muted mt-2 leading-relaxed max-w-prose">
-                      {entry.description}
-                    </p>
-                  )}
-                </div>
+                </p>
+                <p className="text-base text-foreground">{entry.company}</p>
+                {entry.description && (
+                  <p className="text-sm text-muted mt-2 leading-relaxed max-w-prose">
+                    {entry.description}
+                  </p>
+                )}
               </div>
-            </Reveal>
-          ))
-        )}
+            </div>
+          </Reveal>
+        ))}
       </div>
 
       {/* Footer: Skills · Recognition · Clients · Contact */}
