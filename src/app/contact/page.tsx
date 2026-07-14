@@ -163,7 +163,7 @@ export default function Contact() {
 
               {/* Role label → Company → Description */}
               <div>
-                <p className="text-xs text-muted uppercase tracking-widest mb-1">
+                <p className="text-xs text-muted mb-1">
                   {entry.role}
                 </p>
                 <p className="text-base text-foreground">{entry.company}</p>
