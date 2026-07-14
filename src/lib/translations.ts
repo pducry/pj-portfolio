@@ -2,7 +2,7 @@ export type Lang = "en" | "pt";
 
 export const translations = {
   en: {
-    nav: { bio: "Works", playground: "Playground", contact: "Contact" },
+    nav: { bio: "Works", playground: "Playground", contact: "About & Contact" },
     bio: {
       label: "Bio",
       p1: "Designer with 20+ years shaping product design and branding experiences. From early ideation and visual craft to shipped products and solutions, using AI as a creative force. Hands-on by nature, I lead by doing, staying close to the craft across strategy, design, and build.",
@@ -47,7 +47,7 @@ export const translations = {
     copyright: "© Pedro Julien 2026",
   },
   pt: {
-    nav: { bio: "Works", playground: "Playground", contact: "Contato" },
+    nav: { bio: "Works", playground: "Playground", contact: "About & Contact" },
     bio: {
       label: "Bio",
       p1: "Designer com mais de 20 anos moldando produtos digitais e experiências de branding. Da ideação inicial ao craft visual refinado até produtos e soluções entregues, usando IA como força criativa. Hands-on por natureza, lidero fazendo, mantendo proximidade com o craft em estratégia, design e execução.",
