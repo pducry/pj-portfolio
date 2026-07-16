@@ -4,23 +4,28 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { WorksFooter } from "@/components/works-footer";
 import { asset } from "@/lib/asset";
+import { useLang } from "@/components/language-provider";
+import { translations } from "@/lib/translations";
 
 const stack = ["Three.js", "WebGL", "ES Modules", "Firebase Auth", "Firestore", "Cloud Storage"];
 
-const links = [
-  {
-    label: "Live project",
-    href: "https://artas-experience.web.app",
-    external: true,
-  },
-  {
-    label: "GitHub",
-    href: "https://github.com/pducry/artas",
-    external: true,
-  },
-];
-
 export default function ArtasPage() {
+  const { lang } = useLang();
+  const t = translations[lang];
+
+  const links = [
+    {
+      label: t.common.liveProject,
+      href: "https://artas-experience.web.app",
+      external: true,
+    },
+    {
+      label: "GitHub",
+      href: "https://github.com/pducry/artas",
+      external: true,
+    },
+  ];
+
   return (
     <div className="animate-fade-in">
       <SiteHeader />
@@ -28,16 +33,16 @@ export default function ArtasPage() {
       {/* Back */}
       <div className="px-6 pt-1 pb-4">
         <Link href="/works" className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-foreground transition-colors">
-          ← Works
+          {t.common.backToWorks}
         </Link>
       </div>
 
       {/* Title + meta */}
       <div className="px-6 border-t border-border py-4 flex flex-wrap items-baseline gap-x-10 gap-y-1">
         <span className="text-base text-foreground whitespace-nowrap">Artas</span>
-        <span className="text-sm text-muted whitespace-nowrap">Product Design</span>
+        <span className="text-sm text-muted whitespace-nowrap">{t.categories["Product Design"]}</span>
         <span className="text-sm text-muted whitespace-nowrap">2026</span>
-        <span className="text-sm text-muted whitespace-nowrap">Designer</span>
+        <span className="text-sm text-muted whitespace-nowrap">{t.roles["Designer"]}</span>
       </div>
 
       {/* Stack */}
@@ -56,19 +61,13 @@ export default function ArtasPage() {
       <div className="px-6 border-t border-b border-border py-6">
         <div className="max-w-xl space-y-3">
           <p className="text-base leading-snug text-foreground/70">
-            Artas is a social art platform that reimagines how visual art is discovered and shared online.
-            Instead of a flat grid gallery, it opens with an immersive 3D spatial navigation experience:
-            a starfield universe where artworks float as explorable nodes.
+            {t.pages.artas.desc1}
           </p>
           <p className="text-base leading-snug text-foreground/70">
-            Built with Three.js and Unreal Bloom post-processing, full WebGL pipeline with a 10,000-particle
-            starfield. 6,100+ lines of handcrafted vanilla JS, modular ES6 architecture, Firebase backend.
-            Zero frameworks, zero bundlers.
+            {t.pages.artas.desc2}
           </p>
           <p className="text-base leading-snug text-foreground/70">
-            The entire project was designed and built using <span className="text-foreground font-medium">AI and Claude Code</span> as
-            the primary development tool, an experiment in human + AI co-creation at every stage, from
-            concept to shipped product.
+            {t.pages.artas.desc3a}<span className="text-foreground font-medium">{t.pages.artas.desc3b}</span>{t.pages.artas.desc3c}
           </p>
         </div>
       </div>
@@ -103,7 +102,7 @@ export default function ArtasPage() {
 
       <WorksFooter current="Artas" />
 
-      <p className="px-6 pb-8 text-sm text-muted">© Pedro Julien 2026</p>
+      <p className="px-6 pb-8 text-sm text-muted">{t.copyright}</p>
     </div>
   );
 }

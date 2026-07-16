@@ -1,14 +1,21 @@
+"use client";
+
 import Link from "next/link";
 import { projects } from "@/lib/projects";
+import { useLang } from "@/components/language-provider";
+import { translations } from "@/lib/translations";
 
 export function WorksFooter({ current }: { current: string }) {
+  const { lang } = useLang();
+  const t = translations[lang];
+
   const others = projects.filter((p) => p.name !== current);
   const linked = (p: (typeof projects)[0]) => !!p.href;
 
   return (
     <div className="mt-16 border-t border-border">
       <div className="px-6 py-3 border-b border-border">
-        <span className="text-sm text-foreground/30">Works</span>
+        <span className="text-sm text-foreground/30">{t.common.worksSection}</span>
       </div>
 
       {others.map((project) => {
@@ -32,16 +39,16 @@ export function WorksFooter({ current }: { current: string }) {
                 {project.name}
               </span>
               <p className={`text-xs mt-0.5 transition-colors ${isLinked ? "text-muted group-hover:text-background" : "text-muted"}`}>
-                {project.category}
+                {t.categories[project.category as keyof typeof t.categories] ?? project.category}
               </p>
             </div>
 
             {/* Desktop columns */}
             <span className={`hidden lg:block text-sm whitespace-nowrap transition-colors ${isLinked ? "text-muted group-hover:text-background" : "text-muted"}`}>
-              {project.category}
+              {t.categories[project.category as keyof typeof t.categories] ?? project.category}
             </span>
             <span className={`hidden lg:block text-sm whitespace-nowrap transition-colors ${isLinked ? "text-muted group-hover:text-background" : "text-muted"}`}>
-              {project.role}
+              {t.roles[project.role as keyof typeof t.roles] ?? project.role}
             </span>
             <span className={`hidden lg:block text-base whitespace-nowrap transition-colors ${isLinked ? "text-foreground group-hover:text-background" : "text-foreground"}`}>
               {project.name}

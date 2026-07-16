@@ -1,7 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { WorksFooter } from "@/components/works-footer";
 import { asset } from "@/lib/asset";
+import { useLang } from "@/components/language-provider";
+import { translations } from "@/lib/translations";
 
 const images = [
   { src: "/sute/1.png",  alt: "Sute, 1"  },
@@ -17,6 +21,9 @@ const images = [
 ];
 
 export default function SutePage() {
+  const { lang } = useLang();
+  const t = translations[lang];
+
   return (
     <div className="animate-fade-in">
       <SiteHeader />
@@ -24,36 +31,29 @@ export default function SutePage() {
       {/* Back */}
       <div className="px-6 pt-1 pb-4">
         <Link href="/works" className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-foreground transition-colors">
-          ← Works
+          {t.common.backToWorks}
         </Link>
       </div>
 
       {/* Title + meta */}
       <div className="px-6 border-t border-border py-4 flex flex-wrap items-baseline gap-x-10 gap-y-1">
         <span className="text-base text-foreground whitespace-nowrap">Sute</span>
-        <span className="text-sm text-muted whitespace-nowrap">Branding</span>
+        <span className="text-sm text-muted whitespace-nowrap">{t.categories["Branding"]}</span>
         <span className="text-sm text-muted whitespace-nowrap">2025</span>
-        <span className="text-sm text-muted whitespace-nowrap">Head of Design</span>
+        <span className="text-sm text-muted whitespace-nowrap">{t.roles["Head of Design"]}</span>
       </div>
 
       {/* Description */}
       <div className="px-6 border-t border-b border-border py-6">
         <div className="max-w-xl space-y-3">
           <p className="text-base leading-snug text-foreground/70">
-            Sute is a digital product built to bring order to complex information
-            landscapes, taking what is normally dense, fragmented data and making it
-            feel calm, navigable, and human.
+            {t.pages.sute.desc1}
           </p>
           <p className="text-base leading-snug text-foreground/70">
-            I led the design end-to-end alongside a small, focused team. The work spanned
-            foundational research and product strategy, information architecture, the full
-            UI system, motion principles, and the editorial tone that runs through every
-            screen.
+            {t.pages.sute.desc2}
           </p>
           <p className="text-base leading-snug text-foreground/70">
-            Restrained type, deliberate negative space, and a quiet palette anchor the
-            product. The visual language stays intentionally subdued so that the data,
-            decisions, and the people using it remain the loudest voices in the room.
+            {t.pages.sute.desc3}
           </p>
         </div>
       </div>
@@ -73,7 +73,7 @@ export default function SutePage() {
 
       <WorksFooter current="Sute" />
 
-      <p className="px-6 pb-8 text-sm text-muted">© Pedro Julien 2026</p>
+      <p className="px-6 pb-8 text-sm text-muted">{t.copyright}</p>
     </div>
   );
 }

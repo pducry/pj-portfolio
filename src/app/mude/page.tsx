@@ -1,8 +1,9 @@
 "use client";
 import { SiteHeader } from "@/components/site-header";
-
 import Link from "next/link";
 import { RevealMedia, type MediaItem } from "@/components/reveal-media";
+import { useLang } from "@/components/language-provider";
+import { translations } from "@/lib/translations";
 
 const media: MediaItem[] = [
   { type: "image", src: "/projects/mude/Mude2.png", alt: "Mude, 2" },
@@ -17,6 +18,8 @@ const media: MediaItem[] = [
 ];
 
 export default function MudePage() {
+  const { lang } = useLang();
+  const t = translations[lang];
 
   return (
     <div className="w-full">
@@ -33,44 +36,34 @@ export default function MudePage() {
           {/* Meta, same line */}
           <div className="flex flex-wrap gap-x-8 gap-y-3">
             <div className="space-y-1">
-              <p className="text-[10px] font-medium uppercase tracking-widest text-muted">Year</p>
+              <p className="text-[10px] font-medium uppercase tracking-widest text-muted">{t.common.year}</p>
               <p className="text-sm text-foreground">2024</p>
             </div>
             <div className="space-y-1">
-              <p className="text-[10px] font-medium uppercase tracking-widest text-muted">Role</p>
-              <p className="text-sm text-foreground">Product Design</p>
+              <p className="text-[10px] font-medium uppercase tracking-widest text-muted">{t.common.role}</p>
+              <p className="text-sm text-foreground">{t.roles["Product Design"]}</p>
             </div>
             <div className="space-y-1">
-              <p className="text-[10px] font-medium uppercase tracking-widest text-muted">Category</p>
-              <span className="rounded-full border border-border px-2.5 py-0.5 text-[11px] tracking-wide text-muted">Product Design</span>
+              <p className="text-[10px] font-medium uppercase tracking-widest text-muted">{t.common.category}</p>
+              <span className="rounded-full border border-border px-2.5 py-0.5 text-[11px] tracking-wide text-muted">{t.categories["Product Design"]}</span>
             </div>
           </div>
 
           {/* Description */}
           <div className="space-y-3 text-sm leading-relaxed text-muted border-t border-border/40 pt-6">
-            <p>
-              Mude is a wellness app designed to help people build sustainable mindfulness habits.
-              Motivating and calm, encouraging consistency without adding pressure.
-            </p>
-            <p>
-              Organizes daily wellness practices into digestible routines using gentle prompts and
-              clear visual feedback. Every interaction reduces friction so healthy habits feel
-              effortless to start and maintain.
-            </p>
-            <p>
-              Clean space, deliberate typography, and a soft color system that signals calm
-              without being passive. Built for real life.
-            </p>
+            <p>{t.pages.mude.desc1}</p>
+            <p>{t.pages.mude.desc2}</p>
+            <p>{t.pages.mude.desc3}</p>
           </div>
 
           <Link
-            href="/"
+            href="/works"
             className="inline-flex items-center gap-2 text-xs text-muted hover:text-foreground transition-colors"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M19 12H5M5 12l7-7M5 12l7 7" />
             </svg>
-            Back to Works
+            {t.common.backToWorksBtn}
           </Link>
 
         </div>
@@ -84,22 +77,20 @@ export default function MudePage() {
           <h1 className="text-3xl font-semibold tracking-tight">Mude</h1>
           <div className="flex flex-wrap gap-x-6 gap-y-3">
             <div>
-              <p className="text-[10px] uppercase tracking-widest text-muted">Year</p>
+              <p className="text-[10px] uppercase tracking-widest text-muted">{t.common.year}</p>
               <p className="text-sm">2024</p>
             </div>
             <div>
-              <p className="text-[10px] uppercase tracking-widest text-muted">Role</p>
-              <p className="text-sm">Product Design</p>
+              <p className="text-[10px] uppercase tracking-widest text-muted">{t.common.role}</p>
+              <p className="text-sm">{t.roles["Product Design"]}</p>
             </div>
           </div>
-          <p className="text-sm text-muted leading-relaxed">
-            A wellness app designed to help people build sustainable mindfulness habits.
-          </p>
-          <Link href="/" className="inline-flex items-center gap-2 text-xs text-muted">
+          <p className="text-sm text-muted leading-relaxed">{t.pages.mude.descMobile}</p>
+          <Link href="/works" className="inline-flex items-center gap-2 text-xs text-muted">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M19 12H5M5 12l7-7M5 12l7 7" />
             </svg>
-            Back to Works
+            {t.common.backToWorksBtn}
           </Link>
         </div>
 
@@ -108,7 +99,7 @@ export default function MudePage() {
           {media.map((item, i) => (
             <RevealMedia key={i} item={item} />
           ))}
-          <p className="text-xs text-muted pt-4 pb-8">&copy; Pedro Julien 2026</p>
+          <p className="text-xs text-muted pt-4 pb-8">{t.copyright}</p>
         </div>
 
       </div>

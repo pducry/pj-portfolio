@@ -1,7 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { WorksFooter } from "@/components/works-footer";
 import { asset } from "@/lib/asset";
+import { useLang } from "@/components/language-provider";
+import { translations } from "@/lib/translations";
 
 const images = [
   { src: "/my-phone/1.png", alt: "My Phone, 1" },
@@ -15,6 +19,9 @@ const images = [
 ];
 
 export default function MyPhonePage() {
+  const { lang } = useLang();
+  const t = translations[lang];
+
   return (
     <div className="animate-fade-in">
       <SiteHeader />
@@ -22,26 +29,26 @@ export default function MyPhonePage() {
       {/* Back */}
       <div className="px-6 pt-1 pb-4">
         <Link href="/works" className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-foreground transition-colors">
-          ← Works
+          {t.common.backToWorks}
         </Link>
       </div>
 
       {/* Title + meta */}
       <div className="px-6 border-t border-border py-4 flex flex-wrap items-baseline gap-x-10 gap-y-1">
         <span className="text-base text-foreground whitespace-nowrap">My Phone</span>
-        <span className="text-sm text-muted whitespace-nowrap">Branding</span>
+        <span className="text-sm text-muted whitespace-nowrap">{t.categories["Branding"]}</span>
         <span className="text-sm text-muted whitespace-nowrap">2020</span>
-        <span className="text-sm text-muted whitespace-nowrap">Designer</span>
+        <span className="text-sm text-muted whitespace-nowrap">{t.roles["Designer"]}</span>
       </div>
 
       {/* Description */}
       <div className="px-6 border-t border-b border-border py-6">
         <div className="max-w-xl space-y-3">
           <p className="text-base leading-snug text-foreground/70">
-            My Phone is a branding project exploring the visual identity of a personal device brand, built around the idea that technology should feel human, tactile, and distinctly yours.
+            {t.pages.myPhone.desc1}
           </p>
           <p className="text-base leading-snug text-foreground/70">
-            The work covers brand identity, visual language, typography, and art direction, designed to feel bold and minimal at the same time.
+            {t.pages.myPhone.desc2}
           </p>
         </div>
       </div>
@@ -61,7 +68,7 @@ export default function MyPhonePage() {
 
       <WorksFooter current="My Phone" />
 
-      <p className="px-6 pb-8 text-sm text-muted">© Pedro Julien 2026</p>
+      <p className="px-6 pb-8 text-sm text-muted">{t.copyright}</p>
     </div>
   );
 }

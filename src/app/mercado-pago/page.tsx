@@ -4,6 +4,8 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { PasswordGate } from "@/components/password-gate";
 import { Reveal } from "@/components/reveal";
+import { useLang } from "@/components/language-provider";
+import { translations } from "@/lib/translations";
 
 const subProjects = [
   {
@@ -23,6 +25,9 @@ const subProjects = [
 ];
 
 function MercadoPagoContent() {
+  const { lang } = useLang();
+  const t = translations[lang];
+
   return (
     <div className="animate-fade-in">
       <SiteHeader />
@@ -33,32 +38,26 @@ function MercadoPagoContent() {
           href="/works"
           className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-foreground transition-colors"
         >
-          ← Works
+          {t.common.backToWorks}
         </Link>
       </div>
 
       {/* Title + meta */}
       <div className="px-6 border-t border-border py-4 flex flex-wrap items-baseline gap-x-10 gap-y-1">
         <span className="text-base text-foreground whitespace-nowrap">Mercado Pago</span>
-        <span className="text-sm text-muted whitespace-nowrap">Product Design</span>
+        <span className="text-sm text-muted whitespace-nowrap">{t.categories["Product Design"]}</span>
         <span className="text-sm text-muted whitespace-nowrap">2025–</span>
-        <span className="text-sm text-muted whitespace-nowrap">Design Manager</span>
+        <span className="text-sm text-muted whitespace-nowrap">{t.roles["Design Manager"]}</span>
       </div>
 
       {/* Description */}
       <div className="px-6 border-t border-b border-border py-6">
         <div className="max-w-xl space-y-3">
           <p className="text-base leading-snug text-foreground/70">
-            Leading design for Mercado Pago, Latin America&apos;s largest fintech, with over 60 million
-            active users across 7 countries. Responsible for design craft and strategic direction
-            across product design, design systems, and motion, working at the intersection of scale,
-            speed, and quality.
+            {t.pages.mercadoPago.desc1}
           </p>
           <p className="text-base leading-snug text-foreground/70">
-            UX as a business lever: design decisions at this scale touch millions of real financial
-            interactions daily. My role is to keep quality high and intentional, directing a team
-            of designers while staying close to the craft through prototyping, tooling, and hands-on
-            UX and creative direction.
+            {t.pages.mercadoPago.desc2}
           </p>
         </div>
       </div>
@@ -67,7 +66,7 @@ function MercadoPagoContent() {
       <div className="border-t border-border mt-16">
         <Reveal>
           <div className="px-6 py-3 border-b border-border">
-            <span className="text-sm text-foreground/30">Projects</span>
+            <span className="text-sm text-foreground/30">{t.common.projects}</span>
           </div>
         </Reveal>
 
@@ -83,14 +82,14 @@ function MercadoPagoContent() {
                   {p.name}
                 </span>
                 <p className={`text-xs mt-0.5 text-muted ${linked ? "transition-colors group-hover:text-background" : ""}`}>
-                  {p.category}
+                  {t.categories[p.category as keyof typeof t.categories]}
                 </p>
               </div>
               <span className={`hidden lg:block text-sm whitespace-nowrap text-muted ${linked ? "transition-colors group-hover:text-background" : ""}`}>
-                {p.category}
+                {t.categories[p.category as keyof typeof t.categories]}
               </span>
               <span className={`hidden lg:block text-sm whitespace-nowrap text-muted ${linked ? "transition-colors group-hover:text-background" : ""}`}>
-                {p.role}
+                {t.roles[p.role as keyof typeof t.roles]}
               </span>
               <span className={`hidden lg:block text-base whitespace-nowrap text-foreground ${linked ? "transition-colors group-hover:text-background" : ""}`}>
                 {p.name}
@@ -108,7 +107,7 @@ function MercadoPagoContent() {
         })}
       </div>
 
-      <p className="mt-16 px-6 pb-8 text-sm text-muted">© Pedro Julien 2026</p>
+      <p className="mt-16 px-6 pb-8 text-sm text-muted">{t.copyright}</p>
     </div>
   );
 }
