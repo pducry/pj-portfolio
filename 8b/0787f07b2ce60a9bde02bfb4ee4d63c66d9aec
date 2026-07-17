@@ -1,0 +1,20 @@
+src/lib/translations.ts
+  s_f8513a0d3b22d9::t_dcab91f60d7f86 213
+  s_f8513a0d3b22d9::t_2b637c131ed7e7 22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "8b0787f07b2ce60a9bde02bfb4ee4d63c66d9aec",
+  "prompts": {},
+  "sessions": {
+    "s_f8513a0d3b22d9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e17a8e2f-f75f-4c09-81c9-c4ccdd00cb22",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Pedro Julien <pducry@gmail.com>"
+    }
+  }
+}
