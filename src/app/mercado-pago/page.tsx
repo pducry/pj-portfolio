@@ -73,7 +73,7 @@ function MercadoPagoContent() {
         {subProjects.map((p) => {
           const linked = !!p.href;
           const row = (
-            <div className={`group grid items-baseline gap-x-6 border-b border-border px-6 py-5 transition-colors grid-cols-[48px_1fr_auto] lg:grid-cols-[64px_200px_180px_1fr_24px] ${linked ? "hover:bg-foreground cursor-pointer" : ""}`}>
+            <div className={`group grid items-baseline gap-x-6 border-b border-border px-6 py-5 transition-colors grid-cols-[48px_1fr_auto] lg:grid-cols-[64px_200px_1fr_24px] ${linked ? "hover:bg-foreground cursor-pointer" : ""}`}>
               <span className={`text-sm tabular-nums whitespace-nowrap text-muted ${linked ? "transition-colors group-hover:text-background" : ""}`}>
                 {p.year}
               </span>
@@ -87,9 +87,6 @@ function MercadoPagoContent() {
               </div>
               <span className={`hidden lg:block text-sm whitespace-nowrap text-muted ${linked ? "transition-colors group-hover:text-background" : ""}`}>
                 {t.categories[p.category as keyof typeof t.categories]}
-              </span>
-              <span className={`hidden lg:block text-sm whitespace-nowrap text-muted ${linked ? "transition-colors group-hover:text-background" : ""}`}>
-                {t.roles[p.role as keyof typeof t.roles]}
               </span>
               <span className={`hidden lg:block text-base whitespace-nowrap text-foreground ${linked ? "transition-colors group-hover:text-background" : ""}`}>
                 {p.name}
