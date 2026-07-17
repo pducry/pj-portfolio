@@ -1,6 +1,7 @@
 "use client";
 
 import { SiteHeader } from "@/components/site-header";
+import { WorksFooter } from "@/components/works-footer";
 import Link from "next/link";
 import { asset } from "@/lib/asset";
 import { useLang } from "@/components/language-provider";
@@ -94,6 +95,8 @@ export default function ForaclePage() {
           </div>
         ))}
       </div>
+
+      <WorksFooter current="Foracle" />
 
       <p className="px-6 pb-8 text-sm text-muted">{t.copyright}</p>
     </div>

@@ -1,5 +1,6 @@
 "use client";
 import { SiteHeader } from "@/components/site-header";
+import { WorksFooter } from "@/components/works-footer";
 import Link from "next/link";
 import { RevealMedia, type MediaItem } from "@/components/reveal-media";
 import { useLang } from "@/components/language-provider";
@@ -99,8 +100,11 @@ export default function MudePage() {
           {media.map((item, i) => (
             <RevealMedia key={i} item={item} />
           ))}
-          <p className="text-xs text-muted pt-4 pb-8">{t.copyright}</p>
         </div>
+
+        <WorksFooter current="Mude" />
+
+        <p className="px-6 pb-8 text-xs text-muted">{t.copyright}</p>
 
       </div>
 

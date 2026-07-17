@@ -4,6 +4,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { PasswordGate } from "@/components/password-gate";
 import { Reveal } from "@/components/reveal";
+import { WorksFooter } from "@/components/works-footer";
 import { useLang } from "@/components/language-provider";
 import { translations } from "@/lib/translations";
 
@@ -104,7 +105,9 @@ function MercadoPagoContent() {
         })}
       </div>
 
-      <p className="mt-16 px-6 pb-8 text-sm text-muted">{t.copyright}</p>
+      <WorksFooter current="Mercado Pago" />
+
+      <p className="px-6 pb-8 text-sm text-muted">{t.copyright}</p>
     </div>
   );
 }
