@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
-import { PasswordGate } from "@/components/password-gate";
 import { Reveal } from "@/components/reveal";
 import { WorksFooter } from "@/components/works-footer";
 import { asset } from "@/lib/asset";
@@ -193,9 +192,5 @@ function MotionPrinciplesContent() {
 }
 
 export default function MotionPrinciplesPage() {
-  return (
-    <PasswordGate password="mpmp" storageKey="mp-auth">
-      <MotionPrinciplesContent />
-    </PasswordGate>
-  );
+  return <MotionPrinciplesContent />;
 }

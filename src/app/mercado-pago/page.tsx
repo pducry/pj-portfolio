@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
-import { PasswordGate } from "@/components/password-gate";
 import { Reveal } from "@/components/reveal";
 import { WorksFooter } from "@/components/works-footer";
 import { useLang } from "@/components/language-provider";
@@ -113,9 +112,5 @@ function MercadoPagoContent() {
 }
 
 export default function MercadoPagoPage() {
-  return (
-    <PasswordGate password="mpmp" storageKey="mp-auth">
-      <MercadoPagoContent />
-    </PasswordGate>
-  );
+  return <MercadoPagoContent />;
 }
