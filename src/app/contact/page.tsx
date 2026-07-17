@@ -61,7 +61,7 @@ const clients = [
 const contactLinks = [
   { label: "Email",      href: "mailto:pducry@gmail.com" },
   { label: "Instagram",  href: "https://www.instagram.com/pedro_julien" },
-  { label: "LinkedIn",   href: "https://www.linkedin.com/in/pedro_julien" },
+  { label: "LinkedIn",   href: "https://www.linkedin.com/in/pedrojulien/" },
   { label: "Foundation", href: "https://foundation.app/@ixaser" },
   { label: "Objkt",      href: "https://objkt.com/users/tz1VZcpNZW6W8D2hGXvTDqJqwGjmjPKRYwRM" },
 ];
