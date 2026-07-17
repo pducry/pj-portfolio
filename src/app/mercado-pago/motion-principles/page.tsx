@@ -109,6 +109,20 @@ function MotionPrinciplesContent() {
         </div>
       </div>
 
+      {/* Hero video */}
+      <Reveal>
+        <div className="border-b border-border">
+          <video
+            src={asset("/videos/mp/motion-principles-hero.mp4")}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-auto"
+          />
+        </div>
+      </Reveal>
+
       {/* Foundations */}
       <Reveal>
         <div className="mt-16">
