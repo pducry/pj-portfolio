@@ -1,0 +1,32 @@
+src/app/mercado-pago/page.tsx
+  s_f8513a0d3b22d9::t_5e3bf833c12eb2 7
+  s_f8513a0d3b22d9::t_506fdece746761 108-110
+src/app/mude/page.tsx
+  s_f8513a0d3b22d9::t_37ed59c6291684 3
+  s_f8513a0d3b22d9::t_263370e738c639 105-107
+src/app/foracle/page.tsx
+  s_f8513a0d3b22d9::t_b42c41d7d1c88c 4
+  s_f8513a0d3b22d9::t_6f029479546a2b 99-100
+src/app/combustion/page.tsx
+  s_f8513a0d3b22d9::t_6bfe1f965c93d5 107-109
+  s_f8513a0d3b22d9::t_051bfea4c8d8a7 3
+src/app/mercado-pago/motion-principles/page.tsx
+  s_f8513a0d3b22d9::t_e6faeb5797627e 188-190
+  s_f8513a0d3b22d9::t_06b666d180ba16 7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "3ab1273b731d4e92bc4e22aa3405fe45af2ba53c",
+  "prompts": {},
+  "sessions": {
+    "s_f8513a0d3b22d9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e17a8e2f-f75f-4c09-81c9-c4ccdd00cb22",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Pedro Julien <pducry@gmail.com>"
+    }
+  }
+}
