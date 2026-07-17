@@ -19,7 +19,7 @@ export const translations = {
       "Interactive":     "Interactive",
       "Product Design":  "Product Design",
       "Branding":        "Branding",
-      "Creative":        "Creative",
+      "Creative":        "Creative System",
     },
     experience: { current: "Current", past: "Professional Experience" },
     roles: {
@@ -210,7 +210,7 @@ export const translations = {
       "Interactive":     "Interativo",
       "Product Design":  "Product Design",
       "Branding":        "Branding",
-      "Creative":        "Criativo",
+      "Creative":        "Sistema Criativo",
     },
     experience: { current: "Atual", past: "Experiência Profissional" },
     roles: {
