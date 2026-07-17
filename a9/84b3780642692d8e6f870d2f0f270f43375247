@@ -1,0 +1,21 @@
+src/app/mercado-pago/motion-principles/page.tsx
+  s_f8513a0d3b22d9::t_de8a638b96f38c 195
+src/app/mercado-pago/page.tsx
+  s_f8513a0d3b22d9::t_95cf867fe21763 115
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "a984b3780642692d8e6f870d2f0f270f43375247",
+  "prompts": {},
+  "sessions": {
+    "s_f8513a0d3b22d9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e17a8e2f-f75f-4c09-81c9-c4ccdd00cb22",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Pedro Julien <pducry@gmail.com>"
+    }
+  }
+}
