@@ -18,7 +18,7 @@ const subProjects = [
   {
     year: "2026",
     category: "Creative",
-    name: "Artificial Intelligence Art Direction",
+    name: "Art Direction",
     role: "Design Manager",
     href: "",
   },
