@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRef, useEffect } from "react";
 import { SiteHeader } from "@/components/site-header";
 import { Reveal } from "@/components/reveal";
 import { WorksFooter } from "@/components/works-footer";
@@ -41,6 +42,33 @@ const principles = [
     ],
   },
 ];
+
+function HeroVideo({ src }: { src: string }) {
+  const ref = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = ref.current;
+    if (!video) return;
+    const onTimeUpdate = () => {
+      if (video.duration && video.currentTime >= video.duration - 5) {
+        video.currentTime = 0;
+      }
+    };
+    video.addEventListener("timeupdate", onTimeUpdate);
+    return () => video.removeEventListener("timeupdate", onTimeUpdate);
+  }, []);
+
+  return (
+    <video
+      ref={ref}
+      src={src}
+      autoPlay
+      muted
+      playsInline
+      className="w-full h-auto"
+    />
+  );
+}
 
 function VideoClip({
   file,
@@ -112,14 +140,7 @@ function MotionPrinciplesContent() {
       {/* Hero video */}
       <Reveal>
         <div className="border-b border-border">
-          <video
-            src={asset("/videos/mp/motion-principles-hero.mp4")}
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-auto"
-          />
+          <HeroVideo src={asset("/videos/mp/motion-principles-hero.mp4")} />
         </div>
       </Reveal>
 
