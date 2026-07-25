@@ -20,7 +20,7 @@ const subProjects = [
     category: "Creative",
     name: "Art Direction",
     role: "Design Manager",
-    href: "",
+    href: "/mercado-pago/art-direction",
   },
 ];
 

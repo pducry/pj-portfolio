@@ -160,6 +160,10 @@ export const translations = {
           },
         ],
       },
+      artDirection: {
+        intro1: "A unified visual identity for Mercado Pago, built simultaneously across photography, iconography, and 3D. The work consolidates and evolves the brand's creative language across formats and markets — ensuring every touchpoint feels coherent, intentional, and unmistakably on-brand at the scale of Latin America's largest fintech.",
+        intro2: "Art direction operating across live campaign photography, AI-assisted 3D assets, and iconographic systems. Spanning 11 verticals and 7 countries, the project defines how the brand looks and feels wherever it appears — from product screens to campaign visuals.",
+      },
       sute: {
         desc1: "Sute is a digital product built to bring order to complex information landscapes, taking what is normally dense, fragmented data and making it feel calm, navigable, and human.",
         desc2: "I led the design end-to-end alongside a small, focused team. The work spanned foundational research and product strategy, information architecture, the full UI system, motion principles, and the editorial tone that runs through every screen.",
@@ -350,6 +354,10 @@ export const translations = {
             ],
           },
         ],
+      },
+      artDirection: {
+        intro1: "Uma identidade visual unificada para o Mercado Pago, construída simultaneamente em fotografia, iconografia e 3D. O trabalho consolida e evolui a linguagem criativa da marca em formatos e mercados — garantindo que cada ponto de contato seja coerente, intencional e inegavelmente alinhado à marca na escala da maior fintech da América Latina.",
+        intro2: "Direção de arte atuando em fotografia de campanha ao vivo, assets 3D assistidos por IA e sistemas iconográficos. Abrangendo 11 verticais e 7 países, o projeto define como a marca se apresenta onde quer que apareça — das telas do produto aos visuais de campanha.",
       },
       sute: {
         desc1: "Sute é um produto digital criado para trazer ordem a paisagens de informação complexas, transformando dados normalmente densos e fragmentados em algo calmo, navegável e humano.",
