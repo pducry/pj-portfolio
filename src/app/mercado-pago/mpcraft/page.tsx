@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { SiteHeader } from "@/components/site-header";
 import { Reveal } from "@/components/reveal";
 import { WorksFooter } from "@/components/works-footer";
+import { asset } from "@/lib/asset";
 import { useLang } from "@/components/language-provider";
 import { translations } from "@/lib/translations";
 
@@ -41,6 +43,20 @@ function MPCraftContent() {
           <p className="text-base leading-snug text-foreground/70">{mp.intro2}</p>
         </div>
       </div>
+
+      {/* Hero image */}
+      <Reveal>
+        <div className="border-t border-b border-border mt-8">
+          <Image
+            src={asset("/projects/mpcraft/mpcraft_hero.png")}
+            alt="MPCraft"
+            width={2880}
+            height={1800}
+            className="w-full h-auto"
+            sizes="100vw"
+          />
+        </div>
+      </Reveal>
 
       {/* Leadership Pillars */}
       <Reveal>
