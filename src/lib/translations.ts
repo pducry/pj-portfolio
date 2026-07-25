@@ -20,6 +20,7 @@ export const translations = {
       "Product Design":  "Product Design",
       "Branding":        "Branding",
       "Creative":        "Creative System",
+      "Leadership":      "Leadership",
     },
     experience: { current: "Current", past: "Professional Experience" },
     roles: {
@@ -164,6 +165,66 @@ export const translations = {
         intro1: "A unified visual identity for Mercado Pago, built simultaneously across photography, iconography, and 3D. The work consolidates and evolves the brand's creative language across formats and markets — ensuring every touchpoint feels coherent, intentional, and unmistakably on-brand at the scale of Latin America's largest fintech.",
         intro2: "Art direction operating across live campaign photography, AI-assisted 3D assets, and iconographic systems. Spanning 11 verticals and 7 countries, the project defines how the brand looks and feels wherever it appears — from product screens to campaign visuals.",
       },
+      mpcraft: {
+        intro1: "A leadership development program designed for Mercado Pago's design team leads, built on a simple conviction: collective quality is a system, not a talent. MPCraft creates the conditions — rituals, language, and shared practice — for design excellence to emerge consistently, not occasionally.",
+        intro2: "The program operates across two tracks. The craft track develops visual judgment and AI fluency across the full team. The leadership track shapes how design leads build, prototype, and influence — grounding the builder archetype not in aspiration but in daily practice.",
+        pillarsLabel: "Leadership Pillars",
+        initiativesLabel: "Initiatives",
+        ritualsLabel: "Rituals",
+        pillars: [
+          {
+            label: "Craft Obsession",
+            body: "Leaders model excellence through critical judgment, not by doing the team's work. Constant reference study, design decision debate, and an uncompromising eye for quality at every detail.",
+          },
+          {
+            label: "Hands-On Leadership",
+            body: "Design leaders who stop designing lose context and credibility. Prototyping, AI exploration, and proof-of-concept building are leadership acts — leading through example, not discourse.",
+          },
+          {
+            label: "Radical Collaboration",
+            body: "The best work emerges from perspective collision. Leadership creates environments where design, product, engineering, and data intersect — shifting from who had the idea to how to build the best solution.",
+          },
+          {
+            label: "Innovation Through Making",
+            body: "Innovation is a consequence of experimentation. More doing, less discussing. Leaders build clarity by building — using uncertainty as motivation, not as an excuse for inaction.",
+          },
+        ],
+        initiatives: [
+          {
+            label: "AIAD",
+            body: "AI-driven art direction with rational foundations. Structured briefing, reference mapping, intentional prompting, and rational validation — a repeatable framework for AI-assisted creative decisions.",
+          },
+          {
+            label: "AIUD",
+            body: "AI as co-pilot in user research, compressing the cycle between field work and design decisions. Faster synthesis, sharper insight, more time for design.",
+          },
+          {
+            label: "Skillflix",
+            body: "Continuous training enabling designers to build custom AI agents — spanning identification, organization, prototyping, and optimization. Skills built through making, not watching.",
+          },
+          {
+            label: "Builder Sprint",
+            body: "Monthly sessions where leaders construct prototypes, systems, or tools alongside teams. Not delegated. Built together.",
+          },
+        ],
+        rituals: [
+          {
+            label: "Design Tasting",
+            duration: "45 min — weekly",
+            body: "Inspirational sessions elevating visual criteria across typography, branding, motion, photography, and editorial design. Taste is a skill built through deliberate exposure.",
+          },
+          {
+            label: "UX Critique",
+            duration: "45 min — monthly",
+            body: "Structured feedback sessions that transform critique into categorized diagnosis: heuristics, benchmarks, accessibility, and business rationale — all in one room.",
+          },
+          {
+            label: "Skill Drop",
+            duration: "Async — monthly",
+            body: "Screen recordings demonstrating real AI-assisted workflow improvements, shared via Slack. Evidence of fluency over performance of fluency.",
+          },
+        ],
+      },
       sute: {
         desc1: "Sute is a digital product built to bring order to complex information landscapes, taking what is normally dense, fragmented data and making it feel calm, navigable, and human.",
         desc2: "I led the design end-to-end alongside a small, focused team. The work spanned foundational research and product strategy, information architecture, the full UI system, motion principles, and the editorial tone that runs through every screen.",
@@ -215,6 +276,7 @@ export const translations = {
       "Product Design":  "Product Design",
       "Branding":        "Branding",
       "Creative":        "Sistema Criativo",
+      "Leadership":      "Liderança",
     },
     experience: { current: "Atual", past: "Experiência Profissional" },
     roles: {
@@ -358,6 +420,66 @@ export const translations = {
       artDirection: {
         intro1: "Uma identidade visual unificada para o Mercado Pago, construída simultaneamente em fotografia, iconografia e 3D. O trabalho consolida e evolui a linguagem criativa da marca em formatos e mercados — garantindo que cada ponto de contato seja coerente, intencional e inegavelmente alinhado à marca na escala da maior fintech da América Latina.",
         intro2: "Direção de arte atuando em fotografia de campanha ao vivo, assets 3D assistidos por IA e sistemas iconográficos. Abrangendo 11 verticais e 7 países, o projeto define como a marca se apresenta onde quer que apareça — das telas do produto aos visuais de campanha.",
+      },
+      mpcraft: {
+        intro1: "Um programa de desenvolvimento de liderança criado para os design leads do Mercado Pago, construído sobre uma convicção simples: qualidade coletiva é sistema, não talento. O MPCraft cria as condições — rituais, linguagem e prática compartilhada — para que a excelência em design emerja de forma consistente, não ocasional.",
+        intro2: "O programa opera em duas frentes. A trilha de craft desenvolve julgamento visual e fluência em IA em todo o time. A trilha de liderança forma como os design leads constroem, prototipam e influenciam — ancorando o arquétipo de builder não em aspiração, mas em prática diária.",
+        pillarsLabel: "Pilares de Liderança",
+        initiativesLabel: "Iniciativas",
+        ritualsLabel: "Rituais",
+        pillars: [
+          {
+            label: "Obsessão com Craft",
+            body: "Líderes modelam excelência por meio de julgamento crítico, não fazendo o trabalho do time. Estudo constante de referências, debate de decisões de design e um olhar implacável para a qualidade em cada detalhe.",
+          },
+          {
+            label: "Liderança Hands-On",
+            body: "Design leads que param de projetar perdem contexto e credibilidade. Prototipar, explorar IA e construir proofs-of-concept são atos de liderança — liderar pelo exemplo, não pelo discurso.",
+          },
+          {
+            label: "Colaboração Radical",
+            body: "O melhor trabalho nasce da colisão de perspectivas. A liderança cria ambientes onde design, produto, engenharia e dados se cruzam — deslocando o foco de quem teve a ideia para como construir a melhor solução.",
+          },
+          {
+            label: "Inovação pelo Fazer",
+            body: "Inovação é consequência da experimentação. Mais fazendo, menos discutindo. Líderes constroem clareza construindo — usando a incerteza como motivação, não como desculpa para a inação.",
+          },
+        ],
+        initiatives: [
+          {
+            label: "AIAD",
+            body: "Direção de arte orientada por IA com fundamentos racionais. Briefing estruturado, mapeamento de referências, prompts intencionais e validação racional — um framework repetível para decisões criativas assistidas por IA.",
+          },
+          {
+            label: "AIUD",
+            body: "IA como co-piloto em pesquisa com usuários, comprimindo o ciclo entre trabalho de campo e decisões de design. Síntese mais rápida, insights mais precisos, mais tempo para o design.",
+          },
+          {
+            label: "Skillflix",
+            body: "Treinamento contínuo que capacita designers a construir agentes de IA customizados — abrangendo identificação, organização, prototipagem e otimização. Habilidades construídas pelo fazer, não pelo assistir.",
+          },
+          {
+            label: "Builder Sprint",
+            body: "Sessões mensais onde líderes constroem protótipos, sistemas ou ferramentas junto com os times. Não delegado. Construído juntos.",
+          },
+        ],
+        rituals: [
+          {
+            label: "Design Tasting",
+            duration: "45 min — semanal",
+            body: "Sessões de inspiração que elevam os critérios visuais em tipografia, branding, motion, fotografia e design editorial. Gosto é habilidade construída por exposição deliberada.",
+          },
+          {
+            label: "UX Critique",
+            duration: "45 min — mensal",
+            body: "Sessões de feedback estruturado que transformam crítica em diagnóstico categorizado: heurísticas, benchmarks, acessibilidade e racional de negócio — tudo em uma única conversa.",
+          },
+          {
+            label: "Skill Drop",
+            duration: "Async — mensal",
+            body: "Gravações de tela demonstrando melhorias reais em fluxos de trabalho assistidos por IA, compartilhadas via Slack. Evidência de fluência, não performance de fluência.",
+          },
+        ],
       },
       sute: {
         desc1: "Sute é um produto digital criado para trazer ordem a paisagens de informação complexas, transformando dados normalmente densos e fragmentados em algo calmo, navegável e humano.",

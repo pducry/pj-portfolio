@@ -22,6 +22,13 @@ const subProjects = [
     role: "Design Manager",
     href: "/mercado-pago/art-direction",
   },
+  {
+    year: "2025",
+    category: "Leadership",
+    name: "MPCraft",
+    role: "Design Manager",
+    href: "/mercado-pago/mpcraft",
+  },
 ];
 
 function MercadoPagoContent() {
