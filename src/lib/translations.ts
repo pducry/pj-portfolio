@@ -199,10 +199,6 @@ export const translations = {
             body: "AI as co-pilot in user research, compressing the cycle between field work and design decisions. Faster synthesis, sharper insight, more time for design.",
           },
           {
-            label: "Skillflix",
-            body: "Continuous training enabling designers to build custom AI agents — spanning identification, organization, prototyping, and optimization. Skills built through making, not watching.",
-          },
-          {
             label: "Builder Sprint",
             body: "Monthly sessions where leaders construct prototypes, systems, or tools alongside teams. Not delegated. Built together.",
           },
@@ -503,10 +499,6 @@ export const translations = {
           {
             label: "AIUD",
             body: "IA como co-piloto em pesquisa com usuários, comprimindo o ciclo entre trabalho de campo e decisões de design. Síntese mais rápida, insights mais precisos, mais tempo para o design.",
-          },
-          {
-            label: "Skillflix",
-            body: "Treinamento contínuo que capacita designers a construir agentes de IA customizados — abrangendo identificação, organização, prototipagem e otimização. Habilidades construídas pelo fazer, não pelo assistir.",
           },
           {
             label: "Builder Sprint",
