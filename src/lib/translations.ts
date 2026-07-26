@@ -211,17 +211,27 @@ export const translations = {
           {
             label: "Design Tasting",
             duration: "45 min — weekly",
-            body: "Inspirational sessions elevating visual criteria across typography, branding, motion, photography, and editorial design. Taste is a skill built through deliberate exposure.",
+            body: "One reference. One guided discussion. One shared criterion — applied to real work. Not an inspiration board: a weekly session where the team dissects a single piece across typography, photography, motion, or editorial design. The question is never 'do you like it?' but 'why does it work, and what does it teach us?' Over time, the accumulated vocabulary becomes the team's shared creative language — the standard the work is measured against.",
           },
           {
             label: "UX Critique",
             duration: "45 min — monthly",
-            body: "Structured feedback sessions that transform critique into categorized diagnosis: heuristics, benchmarks, accessibility, and business rationale — all in one room.",
+            body: "Team work meets structured diagnosis. Before each session, AI runs a category-based analysis of the work under review — heuristics, benchmarks, accessibility, business rationale, assumptions. The critique itself converts subjective reactions into defensible, documented decisions. Over time, patterns emerge across projects: feedback stops being individual opinion and becomes institutional knowledge the team can build on.",
           },
           {
             label: "Skill Drop",
             duration: "Async — monthly",
-            body: "Screen recordings demonstrating real AI-assisted workflow improvements, shared via Slack. Evidence of fluency over performance of fluency.",
+            body: "10 minutes of context, live demonstration, and measurable result — via Loom, posted directly to Slack. No slides, no meetings. Each drop shows a real workflow improvement from an active project: what the problem was, how AI changed the approach, what the outcome looked like. The format compounds: a growing library of team-built techniques anyone can adapt. Evidence of fluency, not performance of fluency.",
+          },
+          {
+            label: "AI Workflows Clinic",
+            duration: "Monthly — Team Leads",
+            body: "Each Team Lead documents and shares a real AI-assisted workflow from a live project. Not a tutorial — a transparent account of how AI changed how they worked, where it helped, and where it didn't. Leadership through example: the goal is to show AI fluency in practice, building a shared evidence base of what AI actually changes at this scale, with these constraints.",
+          },
+          {
+            label: "AI Pair Design",
+            duration: "Monthly — Team Leads",
+            body: "Leaders prototype directly with AI and make the process visible to their teams. A raw working session — not a polished demo. The output is both the artifact and the thinking behind it: teams see how a leader breaks down a problem, prompts, iterates, and decides. Builder spirit in practice: building to learn, not building to present.",
           },
         ],
       },
@@ -467,17 +477,27 @@ export const translations = {
           {
             label: "Design Tasting",
             duration: "45 min — semanal",
-            body: "Sessões de inspiração que elevam os critérios visuais em tipografia, branding, motion, fotografia e design editorial. Gosto é habilidade construída por exposição deliberada.",
+            body: "Uma referência. Uma discussão guiada. Um critério compartilhado — aplicado ao trabalho real. Não é um mural de inspiração: é uma sessão semanal onde o time disseca uma única peça em tipografia, fotografia, motion ou design editorial. A pergunta não é 'você gostou?' mas 'por que funciona e o que isso nos ensina?' Com o tempo, o vocabulário acumulado se torna a linguagem criativa compartilhada do time — o padrão pelo qual o trabalho é medido.",
           },
           {
             label: "UX Critique",
             duration: "45 min — mensal",
-            body: "Sessões de feedback estruturado que transformam crítica em diagnóstico categorizado: heurísticas, benchmarks, acessibilidade e racional de negócio — tudo em uma única conversa.",
+            body: "O trabalho do time encontra diagnóstico estruturado. Antes de cada sessão, a IA executa uma análise por categorias do trabalho em revisão — heurísticas, benchmarks, acessibilidade, racional de negócio, premissas. A crítica em si converte reações subjetivas em decisões defensáveis e documentadas. Com o tempo, padrões emergem entre projetos: o feedback deixa de ser opinião individual e se torna conhecimento institucional que o time pode evoluir.",
           },
           {
             label: "Skill Drop",
             duration: "Async — mensal",
-            body: "Gravações de tela demonstrando melhorias reais em fluxos de trabalho assistidos por IA, compartilhadas via Slack. Evidência de fluência, não performance de fluência.",
+            body: "10 minutos de contexto, demonstração ao vivo e resultado mensurável — via Loom, direto no Slack. Sem slides, sem reunião. Cada drop mostra uma melhoria real de fluxo de trabalho de um projeto ativo: qual era o problema, como a IA mudou a abordagem, como ficou o resultado. O formato se acumula: uma biblioteca crescente de técnicas do próprio time que qualquer pessoa pode adaptar. Evidência de fluência, não performance de fluência.",
+          },
+          {
+            label: "AI Workflows Clinic",
+            duration: "Mensal — Team Leads",
+            body: "Cada Team Lead documenta e compartilha um fluxo de trabalho real assistido por IA de um projeto ativo. Não é tutorial — é um relato transparente de como a IA mudou como trabalharam, onde ajudou e onde não ajudou. Liderança pelo exemplo: o objetivo é mostrar fluência em IA na prática, construindo uma base de evidências compartilhada sobre o que a IA de fato transforma nessa escala, com essas restrições.",
+          },
+          {
+            label: "AI Pair Design",
+            duration: "Mensal — Team Leads",
+            body: "Líderes prototipam diretamente com IA e tornam o processo visível para o time. Uma sessão de trabalho bruta, não uma demo polida. O output é o artefato e o pensamento por trás dele: o time vê como o líder quebra um problema, constrói prompts, itera e decide. Espírito builder na prática: construir para aprender, não para apresentar.",
           },
         ],
       },
