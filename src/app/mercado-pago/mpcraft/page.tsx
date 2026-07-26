@@ -44,20 +44,6 @@ function MPCraftContent() {
         </div>
       </div>
 
-      {/* Hero image */}
-      <Reveal>
-        <div className="border-t border-b border-border mt-8">
-          <Image
-            src={asset("/projects/mpcraft/mpcraft_hero.png")}
-            alt="MPCraft"
-            width={2880}
-            height={1800}
-            className="w-full h-auto"
-            sizes="100vw"
-          />
-        </div>
-      </Reveal>
-
       {/* Leadership Pillars */}
       <Reveal>
         <div className="mt-16">
@@ -109,6 +95,40 @@ function MPCraftContent() {
               </div>
             ))}
           </div>
+        </div>
+      </Reveal>
+
+      {/* Agentic Leadership */}
+      <Reveal>
+        <div className="mt-16">
+          <div className="px-6 py-3 border-t border-b border-border">
+            <span className="text-sm text-foreground/30">{mp.agenticLabel}</span>
+          </div>
+          <div className="px-6 py-5 border-b border-border max-w-xl">
+            <p className="text-sm text-muted leading-snug">{mp.agenticIntro}</p>
+          </div>
+          <div className="divide-y divide-border">
+            {mp.agentic.map((item, i) => (
+              <div key={i} className="px-6 py-5 grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-2 lg:gap-12">
+                <p className="text-base text-foreground">{item.label}</p>
+                <p className="text-sm text-muted leading-snug">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Reveal>
+
+      {/* Closing image */}
+      <Reveal>
+        <div className="mt-16 border-t border-b border-border">
+          <Image
+            src={asset("/projects/mpcraft/mpcraft_hero.png")}
+            alt="MPCraft"
+            width={2880}
+            height={1800}
+            className="w-full h-auto"
+            sizes="100vw"
+          />
         </div>
       </Reveal>
 

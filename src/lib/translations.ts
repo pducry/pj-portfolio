@@ -207,6 +207,26 @@ export const translations = {
             body: "Monthly sessions where leaders construct prototypes, systems, or tools alongside teams. Not delegated. Built together.",
           },
         ],
+        agenticLabel: "Agentic Leadership",
+        agenticIntro: "The next layer of MPCraft is operational: AI agents embedded in how leadership works day-to-day — not as productivity tools, but as co-pilots that extend the design leader's thinking, speed, and reach.",
+        agentic: [
+          {
+            label: "Systemic Thinking",
+            body: "Agents that map dependencies, surface patterns across projects, and model consequences before decisions are made. Leadership that thinks in systems: how a choice in one vertical reverberates across nine others, how a design decision today shapes engineering cost next quarter. Clarity built before the meeting, not during it.",
+          },
+          {
+            label: "Framework Generation",
+            body: "Moving from blank-canvas frameworks to AI-assisted scaffolding. Agents generate starting structures grounded in real project data, challenge inherited assumptions, and propose new mental models before the team commits to a direction. The goal is not to remove thinking — it's to start further ahead.",
+          },
+          {
+            label: "Handoff Acceleration",
+            body: "Agents that compress the gap between design decisions and implementation. Auto-generated specs, design rationale translated into engineering language, edge cases surfaced before review. Fewer cycles of back-and-forth. More time building the right thing, less time clarifying what was meant.",
+          },
+          {
+            label: "Ideation at Volume",
+            body: "Leaders who use AI to dramatically increase the density of ideas before converging. Not to replace judgment — to multiply the starting surface area so the best ideas have a real chance of emerging. The constraint shifts from how many ideas can we generate to which ones are actually worth pursuing.",
+          },
+        ],
         rituals: [
           {
             label: "Design Tasting",
@@ -437,6 +457,26 @@ export const translations = {
         pillarsLabel: "Pilares de Liderança",
         initiativesLabel: "Iniciativas",
         ritualsLabel: "Rituais",
+        agenticLabel: "Liderança Agêntica",
+        agenticIntro: "A próxima camada do MPCraft é operacional: agentes de IA integrados ao dia a dia da liderança — não como ferramentas de produtividade, mas como co-pilotos que ampliam o pensamento, a velocidade e o alcance do design leader.",
+        agentic: [
+          {
+            label: "Pensamento Sistêmico",
+            body: "Agentes que mapeiam dependências, identificam padrões entre projetos e modelam consequências antes das decisões serem tomadas. Liderança que pensa em sistemas: como uma escolha em uma vertical reverbera em outras nove, como uma decisão de design hoje impacta o custo de engenharia no próximo trimestre. Clareza construída antes da reunião, não durante ela.",
+          },
+          {
+            label: "Geração de Frameworks",
+            body: "Sair de frameworks de tela em branco para scaffolding assistido por IA. Agentes geram estruturas de partida fundamentadas em dados reais do projeto, desafiam premissas herdadas e propõem novos modelos mentais antes de o time se comprometer com uma direção. O objetivo não é remover o pensamento — é começar mais à frente.",
+          },
+          {
+            label: "Aceleração de Handoff",
+            body: "Agentes que comprimem o gap entre decisões de design e implementação. Specs geradas automaticamente, racional de design traduzido para linguagem de engenharia, edge cases identificados antes da revisão. Menos ciclos de ida e volta. Mais tempo construindo a coisa certa, menos tempo explicando o que foi pensado.",
+          },
+          {
+            label: "Ideação em Volume",
+            body: "Líderes que usam IA para aumentar dramaticamente a densidade de ideias antes de convergir. Não para substituir o julgamento — para multiplicar a superfície de partida e dar às melhores ideias uma chance real de emergir. O constraint muda: não mais quantas ideias conseguimos gerar, mas quais delas valem de fato a pena perseguir.",
+          },
+        ],
         pillars: [
           {
             label: "Obsessão com Craft",
