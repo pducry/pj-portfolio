@@ -99,7 +99,7 @@ export function MobileMenu() {
                 borderBottom: border,
                 textDecoration: "none",
                 color: isActive ? fg : `${fg}99`,
-                fontSize: 28,
+                fontSize: 30,
                 fontWeight: 600,
               }}
             >
@@ -111,20 +111,20 @@ export function MobileMenu() {
       </nav>
 
       {/* Bottom controls */}
-      <div style={{ padding: "20px 24px 40px", display: "flex", flexWrap: "wrap", gap: 10, borderTop: border }}>
+      <div style={{ padding: "20px 24px 48px", display: "flex", flexWrap: "wrap", gap: 12, borderTop: border }}>
         {/* Lang */}
-        <div style={{ display: "flex", borderRadius: 999, padding: 2, backgroundColor: pill }}>
+        <div style={{ display: "flex", borderRadius: 999, padding: 3, backgroundColor: pill }}>
           {(["en", "pt"] as const).map((l) => (
-            <button key={l} onClick={() => lang !== l && toggleLang()} style={{ padding: "6px 16px", borderRadius: 999, border: "none", cursor: "pointer", fontSize: 12, backgroundColor: lang === l ? bg : "transparent", color: lang === l ? fg : `${fg}66`, fontWeight: lang === l ? 500 : 400 }}>
+            <button key={l} onClick={() => lang !== l && toggleLang()} style={{ padding: "10px 22px", borderRadius: 999, border: "none", cursor: "pointer", fontSize: 30, fontWeight: lang === l ? 600 : 400, backgroundColor: lang === l ? bg : "transparent", color: lang === l ? fg : `${fg}55` }}>
               {l.toUpperCase()}
             </button>
           ))}
         </div>
 
         {/* Theme */}
-        <div style={{ display: "flex", borderRadius: 999, padding: 2, backgroundColor: pill }}>
+        <div style={{ display: "flex", borderRadius: 999, padding: 3, backgroundColor: pill }}>
           {(["light", "dark"] as const).map((th) => (
-            <button key={th} onClick={() => theme !== th && toggleTheme()} style={{ padding: "6px 16px", borderRadius: 999, border: "none", cursor: "pointer", fontSize: 12, backgroundColor: theme === th ? bg : "transparent", color: theme === th ? fg : `${fg}66`, fontWeight: theme === th ? 500 : 400, textTransform: "capitalize" }}>
+            <button key={th} onClick={() => theme !== th && toggleTheme()} style={{ padding: "10px 22px", borderRadius: 999, border: "none", cursor: "pointer", fontSize: 30, fontWeight: theme === th ? 600 : 400, backgroundColor: theme === th ? bg : "transparent", color: theme === th ? fg : `${fg}55`, textTransform: "capitalize" }}>
               {th}
             </button>
           ))}
