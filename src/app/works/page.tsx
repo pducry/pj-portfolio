@@ -109,7 +109,7 @@ export default function Bio() {
               href="https://ffforma.design/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground font-medium underline underline-offset-2 decoration-foreground/30 hover:decoration-foreground transition-colors"
+              className="text-foreground font-medium hover:opacity-60 transition-opacity"
             >
               FFForma
             </a>

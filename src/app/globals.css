@@ -33,6 +33,10 @@ html {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 @media (min-width: 1024px) {
   html {
     font-size: 30px;
