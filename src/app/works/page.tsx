@@ -117,7 +117,7 @@ export default function Bio() {
           </p>
           <a
             href="mailto:pducry@gmail.com"
-            className="inline-flex items-center gap-2 text-2xl lg:text-[30px] text-foreground border-b border-foreground/30 pb-0.5 hover:border-foreground transition-colors"
+            className="inline-flex items-center gap-2 text-2xl lg:text-[30px] text-foreground hover:opacity-60 transition-opacity"
           >
             {t.bio.cta} →
           </a>

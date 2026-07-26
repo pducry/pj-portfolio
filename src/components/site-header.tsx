@@ -52,13 +52,13 @@ export function SiteHeader() {
         <div className="flex items-center bg-foreground/[0.06] rounded-full p-0.5">
           <button
             onClick={() => lang !== "en" && toggleLang()}
-            className={`text-base px-3 py-1 rounded-full transition-all ${
+            className={`text-[22px] px-3 py-1 rounded-full transition-all ${
               lang === "en" ? "bg-background text-foreground shadow-sm" : "text-muted hover:text-foreground"
             }`}
           >EN</button>
           <button
             onClick={() => lang !== "pt" && toggleLang()}
-            className={`text-base px-3 py-1 rounded-full transition-all ${
+            className={`text-[22px] px-3 py-1 rounded-full transition-all ${
               lang === "pt" ? "bg-background text-foreground shadow-sm" : "text-muted hover:text-foreground"
             }`}
           >PT</button>
@@ -68,13 +68,13 @@ export function SiteHeader() {
         <div className="flex items-center bg-foreground/[0.06] rounded-full p-0.5">
           <button
             onClick={() => theme !== "light" && toggleTheme()}
-            className={`text-base px-3 py-1 rounded-full transition-all ${
+            className={`text-[22px] px-3 py-1 rounded-full transition-all ${
               theme === "light" ? "bg-background text-foreground shadow-sm" : "text-muted hover:text-foreground"
             }`}
           >Light</button>
           <button
             onClick={() => theme !== "dark" && toggleTheme()}
-            className={`text-base px-3 py-1 rounded-full transition-all ${
+            className={`text-[22px] px-3 py-1 rounded-full transition-all ${
               theme === "dark" ? "bg-background text-foreground shadow-sm" : "text-muted hover:text-foreground"
             }`}
           >Dark</button>
