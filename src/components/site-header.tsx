@@ -21,24 +21,24 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 flex items-center justify-between px-6 py-4 bg-background/70 backdrop-blur-md border-b border-border/40">
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3">
         <span className="w-2 h-2 rounded-full bg-red-500 shrink-0" />
-        <Link href="/works" className="text-base font-medium text-foreground transition-opacity hover:opacity-60">
+        <Link href="/works" className="text-[14px] font-medium text-foreground transition-opacity hover:opacity-60">
           Pedro Julien
         </Link>
-        <span className="hidden lg:inline text-base text-muted">Portfolio Version 26.2</span>
+        <span className="hidden lg:inline text-[14px] text-muted">Portfolio Version 26.2</span>
       </div>
 
       {/* Desktop nav */}
-      <div className="hidden lg:flex items-center gap-6">
-        <nav className="flex items-center gap-6">
+      <div className="hidden lg:flex items-center gap-5">
+        <nav className="flex items-center gap-5">
           {navLinks.map(({ href, label }) => {
             const isActive = pathname === href;
             return (
               <Link
                 key={href}
                 href={href}
-                className={`text-base transition-colors ${
+                className={`text-[14px] transition-colors ${
                   isActive ? "text-foreground" : "text-muted hover:text-foreground"
                 }`}
               >
@@ -52,13 +52,13 @@ export function SiteHeader() {
         <div className="flex items-center bg-foreground/[0.06] rounded-full p-0.5">
           <button
             onClick={() => lang !== "en" && toggleLang()}
-            className={`text-[13px] px-3 py-1 rounded-full transition-all ${
+            className={`text-[11px] px-2.5 py-0.5 rounded-full transition-all ${
               lang === "en" ? "bg-background text-foreground shadow-sm" : "text-muted hover:text-foreground"
             }`}
           >EN</button>
           <button
             onClick={() => lang !== "pt" && toggleLang()}
-            className={`text-[13px] px-3 py-1 rounded-full transition-all ${
+            className={`text-[11px] px-2.5 py-0.5 rounded-full transition-all ${
               lang === "pt" ? "bg-background text-foreground shadow-sm" : "text-muted hover:text-foreground"
             }`}
           >PT</button>
@@ -68,13 +68,13 @@ export function SiteHeader() {
         <div className="flex items-center bg-foreground/[0.06] rounded-full p-0.5">
           <button
             onClick={() => theme !== "light" && toggleTheme()}
-            className={`text-[13px] px-3 py-1 rounded-full transition-all ${
+            className={`text-[11px] px-2.5 py-0.5 rounded-full transition-all ${
               theme === "light" ? "bg-background text-foreground shadow-sm" : "text-muted hover:text-foreground"
             }`}
           >Light</button>
           <button
             onClick={() => theme !== "dark" && toggleTheme()}
-            className={`text-[13px] px-3 py-1 rounded-full transition-all ${
+            className={`text-[11px] px-2.5 py-0.5 rounded-full transition-all ${
               theme === "dark" ? "bg-background text-foreground shadow-sm" : "text-muted hover:text-foreground"
             }`}
           >Dark</button>
