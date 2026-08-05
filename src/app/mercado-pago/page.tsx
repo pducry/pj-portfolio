@@ -11,9 +11,9 @@ const subProjects = [
   {
     year: "2026",
     category: "Design System",
-    name: "Motion Principles",
+    name: "Motion Foundations",
     role: "Design Manager",
-    href: "/mercado-pago/motion-principles",
+    href: "/mercado-pago/motion-foundations",
   },
   {
     year: "2026",

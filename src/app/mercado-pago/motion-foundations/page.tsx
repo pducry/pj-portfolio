@@ -102,10 +102,10 @@ function VideoClip({
   );
 }
 
-function MotionPrinciplesContent() {
+function MotionFoundationsContent() {
   const { lang } = useLang();
   const t = translations[lang];
-  const mp = t.pages.motionPrinciples;
+  const mp = t.pages.motionFoundations;
 
   return (
     <div className="animate-fade-in">
@@ -123,7 +123,7 @@ function MotionPrinciplesContent() {
 
       {/* Title + meta */}
       <div className="px-6 border-t border-border py-4 flex flex-wrap items-baseline gap-x-10 gap-y-1">
-        <span className="text-base text-foreground whitespace-nowrap">Motion Principles</span>
+        <span className="text-base text-foreground whitespace-nowrap">Motion Foundations</span>
         <span className="text-sm text-muted whitespace-nowrap">{t.categories["Design System"]}</span>
         <span className="text-sm text-muted whitespace-nowrap">2026</span>
         <span className="text-sm text-muted whitespace-nowrap">{t.roles["Design Manager"]}</span>
@@ -212,6 +212,6 @@ function MotionPrinciplesContent() {
   );
 }
 
-export default function MotionPrinciplesPage() {
-  return <MotionPrinciplesContent />;
+export default function MotionFoundationsPage() {
+  return <MotionFoundationsContent />;
 }

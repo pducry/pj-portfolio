@@ -110,7 +110,7 @@ export const translations = {
         desc1: "Leading design for Mercado Pago, Latin America's largest fintech, with over 60 million active users across 7 countries. Responsible for design craft and strategic direction across product design, design systems, and motion, working at the intersection of scale, speed, and quality.",
         desc2: "UX as a business lever: design decisions at this scale touch millions of real financial interactions daily. My role is to keep quality high and intentional, directing a team of designers while staying close to the craft through prototyping, tooling, and hands-on UX and creative direction.",
       },
-      motionPrinciples: {
+      motionFoundations: {
         intro1: "How Mercado Pago moves. A shared language of motion built for a product operating across 11 verticals and 7 countries, so that every transition, micro-interaction, and expressive moment feels like it comes from the same place.",
         intro2: "Motion should feel agile and reliable, starting with speed, ending with serenity. Three typologies translate design principles into behavior. The typology is chosen by the intention of the screen, not by style or technique.",
         foundations: [
@@ -392,7 +392,7 @@ export const translations = {
         desc1: "Liderando design no Mercado Pago, a maior fintech da América Latina, com mais de 60 milhões de usuários ativos em 7 países. Responsável pelo craft de design e direção estratégica em product design, design systems e motion, trabalhando na interseção de escala, velocidade e qualidade.",
         desc2: "UX como alavanca de negócio: decisões de design nessa escala impactam milhões de interações financeiras reais diariamente. Meu papel é manter a qualidade alta e intencional, dirigindo um time de designers enquanto permaneço próximo ao craft por meio de prototipagem, tooling e direção criativa hands-on.",
       },
-      motionPrinciples: {
+      motionFoundations: {
         intro1: "Como o Mercado Pago se move. Uma linguagem compartilhada de motion construída para um produto que opera em 11 verticais e 7 países, para que cada transição, micro-interação e momento expressivo pareça vir do mesmo lugar.",
         intro2: "O motion deve parecer ágil e confiável, começando com velocidade e terminando com serenidade. Três tipologias traduzem princípios de design em comportamento. A tipologia é escolhida pela intenção da tela, não por estilo ou técnica.",
         foundations: [
