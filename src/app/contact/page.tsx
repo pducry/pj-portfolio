@@ -78,10 +78,10 @@ export default function Contact() {
       {/* Intro */}
       <div className="px-6 pt-6 pb-8">
         <div className="max-w-xl space-y-5">
-          <p className="text-2xl lg:text-[24px] leading-snug text-foreground/75">
+          <p className="text-2xl lg:text-[22px] leading-snug text-foreground/75">
             {a.intro1}
           </p>
-          <p className="text-2xl lg:text-[24px] leading-snug text-foreground/75">
+          <p className="text-2xl lg:text-[22px] leading-snug text-foreground/75">
             {a.intro2a}{" "}
             <span className="text-foreground font-medium">FFForma</span>
             {a.intro2b}
