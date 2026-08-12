@@ -5,6 +5,7 @@ const isProd = process.env.NODE_ENV === "production";
 const nextConfig: NextConfig = {
   devIndicators: false,
   output: "export",
+  trailingSlash: true,
   basePath: isProd ? "/pj-portfolio2" : "",
   assetPrefix: isProd ? "/pj-portfolio2/" : "",
   env: {
