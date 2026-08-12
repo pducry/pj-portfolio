@@ -102,8 +102,8 @@ export default function Bio() {
       {/* Intro */}
       <div className="px-6 pt-6 pb-8">
         <div className="max-w-xl space-y-6">
-          <p className="text-2xl lg:text-[30px] leading-snug text-foreground/75">{t.bio.p1}</p>
-          <p className="text-2xl lg:text-[30px] leading-tight text-foreground/75">
+          <p className="text-2xl lg:text-[24px] leading-snug text-foreground/75">{t.bio.p1}</p>
+          <p className="text-2xl lg:text-[24px] leading-tight text-foreground/75">
             {t.bio.p4a}{" "}
             <a
               href="https://ffforma.design/"
@@ -117,7 +117,7 @@ export default function Bio() {
           </p>
           <a
             href="mailto:pducry@gmail.com"
-            className="inline-flex items-center gap-2 text-2xl lg:text-[30px] text-foreground hover:opacity-60 transition-opacity"
+            className="inline-flex items-center gap-2 text-2xl lg:text-[24px] text-foreground hover:opacity-60 transition-opacity"
           >
             {t.bio.cta} →
           </a>
