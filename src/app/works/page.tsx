@@ -122,6 +122,16 @@ export default function Bio() {
             {t.bio.cta} →
           </a>
         </div>
+
+        <div className="mt-12">
+          <a
+            href="#projects"
+            className="inline-flex items-baseline gap-2 text-sm text-foreground/30 transition-colors hover:text-foreground"
+          >
+            {t.bio.scroll}
+            <span className="animate-scroll-hint">↓</span>
+          </a>
+        </div>
       </div>
 
       <div className="h-16 lg:h-[200px]" />
