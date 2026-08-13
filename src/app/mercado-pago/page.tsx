@@ -18,6 +18,13 @@ const subProjects = [
   {
     year: "2026",
     category: "Creative",
+    name: "Visual Design",
+    role: "Design Manager",
+    href: "/mercado-pago/visual-design",
+  },
+  {
+    year: "2026",
+    category: "Creative",
     name: "Art Direction",
     role: "Design Manager",
     href: "/mercado-pago/art-direction",

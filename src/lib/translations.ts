@@ -166,6 +166,10 @@ export const translations = {
         intro1: "A unified visual identity for Mercado Pago, built simultaneously across photography, iconography, and 3D. The work consolidates and evolves the brand's creative language across formats and markets — ensuring every touchpoint feels coherent, intentional, and unmistakably on-brand at the scale of Latin America's largest fintech.",
         intro2: "Art direction operating across live campaign photography, AI-assisted 3D assets, and iconographic systems. Spanning 11 verticals and 7 countries, the project defines how the brand looks and feels wherever it appears — from product screens to campaign visuals.",
       },
+      visualDesign: {
+        intro1: "The visual and creative evolution of Mercado Pago's aesthetic language — from product surfaces to campaign pages to the hardware itself. A shift toward a louder, more confident brand: yellow as the field, type as the voice, and the Point as a designed object.",
+        intro2: "The work tightens how the brand looks and feels at the scale of Latin America's largest fintech. Bold headlines, saturated yellow fields, and a product UI that treats rates, devices, and checkout as one system — so every surface, from a rates page to a Point Smart screen, speaks with the same weight.",
+      },
       mpcraft: {
         intro1: "A leadership development program designed for Mercado Pago's design team leads, built on a simple conviction: collective quality is a system, not a talent. MPCraft creates the conditions — rituals, language, and shared practice — for design excellence to emerge consistently, not occasionally.",
         intro2: "The program operates across two tracks. The craft track develops visual judgment and AI fluency across the full team. The leadership track shapes how design leads build, prototype, and influence — grounding the builder archetype not in aspiration but in daily practice.",
@@ -448,6 +452,10 @@ export const translations = {
       artDirection: {
         intro1: "Uma identidade visual unificada para o Mercado Pago, construída simultaneamente em fotografia, iconografia e 3D. O trabalho consolida e evolui a linguagem criativa da marca em formatos e mercados — garantindo que cada ponto de contato seja coerente, intencional e inegavelmente alinhado à marca na escala da maior fintech da América Latina.",
         intro2: "Direção de arte atuando em fotografia de campanha ao vivo, assets 3D assistidos por IA e sistemas iconográficos. Abrangendo 11 verticais e 7 países, o projeto define como a marca se apresenta onde quer que apareça — das telas do produto aos visuais de campanha.",
+      },
+      visualDesign: {
+        intro1: "A evolução visual e criativa da linguagem estética do Mercado Pago — das superfícies de produto às páginas de campanha até o hardware. Um movimento em direção a uma identidade mais assertiva: o amarelo como campo, a tipografia como voz, e o Point como objeto de design.",
+        intro2: "O trabalho aperta como a marca se apresenta na escala da maior fintech da América Latina. Títulos ousados, campos de amarelo saturado e uma UI de produto que trata taxas, dispositivos e checkout como um só sistema — para que cada superfície, de uma página de taxas à tela do Point Smart, fale com o mesmo peso.",
       },
       mpcraft: {
         intro1: "Um programa de desenvolvimento de liderança criado para os design leads do Mercado Pago, construído sobre uma convicção simples: qualidade coletiva é sistema, não talento. O MPCraft cria as condições — rituais, linguagem e prática compartilhada — para que a excelência em design emerja de forma consistente, não ocasional.",
