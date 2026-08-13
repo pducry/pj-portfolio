@@ -9,14 +9,24 @@ import { asset } from "@/lib/asset";
 import { useLang } from "@/components/language-provider";
 import { translations } from "@/lib/translations";
 
-function GalleryImage({ src, alt }: { src: string; alt: string }) {
+function GalleryImage({
+  src,
+  alt,
+  width,
+  height,
+}: {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}) {
   return (
     <div className="overflow-hidden w-full">
       <Image
         src={asset(src)}
         alt={alt}
-        width={1920}
-        height={1080}
+        width={width}
+        height={height}
         className="w-full h-auto object-cover"
         sizes="100vw"
       />
@@ -61,7 +71,9 @@ function VisualDesignContent() {
           <div className="border-b border-border">
             <GalleryImage
               src="/projects/visual-design/vd_01.png"
-              alt="Visual Design — Mercado Pago rates hero"
+              alt="Visual Design — hero section"
+              width={2732}
+              height={2954}
             />
           </div>
         </Reveal>
@@ -70,7 +82,9 @@ function VisualDesignContent() {
           <div className="border-b border-border">
             <GalleryImage
               src="/projects/visual-design/vd_02.png"
-              alt="Visual Design — progressive rates system"
+              alt="Visual Design — hero section"
+              width={2732}
+              height={3174}
             />
           </div>
         </Reveal>
@@ -79,7 +93,9 @@ function VisualDesignContent() {
           <div className="border-b border-border">
             <GalleryImage
               src="/projects/visual-design/vd_03.png"
-              alt="Visual Design — Point device lineup"
+              alt="Visual Design — hero section"
+              width={2732}
+              height={2160}
             />
           </div>
         </Reveal>
@@ -88,7 +104,9 @@ function VisualDesignContent() {
           <div className="border-b border-border">
             <GalleryImage
               src="/projects/visual-design/vd_04.png"
-              alt="Visual Design — Point Smart 2 product page"
+              alt="Visual Design — hero section"
+              width={2732}
+              height={2160}
             />
           </div>
         </Reveal>
