@@ -22,6 +22,7 @@ const sections: { columns: number; images: string[] }[] = [
       "/projects/foracle/Foracle03.png",
       "/projects/foracle/Foracle05.png",
       "/projects/foracle/Foracle06.png",
+      "/projects/foracle/Foracle07.png",
     ],
   },
 ];
