@@ -71,9 +71,9 @@ function VisualDesignContent() {
           <div className="border-b border-border">
             <GalleryImage
               src="/projects/visual-design/vd_01.png"
-              alt="Visual Design — hero section"
-              width={2732}
-              height={2954}
+              alt="Visual Design — Mercado Pago visual"
+              width={1920}
+              height={1080}
             />
           </div>
         </Reveal>
@@ -82,31 +82,9 @@ function VisualDesignContent() {
           <div className="border-b border-border">
             <GalleryImage
               src="/projects/visual-design/vd_02.png"
-              alt="Visual Design — hero section"
-              width={2732}
-              height={3174}
-            />
-          </div>
-        </Reveal>
-
-        <Reveal>
-          <div className="border-b border-border">
-            <GalleryImage
-              src="/projects/visual-design/vd_03.png"
-              alt="Visual Design — hero section"
-              width={2732}
-              height={2160}
-            />
-          </div>
-        </Reveal>
-
-        <Reveal>
-          <div className="border-b border-border">
-            <GalleryImage
-              src="/projects/visual-design/vd_04.png"
-              alt="Visual Design — hero section"
-              width={2732}
-              height={2160}
+              alt="Visual Design — Mercado Pago visual"
+              width={1920}
+              height={1227}
             />
           </div>
         </Reveal>
