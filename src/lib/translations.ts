@@ -64,7 +64,7 @@ export const translations = {
         ", a studio crafting new motion and visual solutions using GenAI for the creative industry.",
       quote:
         "I do believe in the power of craft leading by business needs, always collaborating with teams to achieve better results — whether it's concept design, a user-centered approach or leading creative teams.",
-      experienceLabel: "Experience",
+      experienceLabel: "Main experiences",
       recognitionLabel: "Recognition",
       skills: [
         "Team Management",
@@ -351,7 +351,7 @@ export const translations = {
         ", um estúdio que cria novas soluções de motion e visual usando GenAI para a indústria criativa.",
       quote:
         "Acredito no poder do craft guiado pelas necessidades do negócio, sempre colaborando com os times para alcançar melhores resultados — seja no design conceitual, em uma abordagem centrada no usuário ou na liderança de times criativos.",
-      experienceLabel: "Experiência",
+      experienceLabel: "Principais experiências",
       recognitionLabel: "Reconhecimento",
       skills: [
         "Gestão de Times",
