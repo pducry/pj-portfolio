@@ -70,17 +70,6 @@ function VisualDesignContent() {
         <Reveal>
           <div className="border-b border-border">
             <GalleryImage
-              src="/projects/visual-design/vd_01.png"
-              alt="Visual Design — Mercado Pago visual"
-              width={1920}
-              height={1080}
-            />
-          </div>
-        </Reveal>
-
-        <Reveal>
-          <div className="border-b border-border">
-            <GalleryImage
               src="/projects/visual-design/vd_02.png"
               alt="Visual Design — Mercado Pago visual"
               width={1920}
