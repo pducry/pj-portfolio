@@ -24,6 +24,20 @@ const experience: Entry[] = [
   { company: "Y Dreams",                role: "Senior Designer",  years: "2014–2015"  },
 ];
 
+const recognition = [
+  "Cannes Lions",
+  "Webby Awards",
+  "SxSW Digital Design",
+  "Adobe's Cutting Edge",
+  "D&AD",
+  "Behance Portfolio Review",
+  "Brasil Design Awards",
+  "FastCo. Most Innovative Companies 2021",
+  "Computer Arts",
+  "Awwwards",
+  "FWA",
+];
+
 const clients = [
   "Mercado Pago", "Google", "Facebook", "Nike", "Isadore", "Royal Canin",
   "KLM", "Heineken", "Globosat", "Adidas", "Shutterstock",
@@ -167,14 +181,15 @@ export default function Bio() {
       <div className="mt-16 lg:mt-20">
         {/* Desktop header */}
         <Reveal>
-          <div className="hidden lg:grid grid-cols-3 gap-24 px-6 py-3 border-t border-b border-border">
+          <div className="hidden lg:grid grid-cols-4 gap-16 px-6 py-3 border-t border-b border-border">
             <span className="text-sm text-foreground/30">{t.footer.skills}</span>
+            <span className="text-sm text-foreground/30">{t.footer.recognition}</span>
             <span className="text-sm text-foreground/30">{t.footer.clients}</span>
             <span className="text-sm text-foreground/30">{t.footer.contact}</span>
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 gap-0 lg:grid-cols-3 lg:gap-24 lg:mt-3 lg:px-6">
+        <div className="grid grid-cols-1 gap-0 lg:grid-cols-4 lg:gap-16 lg:mt-3 lg:px-6">
           {/* Skills */}
           <Reveal>
             <div className="lg:hidden px-6 py-3 border-t border-b border-border">
@@ -185,8 +200,18 @@ export default function Bio() {
             </div>
           </Reveal>
 
+          {/* Recognition */}
+          <Reveal delay={0.06}>
+            <div className="lg:hidden px-6 py-3 border-t border-b border-border">
+              <span className="text-sm text-foreground/30">{t.footer.recognition}</span>
+            </div>
+            <div className="px-6 lg:px-0 py-6 lg:py-0 space-y-3 lg:space-y-4">
+              {recognition.map((r) => <p key={r} className="text-base text-foreground/60">{r}</p>)}
+            </div>
+          </Reveal>
+
           {/* Clients */}
-          <Reveal delay={0.08}>
+          <Reveal delay={0.12}>
             <div className="lg:hidden px-6 py-3 border-t border-b border-border">
               <span className="text-sm text-foreground/30">{t.footer.clients}</span>
             </div>
@@ -196,7 +221,7 @@ export default function Bio() {
           </Reveal>
 
           {/* Contact */}
-          <Reveal delay={0.16}>
+          <Reveal delay={0.18}>
             <div className="lg:hidden px-6 py-3 border-t border-b border-border">
               <span className="text-sm text-foreground/30">{t.footer.contact}</span>
             </div>
