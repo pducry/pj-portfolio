@@ -100,10 +100,10 @@ function UxEvolveContent() {
           </div>
         </Reveal>
 
-        {/* Separator videos, two columns */}
+        {/* Separator videos, always stacked */}
         <Reveal>
-          <div className="grid grid-cols-1 lg:grid-cols-2 border-b border-border">
-            <div className="border-b lg:border-b-0 lg:border-r border-border">
+          <div className="border-b border-border">
+            <div className="border-b border-border">
               <video
                 src={asset("/videos/uxevolve/separator-01.mp4")}
                 autoPlay
@@ -126,13 +126,13 @@ function UxEvolveContent() {
           </div>
         </Reveal>
 
-        {/* Slide backgrounds, four columns */}
+        {/* Slide backgrounds, always two columns */}
         <Reveal>
-          <div className="grid grid-cols-2 lg:grid-cols-4 border-b border-border">
+          <div className="grid grid-cols-2 border-b border-border">
             {[1, 2, 3, 4].map((i) => (
               <div
                 key={i}
-                className={`${i < 4 ? "border-r border-border" : ""} ${i === 1 || i === 2 ? "border-b lg:border-b-0 border-border" : ""}`}
+                className={`${i % 2 === 1 ? "border-r border-border" : ""} ${i < 3 ? "border-b border-border" : ""}`}
               >
                 <Image
                   src={asset(`/images/uxevolve/bg-${i}.jpg`)}
@@ -140,7 +140,7 @@ function UxEvolveContent() {
                   width={1920}
                   height={1080}
                   className="w-full h-auto object-cover"
-                  sizes="(max-width: 1024px) 50vw, 25vw"
+                  sizes="50vw"
                 />
               </div>
             ))}
