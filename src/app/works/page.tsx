@@ -34,7 +34,6 @@ const contactLinks = [
   { label: "Email",      href: "mailto:pducry@gmail.com" },
   { label: "Instagram",  href: "https://www.instagram.com/pedro_julien" },
   { label: "LinkedIn",   href: "https://www.linkedin.com/in/pedrojulien/" },
-  { label: "Foundation", href: "https://foundation.app/@ixaser" },
   { label: "Objkt",      href: "https://objkt.com/users/tz1VZcpNZW6W8D2hGXvTDqJqwGjmjPKRYwRM" },
 ];
 
@@ -102,8 +101,8 @@ export default function Bio() {
       {/* Intro */}
       <div className="px-6 pt-6 pb-8">
         <div className="max-w-xl space-y-6">
-          <p className="text-2xl lg:text-[30px] leading-snug text-foreground/75">{t.bio.p1}</p>
-          <p className="text-2xl lg:text-[30px] leading-tight text-foreground/75">
+          <p className="text-2xl lg:text-[22px] leading-snug text-foreground/75">{t.bio.p1}</p>
+          <p className="text-2xl lg:text-[22px] leading-tight text-foreground/75">
             {t.bio.p4a}{" "}
             <a
               href="https://ffforma.design/"
@@ -117,10 +116,19 @@ export default function Bio() {
           </p>
           <a
             href="mailto:pducry@gmail.com"
-            className="inline-flex items-center gap-2 text-2xl lg:text-[30px] text-foreground hover:opacity-60 transition-opacity"
+            className="inline-flex items-center gap-2 text-2xl lg:text-[22px] text-foreground hover:opacity-60 transition-opacity"
           >
             {t.bio.cta} →
           </a>
+          <div>
+            <a
+              href="#projects"
+              className="inline-flex items-baseline gap-2 text-sm text-foreground/30 transition-colors hover:text-foreground"
+            >
+              {t.bio.scroll}
+              <span className="animate-scroll-hint">↓</span>
+            </a>
+          </div>
         </div>
       </div>
 

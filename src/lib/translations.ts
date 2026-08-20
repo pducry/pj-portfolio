@@ -9,6 +9,7 @@ export const translations = {
       p4a: "Founder of",
       p4b: ".",
       cta: "Get in touch",
+      scroll: "Scroll down",
     },
     projects: { type: "Type", year: "Year", role: "Role", name: "Project's Name" },
     works: { craft: "Craft", build: "Digital Artifacts" },
@@ -64,7 +65,7 @@ export const translations = {
         ", a studio crafting new motion and visual solutions using GenAI for the creative industry.",
       quote:
         "I do believe in the power of craft leading by business needs, always collaborating with teams to achieve better results — whether it's concept design, a user-centered approach or leading creative teams.",
-      experienceLabel: "Experience",
+      experienceLabel: "Main experiences",
       recognitionLabel: "Recognition",
       skills: [
         "Team Management",
@@ -111,7 +112,7 @@ export const translations = {
         desc1: "Leading design for Mercado Pago, Latin America's largest fintech, with over 60 million active users across 7 countries. Responsible for design craft and strategic direction across product design, design systems, and motion, working at the intersection of scale, speed, and quality.",
         desc2: "UX as a business lever: design decisions at this scale touch millions of real financial interactions daily. My role is to keep quality high and intentional, directing a team of designers while staying close to the craft through prototyping, tooling, and hands-on UX and creative direction.",
       },
-      motionPrinciples: {
+      motionFoundations: {
         intro1: "How Mercado Pago moves. A shared language of motion built for a product operating across 11 verticals and 7 countries, so that every transition, micro-interaction, and expressive moment feels like it comes from the same place.",
         intro2: "Motion should feel agile and reliable, starting with speed, ending with serenity. Three typologies translate design principles into behavior. The typology is chosen by the intention of the screen, not by style or technique.",
         foundations: [
@@ -165,6 +166,10 @@ export const translations = {
       artDirection: {
         intro1: "A unified visual identity for Mercado Pago, built simultaneously across photography, iconography, and 3D. The work consolidates and evolves the brand's creative language across formats and markets — ensuring every touchpoint feels coherent, intentional, and unmistakably on-brand at the scale of Latin America's largest fintech.",
         intro2: "Art direction operating across live campaign photography, AI-assisted 3D assets, and iconographic systems. Spanning 11 verticals and 7 countries, the project defines how the brand looks and feels wherever it appears — from product screens to campaign visuals.",
+      },
+      visualDesign: {
+        intro1: "The visual and creative evolution of Mercado Pago's aesthetic language — from product surfaces to campaign pages to the hardware itself. A shift toward a louder, more confident brand: yellow as the field, type as the voice, and the Point as a designed object.",
+        intro2: "The work tightens how the brand looks and feels at the scale of Latin America's largest fintech. Bold headlines, saturated yellow fields, and a product UI that treats rates, devices, and checkout as one system — so every surface, from a rates page to a Point Smart screen, speaks with the same weight.",
       },
       mpcraft: {
         intro1: "A leadership development program designed for Mercado Pago's design team leads, built on a simple conviction: collective quality is a system, not a talent. MPCraft creates the conditions — rituals, language, and shared practice — for design excellence to emerge consistently, not occasionally.",
@@ -313,6 +318,7 @@ export const translations = {
       p4a: "Fundador da",
       p4b: ".",
       cta: "Entre em contato",
+      scroll: "Scroll down",
     },
     projects: { type: "Tipo", year: "Ano", role: "Cargo", name: "Nome do Projeto" },
     works: { craft: "Craft", build: "Artefatos Digitais" },
@@ -368,7 +374,7 @@ export const translations = {
         ", um estúdio que cria novas soluções de motion e visual usando GenAI para a indústria criativa.",
       quote:
         "Acredito no poder do craft guiado pelas necessidades do negócio, sempre colaborando com os times para alcançar melhores resultados — seja no design conceitual, em uma abordagem centrada no usuário ou na liderança de times criativos.",
-      experienceLabel: "Experiência",
+      experienceLabel: "Principais experiências",
       recognitionLabel: "Reconhecimento",
       skills: [
         "Gestão de Times",
@@ -415,7 +421,7 @@ export const translations = {
         desc1: "Liderando design no Mercado Pago, a maior fintech da América Latina, com mais de 60 milhões de usuários ativos em 7 países. Responsável pelo craft de design e direção estratégica em product design, design systems e motion, trabalhando na interseção de escala, velocidade e qualidade.",
         desc2: "UX como alavanca de negócio: decisões de design nessa escala impactam milhões de interações financeiras reais diariamente. Meu papel é manter a qualidade alta e intencional, dirigindo um time de designers enquanto permaneço próximo ao craft por meio de prototipagem, tooling e direção criativa hands-on.",
       },
-      motionPrinciples: {
+      motionFoundations: {
         intro1: "Como o Mercado Pago se move. Uma linguagem compartilhada de motion construída para um produto que opera em 11 verticais e 7 países, para que cada transição, micro-interação e momento expressivo pareça vir do mesmo lugar.",
         intro2: "O motion deve parecer ágil e confiável, começando com velocidade e terminando com serenidade. Três tipologias traduzem princípios de design em comportamento. A tipologia é escolhida pela intenção da tela, não por estilo ou técnica.",
         foundations: [
@@ -469,6 +475,10 @@ export const translations = {
       artDirection: {
         intro1: "Uma identidade visual unificada para o Mercado Pago, construída simultaneamente em fotografia, iconografia e 3D. O trabalho consolida e evolui a linguagem criativa da marca em formatos e mercados — garantindo que cada ponto de contato seja coerente, intencional e inegavelmente alinhado à marca na escala da maior fintech da América Latina.",
         intro2: "Direção de arte atuando em fotografia de campanha ao vivo, assets 3D assistidos por IA e sistemas iconográficos. Abrangendo 11 verticais e 7 países, o projeto define como a marca se apresenta onde quer que apareça — das telas do produto aos visuais de campanha.",
+      },
+      visualDesign: {
+        intro1: "A evolução visual e criativa da linguagem estética do Mercado Pago — das superfícies de produto às páginas de campanha até o hardware. Um movimento em direção a uma identidade mais assertiva: o amarelo como campo, a tipografia como voz, e o Point como objeto de design.",
+        intro2: "O trabalho aperta como a marca se apresenta na escala da maior fintech da América Latina. Títulos ousados, campos de amarelo saturado e uma UI de produto que trata taxas, dispositivos e checkout como um só sistema — para que cada superfície, de uma página de taxas à tela do Point Smart, fale com o mesmo peso.",
       },
       mpcraft: {
         intro1: "Um programa de desenvolvimento de liderança criado para os design leads do Mercado Pago, construído sobre uma convicção simples: qualidade coletiva é sistema, não talento. O MPCraft cria as condições — rituais, linguagem e prática compartilhada — para que a excelência em design emerja de forma consistente, não ocasional.",
