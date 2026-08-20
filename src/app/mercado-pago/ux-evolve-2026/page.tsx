@@ -44,23 +44,6 @@ function UxEvolveContent() {
         </div>
       </div>
 
-      {/* Hosts */}
-      <Reveal>
-        <div className="mt-16">
-          <div className="px-6 py-3 border-t border-b border-border">
-            <span className="text-sm text-foreground/30">{ux.hostsLabel}</span>
-          </div>
-          <div className="divide-y divide-border">
-            {ux.hosts.map((host) => (
-              <div key={host.name} className="px-6 py-5 grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-2 lg:gap-12">
-                <p className="text-base text-foreground">{host.name}</p>
-                <p className="text-sm text-muted leading-snug">{host.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Reveal>
-
       {/* Highlight reel */}
       <Reveal>
         <div className="mt-16 border-t border-b border-border">
