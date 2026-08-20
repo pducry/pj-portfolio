@@ -21,6 +21,7 @@ export const translations = {
       "Branding":        "Branding",
       "Creative":        "Creative System",
       "Leadership":      "Leadership",
+      "Culture":         "Culture",
     },
     experience: { current: "Current", past: "Professional Experience" },
     roles: {
@@ -251,6 +252,27 @@ export const translations = {
           },
         ],
       },
+      uxEvolve: {
+        intro1: "UxEvolve is Mercado Pago's annual UX summit, an internal gathering that brings the entire product design team together to look back at a year of work and forward at what's next. Part celebration, part working session: a space to share craft, align on where the discipline is heading, and recognize the effort behind the year's shipped work.",
+        intro2: "Structured as a series of short talks interwoven with cinematic separators, motion, and a shared visual identity, the summit's format is itself a piece of design: every transition, every slide, treated with the same care as the product work it celebrates.",
+        hostsLabel: "Hosted by",
+        agendaLabel: "Agenda",
+        visualLabel: "Visual Identity",
+        hosts: [
+          { name: "Julia Lima", role: "Expert" },
+          { name: "Leandro Di Pasquale", role: "Sr. Director" },
+          { name: "Debora Lambrechts", role: "Sr. Manager" },
+        ],
+        talks: [
+          { label: "Design Principles", speakers: "Nacho Bogo" },
+          { label: "Design System", speakers: "Gae, Mavi" },
+          { label: "Landings & Desktop", speakers: "Vale Slo, Lucho, Pedro Julien" },
+          { label: "Design Tasting", speakers: "Julio Gómez" },
+          { label: "MELI Studio", speakers: "Ernest" },
+          { label: "AI Prototyping", speakers: "Fratín" },
+          { label: "Andes Converter", speakers: "Santi Camargo, Sol Kiernan" },
+        ],
+      },
       sute: {
         desc1: "Sute is a digital product built to bring order to complex information landscapes, taking what is normally dense, fragmented data and making it feel calm, navigable, and human.",
         desc2: "I led the design end-to-end alongside a small, focused team. The work spanned foundational research and product strategy, information architecture, the full UI system, motion principles, and the editorial tone that runs through every screen.",
@@ -303,6 +325,7 @@ export const translations = {
       "Branding":        "Branding",
       "Creative":        "Sistema Criativo",
       "Leadership":      "Liderança",
+      "Culture":         "Cultura",
     },
     experience: { current: "Atual", past: "Experiência Profissional" },
     roles: {
@@ -531,6 +554,27 @@ export const translations = {
             duration: "Mensal — Team Leads",
             body: "Líderes prototipam diretamente com IA e tornam o processo visível para o time. Uma sessão de trabalho bruta, não uma demo polida. O output é o artefato e o pensamento por trás dele: o time vê como o líder quebra um problema, constrói prompts, itera e decide. Espírito builder na prática: construir para aprender, não para apresentar.",
           },
+        ],
+      },
+      uxEvolve: {
+        intro1: "UxEvolve é o encontro anual de UX do Mercado Pago, uma reunião interna que junta todo o time de design de produto para revisitar um ano de trabalho e alinhar o que vem a seguir. Parte celebração, parte sessão de trabalho: um espaço para compartilhar craft, alinhar para onde a disciplina está indo e reconhecer o esforço por trás do que foi entregue no ano.",
+        intro2: "Estruturado como uma série de talks curtas intercaladas por separadores cinematográficos, motion e uma identidade visual única, o formato do encontro é, em si, uma peça de design: cada transição, cada slide, tratado com o mesmo cuidado do trabalho de produto que celebra.",
+        hostsLabel: "Apresentado por",
+        agendaLabel: "Agenda",
+        visualLabel: "Identidade Visual",
+        hosts: [
+          { name: "Julia Lima", role: "Expert" },
+          { name: "Leandro Di Pasquale", role: "Sr. Director" },
+          { name: "Debora Lambrechts", role: "Sr. Manager" },
+        ],
+        talks: [
+          { label: "Princípios de Design", speakers: "Nacho Bogo" },
+          { label: "Design System", speakers: "Gae, Mavi" },
+          { label: "Landings & Desktop", speakers: "Vale Slo, Lucho, Pedro Julien" },
+          { label: "Design Tasting", speakers: "Julio Gómez" },
+          { label: "MELI Studio", speakers: "Ernest" },
+          { label: "Prototipagem com IA", speakers: "Fratín" },
+          { label: "Andes Converter", speakers: "Santi Camargo, Sol Kiernan" },
         ],
       },
       sute: {

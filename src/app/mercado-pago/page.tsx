@@ -29,6 +29,13 @@ const subProjects = [
     role: "Design Manager",
     href: "/mercado-pago/mpcraft",
   },
+  {
+    year: "2026",
+    category: "Culture",
+    name: "UxEvolve 2026",
+    role: "Design Manager",
+    href: "/mercado-pago/ux-evolve-2026",
+  },
 ];
 
 function MercadoPagoContent() {
