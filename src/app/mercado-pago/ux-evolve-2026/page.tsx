@@ -59,11 +59,6 @@ function UxEvolveContent() {
 
       {/* Visual identity */}
       <div className="mt-16 border-t border-border">
-        <Reveal>
-          <div className="px-6 py-3 border-b border-border">
-            <span className="text-sm text-foreground/30">{ux.visualLabel}</span>
-          </div>
-        </Reveal>
 
         {/* Separator video 1 */}
         <Reveal>
