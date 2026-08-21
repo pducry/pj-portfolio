@@ -263,6 +263,8 @@ export const translations = {
         hostsLabel: "Hosted by",
         agendaLabel: "Agenda",
         visualLabel: "Visual Identity",
+        conceptLabel: "The Concept",
+        conceptText: "The visual concept started by mapping the event's themes and translating them into a single system built to move at the pace of the summit itself: a dynamic grid and generous negative space, flexible enough to hold seven different talks under one voice. The result reads as dynamism and modernity — a language designed to energize a team of roughly 500 people.",
         hosts: [
           { name: "Julia Lima", role: "Expert" },
           { name: "Leandro Di Pasquale", role: "Sr. Director" },
@@ -572,6 +574,8 @@ export const translations = {
         hostsLabel: "Apresentado por",
         agendaLabel: "Agenda",
         visualLabel: "Identidade Visual",
+        conceptLabel: "O Conceito",
+        conceptText: "O conceito visual partiu do mapeamento dos temas do evento, traduzidos em um único sistema construído para acompanhar o ritmo do próprio encontro: grid dinâmica e espaço negativo generoso, flexível o suficiente para sustentar sete talks diferentes sob uma só voz. O resultado é dinamismo e modernidade — uma linguagem pensada para inspirar um time de cerca de 500 pessoas.",
         hosts: [
           { name: "Julia Lima", role: "Expert" },
           { name: "Leandro Di Pasquale", role: "Sr. Director" },

@@ -65,29 +65,41 @@ function UxEvolveContent() {
           </div>
         </Reveal>
 
-        {/* Separator videos, always stacked */}
+        {/* Separator video 1 */}
         <Reveal>
           <div className="border-b border-border">
-            <div className="border-b border-border">
-              <video
-                src={asset("/videos/uxevolve/separator-01.mp4")}
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-auto"
-              />
+            <video
+              src={asset("/videos/uxevolve/separator-01.mp4")}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-auto"
+            />
+          </div>
+        </Reveal>
+
+        {/* Concept text */}
+        <Reveal>
+          <div className="px-6 border-b border-border py-6">
+            <div className="max-w-xl space-y-2">
+              <p className="text-xs text-muted">{ux.conceptLabel}</p>
+              <p className="text-base leading-snug text-foreground/70">{ux.conceptText}</p>
             </div>
-            <div>
-              <video
-                src={asset("/videos/uxevolve/separator-03.mp4")}
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-auto"
-              />
-            </div>
+          </div>
+        </Reveal>
+
+        {/* Separator video 2 */}
+        <Reveal>
+          <div className="border-b border-border">
+            <video
+              src={asset("/videos/uxevolve/separator-03.mp4")}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-auto"
+            />
           </div>
         </Reveal>
 
