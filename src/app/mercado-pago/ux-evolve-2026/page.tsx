@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { SiteHeader } from "@/components/site-header";
 import { Reveal } from "@/components/reveal";
 import { WorksFooter } from "@/components/works-footer";
@@ -92,24 +91,23 @@ function UxEvolveContent() {
           </div>
         </Reveal>
 
-        {/* Slide backgrounds, always two columns */}
+        {/* Slide backgrounds, automatic side-scrolling carousel */}
         <Reveal>
-          <div className="grid grid-cols-2 border-b border-border">
-            {[1, 2, 3, 4].map((i) => (
-              <div
-                key={i}
-                className={`${i % 2 === 1 ? "border-r border-border" : ""} ${i < 3 ? "border-b border-border" : ""}`}
-              >
-                <Image
-                  src={asset(`/images/uxevolve/bg-${i}.jpg`)}
-                  alt={`UxEvolve 2026, background ${i}`}
-                  width={1920}
-                  height={1080}
-                  className="w-full h-auto object-cover"
-                  sizes="50vw"
-                />
-              </div>
-            ))}
+          <div className="overflow-hidden border-b border-border">
+            <div className="flex w-max animate-marquee">
+              {[0, 1].map((dup) =>
+                [1, 2, 3, 4].map((i) => (
+                  <div key={`${dup}-${i}`} className="h-64 lg:h-96 shrink-0 border-r border-border">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={asset(`/images/uxevolve/bg-${i}.jpg`)}
+                      alt={`UxEvolve 2026, background ${i}`}
+                      className="h-full w-auto object-cover"
+                    />
+                  </div>
+                ))
+              )}
+            </div>
           </div>
         </Reveal>
       </div>
