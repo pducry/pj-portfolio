@@ -76,6 +76,13 @@ const imgPosters: Img = {
   height: 1120,
 };
 
+const imgPlantao: Img = {
+  src: "/projects/descomplica/descomplica-12.webp",
+  alt: "Descomplica campaign: Plantão comic-style explosion graphic in green, orange and black",
+  width: 1355,
+  height: 755,
+};
+
 const imgDesignSystem: Img = {
   src: "/projects/descomplica/descomplica-10.webp",
   alt: "Desco System: design principle cards for consistency, clarity, beauty and efficiency",
@@ -205,6 +212,12 @@ function DescomplicaContent() {
         <Reveal>
           <div className="border-b border-border">
             <GalleryImage img={imgPosters} />
+          </div>
+        </Reveal>
+
+        <Reveal>
+          <div className="border-b border-border">
+            <GalleryImage img={imgPlantao} />
           </div>
         </Reveal>
 
