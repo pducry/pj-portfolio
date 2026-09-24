@@ -215,12 +215,6 @@ function DescomplicaContent() {
           </div>
         </Reveal>
 
-        <Reveal>
-          <div className="border-b border-border">
-            <GalleryImage img={imgPlantao} />
-          </div>
-        </Reveal>
-
         <TextBlock paragraphs={[c.system1, c.system2]} />
 
         <Reveal>
@@ -230,6 +224,12 @@ function DescomplicaContent() {
         </Reveal>
 
         <TwoCol imgs={imgsPlatform} />
+
+        <Reveal>
+          <div className="border-b border-border">
+            <GalleryImage img={imgPlantao} />
+          </div>
+        </Reveal>
       </div>
 
       <WorksFooter current="Descomplica" />
