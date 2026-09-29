@@ -147,25 +147,17 @@ function ArtDirectionContent() {
           </div>
         </div>
 
-        {/* ui_01 + ui_02: two columns */}
+        {/* Media Platform: image generator tool walkthrough video, last asset on the page */}
         <Reveal>
-          <div className="grid grid-cols-1 lg:grid-cols-2 border-b border-border">
-            <div className="border-b lg:border-b-0 lg:border-r border-border">
-              <GalleryImage src="/projects/art-direction/ad_ui_01.jpg" alt="Image generator: category, audience and theme for individuals" width={1600} height={900} fillCell />
-            </div>
-            <div>
-              <GalleryImage src="/projects/art-direction/ad_ui_02.jpg" alt="Image generator: category, audience and theme for sellers" width={1600} height={900} fillCell />
-            </div>
-          </div>
-        </Reveal>
-
-        {/* ui_03 + (fourth screen to come): two columns, right cell empty for now */}
-        <Reveal>
-          <div className="grid grid-cols-1 lg:grid-cols-2 border-b border-border">
-            <div className="lg:border-r border-border">
-              <GalleryImage src="/projects/art-direction/ad_ui_03.jpg" alt="Image generator: advanced filters for camera angles and framing" width={1600} height={900} fillCell />
-            </div>
-            <div />
+          <div className="border-b border-border">
+            <video
+              src={asset("/projects/art-direction/ad-media-platform.mp4")}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-auto"
+            />
           </div>
         </Reveal>
 
