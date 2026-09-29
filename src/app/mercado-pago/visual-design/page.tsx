@@ -157,6 +157,17 @@ function VisualDesignContent() {
           </div>
         </Reveal>
 
+        <Reveal>
+          <div className="border-b border-border">
+            <GalleryImage
+              src="/projects/visual-design/vd_15.png"
+              alt="New UI Kit: onboarding carousel, discover everything you can do with your account"
+              width={3840}
+              height={2160}
+            />
+          </div>
+        </Reveal>
+
         {/* Investments carousel slides, automatic side-scrolling carousel (same as UxEvolve 2026) */}
         <Reveal>
           <div className="overflow-hidden border-b border-border">
