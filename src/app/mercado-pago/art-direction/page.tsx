@@ -147,6 +147,13 @@ function ArtDirectionContent() {
           </div>
         </div>
 
+        {/* 13: full width campaign graphic */}
+        <Reveal>
+          <div className="border-b border-border">
+            <GalleryImage src="/projects/art-direction/ad_13.png" alt="Art Direction: Mercado Livre installment payment campaign graphic" width={2590} height={1366} />
+          </div>
+        </Reveal>
+
         {/* Media Platform: image generator tool walkthrough video, last asset on the page */}
         <Reveal>
           <div className="border-b border-border">
