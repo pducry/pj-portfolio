@@ -72,7 +72,7 @@ function ArtDirectionContent() {
         </div>
       </div>
 
-      {/* Gallery: rhythm: full / 2col / 2col / full / 2col / 2col / text / 2col / 2col */}
+      {/* Gallery: rhythm: full / 2col / 2col / full / 2col / 2col / full / text / video */}
       <div className="mt-16 border-t border-border">
 
         {/* 7: full width hero */}
@@ -137,7 +137,14 @@ function ArtDirectionContent() {
           </div>
         </Reveal>
 
-        {/* Image generator: rationale + three interface screens */}
+        {/* 13: full width campaign graphic */}
+        <Reveal>
+          <div className="border-b border-border">
+            <GalleryImage src="/projects/art-direction/ad_13.png" alt="Art Direction: Mercado Livre installment payment campaign graphic" width={2590} height={1366} />
+          </div>
+        </Reveal>
+
+        {/* Image generator: rationale, sits right above the Media Platform video */}
         <div className="px-6 border-b border-border py-6">
           <span className="text-sm text-muted">{ad.toolLabel}</span>
           <div className="mt-3 max-w-xl space-y-3">
@@ -146,13 +153,6 @@ function ArtDirectionContent() {
             <p className="text-base leading-snug text-foreground/70">{ad.tool3}</p>
           </div>
         </div>
-
-        {/* 13: full width campaign graphic */}
-        <Reveal>
-          <div className="border-b border-border">
-            <GalleryImage src="/projects/art-direction/ad_13.png" alt="Art Direction: Mercado Livre installment payment campaign graphic" width={2590} height={1366} />
-          </div>
-        </Reveal>
 
         {/* Media Platform: image generator tool walkthrough video, last asset on the page */}
         <Reveal>
