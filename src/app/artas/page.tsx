@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { SiteHeader } from "@/components/site-header";
 import { WorksFooter } from "@/components/works-footer";
 import { asset } from "@/lib/asset";
@@ -97,6 +98,17 @@ export default function ArtasPage() {
           loop
           playsInline
           className="w-full h-auto"
+        />
+      </div>
+
+      <div className="px-6 pb-6">
+        <Image
+          src={asset("/projects/artas/artas_01.png")}
+          alt="ARTAS: metal name badge on dark fabric"
+          width={1672}
+          height={941}
+          className="w-full h-auto"
+          sizes="100vw"
         />
       </div>
 
