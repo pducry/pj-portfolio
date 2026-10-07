@@ -72,7 +72,7 @@ function ArtDirectionContent() {
         </div>
       </div>
 
-      {/* Gallery: rhythm: full / 2col / 2col / full / 2col / 2col / full / text / video */}
+      {/* Gallery: rhythm: full / 2col / 2col / full / 2col / 2col / full / full / text / video */}
       <div className="mt-16 border-t border-border">
 
         {/* 7: full width hero */}
@@ -141,6 +141,13 @@ function ArtDirectionContent() {
         <Reveal>
           <div className="border-b border-border">
             <GalleryImage src="/projects/art-direction/ad_13.png" alt="Art Direction: Mercado Livre installment payment campaign graphic" width={2590} height={1366} />
+          </div>
+        </Reveal>
+
+        {/* 14: full width campaign graphic */}
+        <Reveal>
+          <div className="border-b border-border">
+            <GalleryImage src="/projects/art-direction/ad_14.png" alt="Art Direction: Mercado Pago digital account landing hero" width={2632} height={1482} />
           </div>
         </Reveal>
 
